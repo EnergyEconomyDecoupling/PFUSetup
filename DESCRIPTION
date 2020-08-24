@@ -8,7 +8,7 @@ Authors@R:
            email = "matthew.heun@me.com",
            comment = c(ORCID = "0000-0002-7438-214X"))
 Description: In the context of the broader Primary-Final-Useful project, 
-             the PFU-Setup package provides directory and other information
+             the PFUSetup package provides directory and other information
              common to all machines running the PFU code.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -16,4 +16,5 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    covr
+    covr,
+    testthat
