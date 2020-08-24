@@ -32,3 +32,8 @@ You might use the package as follows:
 library(PFUSetup)
 get_abs_paths()
 ```
+
+## More Information
+
+Find more information, including vignettes and function documentation,
+at <https://EnergyEconomyDecoupling.github.io/matsindf/PFUSetup/>.
