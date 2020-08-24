@@ -2,6 +2,33 @@
 context("Path Functions")
 ###########################################################
 
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("get_abs_paths() works as expected", {
+  paths <- get_abs_paths()
+
+  # Home path
+  expect_true(file.exists(paths$home_path))
+
+  # Dropbox path
+  expect_true(file.exists(paths$dropbox_path))
+  expect_true(endsWith(paths$dropbox_path, "Dropbox"))
+
+  # Project path
+  expect_true(file.exists(paths$project_path))
+  expect_true(endsWith(paths$project_path, "Fellowship 1960-2015 PFU database"))
+
+  # IEA folder path
+  expect_true(file.exists(paths$iea_folder_path))
+  expect_true(endsWith(paths$iea_folder_path, file.path("IEA extended energy balance data", "IEA 2019 energy balance data")))
+
+  # IEA data path
+  expect_true(file.exists(paths$iea_data_path))
+  expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2019.csv")))
+
+  # exemplar table path
+  expect_true(file.exists(paths$exemplar_table_path))
+  expect_true(endsWith(paths$exemplar_table_path, file.path("Database plan", "Exemplar_Table.xlsx")))
+
+  # FU analysis folder
+  expect_true(file.exists(paths$fu_analysis_folder))
+  expect_true(endsWith(paths$fu_analysis_folder, "Country-level exergy accounting data"))
 })
