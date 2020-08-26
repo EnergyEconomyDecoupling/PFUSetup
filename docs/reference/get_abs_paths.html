@@ -73,7 +73,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PFUSetup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -127,7 +127,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
   <span class='kw'>iea_data_path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>iea_folder_path</span>, <span class='st'>"IEA Extended Energy Balances 2019.csv"</span>),
   <span class='kw'>exemplar_table_path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>project_path</span>, <span class='st'>"Database plan"</span>, <span class='st'>"Exemplar_Table.xlsx"</span>),
   <span class='kw'>fu_analysis_folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>project_path</span>, <span class='st'>"Country-level exergy accounting data"</span>),
-  <span class='kw'>reports_source_folders</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"reports"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"SEAPSUTWorkflow"</span>),
+  <span class='kw'>reports_source_folders</span> <span class='kw'>=</span> <span class='st'>"reports"</span>,
   <span class='kw'>reports_dest_folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>project_path</span>, <span class='st'>"Reports"</span>)
 )</pre>
 
@@ -218,7 +218,7 @@ and will return the HOME path, as desired.</p>
 #&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Country-level exergy accounting data"
 #&gt; 
 #&gt; $reports_source_folders
-#&gt; [1] "/Users/mkh2/Library/R/4.0/library/SEAPSUTWorkflow/reports"
+#&gt; [1] "reports"
 #&gt; 
 #&gt; $reports_dest_folder
 #&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Reports"
