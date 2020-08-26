@@ -14,7 +14,7 @@ get_abs_paths(
   iea_data_path = file.path(iea_folder_path, "IEA Extended Energy Balances 2019.csv"),
   exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
   fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
-  reports_source_folders = system.file("reports", package = "SEAPSUTWorkflow"),
+  reports_source_folders = "reports",
   reports_dest_folder = file.path(project_path, "Reports")
 )
 }

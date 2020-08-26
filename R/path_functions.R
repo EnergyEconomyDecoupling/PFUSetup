@@ -50,7 +50,7 @@ get_abs_paths <- function(home_path = sub(pattern = "Documents$", replacement = 
                                                     "IEA Extended Energy Balances 2019.csv"),
                           exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
                           fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
-                          reports_source_folders = system.file("reports", package = "SEAPSUTWorkflow"),
+                          reports_source_folders = "reports",
                           reports_dest_folder = file.path(project_path, "Reports")) {
 
   list(home_path = home_path,
