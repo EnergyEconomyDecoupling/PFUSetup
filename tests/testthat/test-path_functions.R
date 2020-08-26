@@ -31,4 +31,13 @@ test_that("get_abs_paths() works as expected", {
   # FU analysis folder
   expect_true(file.exists(paths$fu_analysis_folder))
   expect_true(endsWith(paths$fu_analysis_folder, "Country-level exergy accounting data"))
+
+  # Report source folder
+  # Fails when checking the package.
+  # expect_true(file.exists(paths$reports_source_folders))
+  # expect_true(endsWith(paths$reports_source_folders, "reports"))
+
+  # Report destination folder
+  expect_true(file.exists(paths$reports_dest_folder))
+  expect_true(endsWith(paths$reports_dest_folder, "Reports"))
 })
