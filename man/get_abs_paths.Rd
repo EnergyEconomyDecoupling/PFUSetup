@@ -13,32 +13,40 @@ get_abs_paths(
     "IEA 2019 energy balance data"),
   iea_data_path = file.path(iea_folder_path, "IEA Extended Energy Balances 2019.csv"),
   exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
-  fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data")
+  fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
+  reports_source_folders = "reports",
+  reports_dest_folder = file.path(project_path, "Reports")
 )
 }
 \arguments{
-\item{home_path}{the absolute path to the user's home directory.}
+\item{home_path}{The absolute path to the user's home directory.}
 
-\item{dropbox_path}{the path to the user's Dropbox directory, relative to \code{home_path}.}
+\item{dropbox_path}{The path to the user's Dropbox directory, relative to \code{home_path}.}
 
-\item{project_path}{the path to the project directory, relative to \code{dropbox_path}.}
+\item{project_path}{The path to the project directory, relative to \code{dropbox_path}.}
 
-\item{iea_folder_path}{the path to the IEA data directory, relative to \code{project_path}.}
+\item{iea_folder_path}{The path to the IEA data directory, relative to \code{project_path}.}
 
-\item{iea_data_path}{the path to the IEA data file, relative to \code{iea_folder_path}.}
+\item{iea_data_path}{The path to the IEA data file, relative to \code{iea_folder_path}.}
 
-\item{exemplar_table_path}{The path to the exemplar table, relative to \code{home_path}.}
+\item{exemplar_table_path}{The path to the exemplar table, relative to \code{project_path}.}
 
-\item{fu_analysis_folder}{the path to the folder containing final-to-useful exergy information, relative to \code{home_path}.}
+\item{fu_analysis_folder}{The path to the folder containing final-to-useful exergy information, relative to \code{project_path}.}
+
+\item{reports_source_folders}{A string vector of paths to folders containing report sources.}
+
+\item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{project_path}.}
 }
 \value{
-a named list containing paths to important directories and files, including
+A named list containing paths to important directories and files, including
 \code{home_path} (the absolute path to the user's home),
 \code{dropbox_path} (the absolute path of the user's Dropbox folder)
 \code{project_path} (the absolute path to the project folder),
 \code{iea_folder_path} (the absolute path to a folder containing IEA data),
-\code{iea_data_path} (the absolute path to the IEA data file for the OECD countries), and
-\code{fu_analysis_path} (the absolute path to the folder containing final-to-useful exergy information).
+\code{iea_data_path} (the absolute path to the IEA data file for the OECD countries),
+\code{fu_analysis_path} (the absolute path to the folder containing final-to-useful exergy information),
+\code{reports_source_folders} (a vector of absolute paths to folders containing source reports), and
+\code{reports_dest_folder} (a directory into which completed reports will be written).
 }
 \description{
 Default argument values assume a directory structure that includes Dropbox

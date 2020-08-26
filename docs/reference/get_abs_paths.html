@@ -73,7 +73,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PFUSetup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -126,7 +126,9 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
     <span class='st'>"IEA 2019 energy balance data"</span>),
   <span class='kw'>iea_data_path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>iea_folder_path</span>, <span class='st'>"IEA Extended Energy Balances 2019.csv"</span>),
   <span class='kw'>exemplar_table_path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>project_path</span>, <span class='st'>"Database plan"</span>, <span class='st'>"Exemplar_Table.xlsx"</span>),
-  <span class='kw'>fu_analysis_folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>project_path</span>, <span class='st'>"Country-level exergy accounting data"</span>)
+  <span class='kw'>fu_analysis_folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>project_path</span>, <span class='st'>"Country-level exergy accounting data"</span>),
+  <span class='kw'>reports_source_folders</span> <span class='kw'>=</span> <span class='st'>"reports"</span>,
+  <span class='kw'>reports_dest_folder</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>project_path</span>, <span class='st'>"Reports"</span>)
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -134,43 +136,53 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>home_path</th>
-      <td><p>the absolute path to the user's home directory.</p></td>
+      <td><p>The absolute path to the user's home directory.</p></td>
     </tr>
     <tr>
       <th>dropbox_path</th>
-      <td><p>the path to the user's Dropbox directory, relative to <code>home_path</code>.</p></td>
+      <td><p>The path to the user's Dropbox directory, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>project_path</th>
-      <td><p>the path to the project directory, relative to <code>dropbox_path</code>.</p></td>
+      <td><p>The path to the project directory, relative to <code>dropbox_path</code>.</p></td>
     </tr>
     <tr>
       <th>iea_folder_path</th>
-      <td><p>the path to the IEA data directory, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the IEA data directory, relative to <code>project_path</code>.</p></td>
     </tr>
     <tr>
       <th>iea_data_path</th>
-      <td><p>the path to the IEA data file, relative to <code>iea_folder_path</code>.</p></td>
+      <td><p>The path to the IEA data file, relative to <code>iea_folder_path</code>.</p></td>
     </tr>
     <tr>
       <th>exemplar_table_path</th>
-      <td><p>The path to the exemplar table, relative to <code>home_path</code>.</p></td>
+      <td><p>The path to the exemplar table, relative to <code>project_path</code>.</p></td>
     </tr>
     <tr>
       <th>fu_analysis_folder</th>
-      <td><p>the path to the folder containing final-to-useful exergy information, relative to <code>home_path</code>.</p></td>
+      <td><p>The path to the folder containing final-to-useful exergy information, relative to <code>project_path</code>.</p></td>
+    </tr>
+    <tr>
+      <th>reports_source_folders</th>
+      <td><p>A string vector of paths to folders containing report sources.</p></td>
+    </tr>
+    <tr>
+      <th>reports_dest_folder</th>
+      <td><p>The path to the folder into which reports will be written, relative to <code>project_path</code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a named list containing paths to important directories and files, including
+    <p>A named list containing paths to important directories and files, including
 <code>home_path</code> (the absolute path to the user's home),
 <code>dropbox_path</code> (the absolute path of the user's Dropbox folder)
 <code>project_path</code> (the absolute path to the project folder),
 <code>iea_folder_path</code> (the absolute path to a folder containing IEA data),
-<code>iea_data_path</code> (the absolute path to the IEA data file for the OECD countries), and
-<code>fu_analysis_path</code> (the absolute path to the folder containing final-to-useful exergy information).</p>
+<code>iea_data_path</code> (the absolute path to the IEA data file for the OECD countries),
+<code>fu_analysis_path</code> (the absolute path to the folder containing final-to-useful exergy information),
+<code>reports_source_folders</code> (a vector of absolute paths to folders containing source reports), and
+<code>reports_dest_folder</code> (a directory into which completed reports will be written).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The default argument for <code>home_path</code> gets the value for <code><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv("HOME")</a></code>.
@@ -204,6 +216,12 @@ and will return the HOME path, as desired.</p>
 #&gt; 
 #&gt; $fu_analysis_folder
 #&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Country-level exergy accounting data"
+#&gt; 
+#&gt; $reports_source_folders
+#&gt; [1] "reports"
+#&gt; 
+#&gt; $reports_dest_folder
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Reports"
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
