@@ -1,3 +1,5 @@
+# PFUSetup 0.1.2 (2020-08-26)
+
 * Added `reports_source_folder` and `reports_dest_folder` items
   in the output of `get_abs_paths()`.
 
