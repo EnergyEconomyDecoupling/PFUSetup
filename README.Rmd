@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Codecov test coverage](https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup/branch/master/graph/badge.svg)](https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup?branch=master)
+[![R-CMD-check](https://github.com/EnergyEconomyDecoupling/PFUSetup/workflows/R-CMD-check/badge.svg)](https://github.com/EnergyEconomyDecoupling/PFUSetup/actions)
 <!-- badges: end -->
 
 PFUSetup automates the setup process for the PFU database project.
