@@ -43,7 +43,7 @@
 #'
 #' @examples
 #' get_abs_paths()
-get_abs_paths <- function(home_path = sub(pattern = "Documents$", replacement = "", x = file.path(Sys.getenv("HOME"))),
+get_abs_paths <- function(home_path = sub(pattern = "\\Documents$", replacement = "", x = file.path(Sys.getenv("HOME"))),
                           dropbox_path = "Dropbox",
                           project_path = file.path(dropbox_path,
                                                    "Fellowship 1960-2015 PFU database"),

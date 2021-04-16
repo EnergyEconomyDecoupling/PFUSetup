@@ -5,7 +5,7 @@
 \title{Get absolute paths to important files and folders appropriate for this computer}
 \usage{
 get_abs_paths(
-  home_path = sub(pattern = "Documents$", replacement = "", x =
+  home_path = sub(pattern = "\\\\Documents$", replacement = "", x =
     file.path(Sys.getenv("HOME"))),
   dropbox_path = "Dropbox",
   project_path = file.path(dropbox_path, "Fellowship 1960-2015 PFU database"),
