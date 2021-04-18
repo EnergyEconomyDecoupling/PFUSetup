@@ -1,6 +1,3 @@
-###########################################################
-context("Path Functions")
-###########################################################
 
 test_that("get_abs_paths() works as expected", {
   paths <- get_abs_paths()
