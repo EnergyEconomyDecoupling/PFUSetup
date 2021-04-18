@@ -43,4 +43,4 @@ get_abs_paths()
 ## More Information
 
 Find more information, including vignettes and function documentation,
-at <https://EnergyEconomyDecoupling.github.io/matsindf/PFUSetup/>.
+at <https://EnergyEconomyDecoupling.github.io/PFUSetup/>.
