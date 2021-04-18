@@ -5,8 +5,7 @@
 \title{Get absolute paths to important files and folders appropriate for this computer}
 \usage{
 get_abs_paths(
-  home_path = sub(pattern = "Documents$", replacement = "", x =
-    file.path(Sys.getenv("HOME"))),
+  home_path = fs::path_home(),
   dropbox_path = "Dropbox",
   project_path = file.path(dropbox_path, "Fellowship 1960-2015 PFU database"),
   iea_folder_path = file.path(project_path, "IEA extended energy balance data",
@@ -14,6 +13,8 @@ get_abs_paths(
   iea_data_path = file.path(iea_folder_path, "IEA Extended Energy Balances 2019.csv"),
   exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
   fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
+  ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
+  machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
   reports_source_folders = "reports",
   reports_dest_folder = file.path(project_path, "Reports")
 )
@@ -33,6 +34,10 @@ get_abs_paths(
 
 \item{fu_analysis_folder}{The path to the folder containing final-to-useful exergy information, relative to \code{project_path}.}
 
+\item{ceda_data_folder}{The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to \code{project_path}.}
+
+\item{machine_data_folder}{The path to the folder containing machine-specific efficiencies, relative to \code{project_path}.}
+
 \item{reports_source_folders}{A string vector of paths to folders containing report sources.}
 
 \item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{project_path}.}
@@ -45,6 +50,8 @@ A named list containing paths to important directories and files, including
 \code{iea_folder_path} (the absolute path to a folder containing IEA data),
 \code{iea_data_path} (the absolute path to the IEA data file for the OECD countries),
 \code{fu_analysis_path} (the absolute path to the folder containing final-to-useful exergy information),
+\code{machine_data_folder} (the absolute path to the folder containing machine-specific efficiency information),
+\code{ceda_data_folder} (the absolute path to the folder containing CEDA environment information),
 \code{reports_source_folders} (a vector of absolute paths to folders containing source reports), and
 \code{reports_dest_folder} (a directory into which completed reports will be written).
 }

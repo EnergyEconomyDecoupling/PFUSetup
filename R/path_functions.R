@@ -22,6 +22,8 @@
 #' @param iea_data_path The path to the IEA data file, relative to `iea_folder_path`.
 #' @param exemplar_table_path The path to the exemplar table, relative to `project_path`.
 #' @param fu_analysis_folder The path to the folder containing final-to-useful exergy information, relative to `project_path`.
+#' @param machine_data_folder The path to the folder containing machine-specific efficiencies, relative to `project_path`.
+#' @param ceda_data_folder The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to `project_path`.
 #' @param reports_source_folders A string vector of paths to folders containing report sources.
 #' @param reports_dest_folder The path to the folder into which reports will be written, relative to `project_path`.
 #'
@@ -32,6 +34,8 @@
 #' `iea_folder_path` (the absolute path to a folder containing IEA data),
 #' `iea_data_path` (the absolute path to the IEA data file for the OECD countries),
 #' `fu_analysis_path` (the absolute path to the folder containing final-to-useful exergy information),
+#' `machine_data_folder` (the absolute path to the folder containing machine-specific efficiency information),
+#' `ceda_data_folder` (the absolute path to the folder containing CEDA environment information),
 #' `reports_source_folders` (a vector of absolute paths to folders containing source reports), and
 #' `reports_dest_folder` (a directory into which completed reports will be written).
 #'
@@ -39,7 +43,7 @@
 #'
 #' @examples
 #' get_abs_paths()
-get_abs_paths <- function(home_path = sub(pattern = "Documents$", replacement = "", x = file.path(Sys.getenv("HOME"))),
+get_abs_paths <- function(home_path = fs::path_home(),
                           dropbox_path = "Dropbox",
                           project_path = file.path(dropbox_path,
                                                    "Fellowship 1960-2015 PFU database"),
@@ -50,6 +54,8 @@ get_abs_paths <- function(home_path = sub(pattern = "Documents$", replacement = 
                                                     "IEA Extended Energy Balances 2019.csv"),
                           exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
                           fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
+                          ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
+                          machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
                           reports_source_folders = "reports",
                           reports_dest_folder = file.path(project_path, "Reports")) {
 
@@ -60,6 +66,8 @@ get_abs_paths <- function(home_path = sub(pattern = "Documents$", replacement = 
        iea_data_path = file.path(home_path, iea_data_path),
        exemplar_table_path = file.path(home_path, exemplar_table_path),
        fu_analysis_folder = file.path(home_path, fu_analysis_folder),
+       machine_data_folder = file.path(home_path, machine_data_folder),
+       ceda_data_folder = file.path(home_path, ceda_data_folder),
        reports_source_folders = reports_source_folders,
        reports_dest_folder = file.path(home_path, reports_dest_folder))
 }
