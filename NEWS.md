@@ -1,3 +1,5 @@
+# PFUSetup 0.1.3 (2021-04-17)
+
 * Fixed all warnings and notes in R CMD Check
 * Now skips file existence tests if running on continuous integration systems.
 * Added continuous integration testing.
