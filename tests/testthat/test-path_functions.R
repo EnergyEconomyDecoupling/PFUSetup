@@ -27,8 +27,6 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$ceda_data_folder, "CEDA Data"))
 
   # Report source folder
-  # Fails when checking the package.
-  # expect_true(file.exists(paths$reports_source_folders))
   expect_true(endsWith(paths$reports_source_folders, "reports"))
 
   # Report destination folder
