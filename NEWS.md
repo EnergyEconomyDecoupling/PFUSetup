@@ -1,3 +1,5 @@
+# PFUSetup 0.1.4 (2021-04-27)
+
 * Added `drake_cache_path` to the list of strings returned 
   from `get_abs_paths()`.
 * No new tests.
