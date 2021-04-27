@@ -16,7 +16,8 @@ get_abs_paths(
   ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
   machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
   reports_source_folders = "reports",
-  reports_dest_folder = file.path(project_path, "Reports")
+  reports_dest_folder = file.path(project_path, "Reports"),
+  drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
 )
 }
 \arguments{
@@ -41,34 +42,38 @@ get_abs_paths(
 \item{reports_source_folders}{A string vector of paths to folders containing report sources.}
 
 \item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{project_path}.}
+
+\item{drake_cache_folder}{The path to the drake cache. Default is \code{../PFU-Database/.drake}.
+See Details for more information.}
 }
 \value{
 A named list containing paths to important directories and files, including
-\code{home_path} (the absolute path to the user's home),
-\code{dropbox_path} (the absolute path of the user's Dropbox folder)
-\code{project_path} (the absolute path to the project folder),
-\code{iea_folder_path} (the absolute path to a folder containing IEA data),
-\code{iea_data_path} (the absolute path to the IEA data file for the OECD countries),
-\code{fu_analysis_path} (the absolute path to the folder containing final-to-useful exergy information),
-\code{machine_data_folder} (the absolute path to the folder containing machine-specific efficiency information),
-\code{ceda_data_folder} (the absolute path to the folder containing CEDA environment information),
-\code{reports_source_folders} (a vector of absolute paths to folders containing source reports), and
-\code{reports_dest_folder} (a directory into which completed reports will be written).
+\itemize{
+\item{\code{home_path} }{The absolute path to the user's home.}
+\item{\code{dropbox_path} }{The absolute path of the user's Dropbox folder.}
+\item{\code{project_path} }{The absolute path to the project folder.}
+\item{\code{iea_folder_path} }{The absolute path to a folder containing IEA data.}
+\item{\code{iea_data_path} }{The absolute path to the IEA data file for the OECD countries.}
+\item{\code{fu_analysis_path} }{The absolute path to the folder containing final-to-useful exergy information.}
+\item{\code{machine_data_folder} }{The absolute path to the folder containing machine-specific efficiency information.}
+\item{\code{ceda_data_folder} }{The absolute path to the folder containing CEDA environment information.}
+\item{\code{reports_source_folders} }{A vector of absolute paths to folders containing source reports.}
+\item{\code{reports_dest_folder} }{A directory into which completed reports will be written.}
+\item{\code{drake_cache_folder} }{The path to the drake cache.}
+}
 }
 \description{
 Default argument values assume a directory structure that includes Dropbox
 and is appropriate for the Fellowship project for Dr. Paul Brockway.
 }
 \details{
-The default argument for \code{home_path} gets the value for \code{Sys.getenv("HOME")}.
-On Windows, user directories reported by Sys.getenv("HOME") are set to the user's "Documents" folder by default.
-\code{R} on other OSs does not append the "Documents" folder at the end of the \code{home_path}.
-For the \code{home_path} argument,
-we want the path without the Documents folder appended, because that is the enclosing directory
-for the Dropbox folder's default location.
-Thus, the default argument for \code{home_path} trims trailing "Documents", if present.
-The default value for the \code{home_path} argument won't find "Documents" at the end of macOS and Linux home paths
-and will return the HOME path, as desired.
+The default argument for \code{home_path} gets the value for \code{fs::path_home()}.
+
+The default value for \code{drake_cache_folder} assumes that the \code{PFUSetup} folder
+(this project's folder) is a sibling of the working directory
+from which the drake workflow is run.
+If this assumption is not true, users are free to
+pass a non-default value into this function.
 }
 \examples{
 get_abs_paths()

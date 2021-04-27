@@ -1,3 +1,12 @@
+# PFUSetup 0.1.4 (2021-04-27)
+
+* Added `drake_cache_path` to the list of strings returned 
+  from `get_abs_paths()`.
+* No new tests.
+    * Now at 22 tests, all passing.
+    * Test coverage remains at 100 %.
+
+
 # PFUSetup 0.1.3 (2021-04-17)
 
 * Fixed all warnings and notes in R CMD Check
