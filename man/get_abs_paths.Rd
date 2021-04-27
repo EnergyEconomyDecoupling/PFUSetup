@@ -17,7 +17,7 @@ get_abs_paths(
   machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
   reports_source_folders = "reports",
   reports_dest_folder = file.path(project_path, "Reports"),
-  drake_cache_folder = file.path("..", "PFU-Database", ".drake")
+  drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
 )
 }
 \arguments{
