@@ -31,6 +31,9 @@ test_that("get_abs_paths() works as expected", {
 
   # Report destination folder
   expect_true(endsWith(paths$reports_dest_folder, "Reports"))
+
+  # Drake cache folder
+  expect_true(endsWith(paths$drake_cache_folder, ".drake"))
 })
 
 
@@ -39,7 +42,7 @@ test_that("Files exist", {
   # which are unlikely to have access to the folders.
   testthat::skip_on_ci()
 
-  paths <- get_abs_paths()
+  paths <- get_abs_paths(drake_cache_folder = testthat::test_path("..", "..", "..", "PFU-Database", ".drake"))
 
   # Home path
   expect_true(file.exists(paths$home_path))
@@ -71,4 +74,6 @@ test_that("Files exist", {
   # Report destination folder
   expect_true(file.exists(paths$reports_dest_folder))
 
+  # Drake cache folder
+  expect_true(file.exists(paths$drake_cache_folder))
 })
