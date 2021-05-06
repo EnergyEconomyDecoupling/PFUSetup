@@ -44,7 +44,7 @@
 #'
 #' @examples
 #' get_abs_paths()
-get_abs_paths <- function(home_path = fs::path_home(),
+get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           dropbox_path = "Dropbox",
                           project_path = file.path(dropbox_path,
                                                    "Fellowship 1960-2015 PFU database"),
