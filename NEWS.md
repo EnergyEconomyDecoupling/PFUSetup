@@ -1,3 +1,5 @@
+# PFUSetup 0.1.5 (2021-05-07)
+
 * Now making a character vector of the home path.
   `fs::path_home() %>% as.character()`
 * No new tests.
