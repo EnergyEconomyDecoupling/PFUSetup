@@ -73,7 +73,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PFUSetup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5</span>
       </span>
     </div>
 
@@ -118,7 +118,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_abs_paths</span><span class='op'>(</span>
-  home_path <span class='op'>=</span> <span class='fu'>fs</span><span class='fu'>::</span><span class='fu'><a href='http://fs.r-lib.org/reference/path_expand.html'>path_home</a></span><span class='op'>(</span><span class='op'>)</span>,
+  home_path <span class='op'>=</span> <span class='fu'>fs</span><span class='fu'>::</span><span class='fu'><a href='http://fs.r-lib.org/reference/path_expand.html'>path_home</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='op'>)</span>,
   dropbox_path <span class='op'>=</span> <span class='st'>"Dropbox"</span>,
   project_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>dropbox_path</span>, <span class='st'>"Fellowship 1960-2015 PFU database"</span><span class='op'>)</span>,
   iea_folder_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"IEA extended energy balance data"</span>,
@@ -215,41 +215,41 @@ pass a non-default value into this function.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>get_abs_paths</span><span class='op'>(</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; $home_path
-#&gt; <span style='color: #0000BB;font-weight: bold;'>/Users/mkh2</span><span>
+#&gt; [1] "C:/Users/earzm"
 #&gt; 
 #&gt; $dropbox_path
-#&gt; [1] "/Users/mkh2/Dropbox"
+#&gt; [1] "C:/Users/earzm/Dropbox"
 #&gt; 
 #&gt; $project_path
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database"
 #&gt; 
 #&gt; $iea_folder_path
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data"
 #&gt; 
 #&gt; $iea_data_path
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data/IEA Extended Energy Balances 2019.csv"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data/IEA Extended Energy Balances 2019.csv"
 #&gt; 
 #&gt; $exemplar_table_path
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Database plan/Exemplar_Table.xlsx"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Database plan/Exemplar_Table.xlsx"
 #&gt; 
 #&gt; $fu_analysis_folder
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Country-level exergy accounting data"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Country-level exergy accounting data"
 #&gt; 
 #&gt; $machine_data_folder
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Data/Machines - Data"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Data/Machines - Data"
 #&gt; 
 #&gt; $ceda_data_folder
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Data/CEDA Data"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Data/CEDA Data"
 #&gt; 
 #&gt; $reports_source_folders
 #&gt; [1] "reports"
 #&gt; 
 #&gt; $reports_dest_folder
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Reports"
+#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Reports"
 #&gt; 
 #&gt; $drake_cache_folder
-#&gt; [1] "/Users/mkh2/github/PFUSetup/docs/reference/../PFU-Database/.drake"
-#&gt; </div></span></pre>
+#&gt; [1] "C:/Users/earzm/Documents/Github/PFUSetup/docs/reference/../PFU-Database/.drake"
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
