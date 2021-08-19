@@ -16,6 +16,7 @@
 #' @param project_path The path to the project directory, relative to `dropbox_path`.
 #' @param iea_folder_path The path to the IEA data directory, relative to `project_path`.
 #' @param iea_data_path The path to the IEA data file, relative to `iea_folder_path`.
+#' @param country_concordance_path The path to the country concordance file, relative to `project_path`.
 #' @param exemplar_table_path The path to the exemplar table, relative to `project_path`.
 #' @param fu_analysis_folder The path to the folder containing final-to-useful exergy information, relative to `project_path`.
 #' @param machine_data_folder The path to the folder containing machine-specific efficiencies, relative to `project_path`.
@@ -25,19 +26,21 @@
 #' @param drake_cache_folder The path to the drake cache. Default is `../PFU-Database/.drake`.
 #'                           See Details for more information.
 #'
-#' @return A named list containing paths to important directories and files, including
+#' @return A named list containing paths to important directories and files, including:
 #' \itemize{
-#'  \item{`home_path` }{The absolute path to the user's home.}
-#'  \item{`dropbox_path` }{The absolute path of the user's Dropbox folder.}
-#'  \item{`project_path` }{The absolute path to the project folder.}
-#'  \item{`iea_folder_path` }{The absolute path to a folder containing IEA data.}
-#'  \item{`iea_data_path` }{The absolute path to the IEA data file for the OECD countries.}
-#'  \item{`fu_analysis_path` }{The absolute path to the folder containing final-to-useful exergy information.}
-#'  \item{`machine_data_folder` }{The absolute path to the folder containing machine-specific efficiency information.}
-#'  \item{`ceda_data_folder` }{The absolute path to the folder containing CEDA environment information.}
-#'  \item{`reports_source_folders` }{A vector of absolute paths to folders containing source reports.}
-#'  \item{`reports_dest_folder` }{A directory into which completed reports will be written.}
-#'  \item{`drake_cache_folder` }{The path to the drake cache.}
+#'  \item{`home_path`}{The absolute path to the user's home.}
+#'  \item{`dropbox_path`}{The absolute path of the user's Dropbox folder.}
+#'  \item{`project_path`}{The absolute path to the project folder.}
+#'  \item{`iea_folder_path`}{The absolute path to a folder containing IEA data.}
+#'  \item{`iea_data_path`}{The absolute path to the IEA data file for the OECD countries.}
+#'  \item{`country_concordance_path`}{The absolute path to the country concordance file.}
+#'  \item{`exemplar_table_path`}{The path to the exemplar table.}
+#'  \item{`fu_analysis_folder`}{The absolute path to the folder containing final-to-useful exergy information.}
+#'  \item{`machine_data_folder`}{The absolute path to the folder containing machine-specific efficiency information.}
+#'  \item{`ceda_data_folder`}{The absolute path to the folder containing CEDA environment information.}
+#'  \item{`reports_source_folders`}{A vector of absolute paths to folders containing source reports.}
+#'  \item{`reports_dest_folder`}{A directory into which completed reports will be written.}
+#'  \item{`drake_cache_folder`}{The path to the drake cache.}
 #' }
 #'
 #' @export
@@ -53,6 +56,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                                                       "IEA 2019 energy balance data"),
                           iea_data_path = file.path(iea_folder_path,
                                                     "IEA Extended Energy Balances 2019.csv"),
+                          country_concordance_path = file.path(project_path, "Mapping", "Country_Concordance_Full.xlsx"),
                           exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
                           fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
                           ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
@@ -66,6 +70,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        project_path = file.path(home_path, project_path),
        iea_folder_path = file.path(home_path, iea_folder_path),
        iea_data_path = file.path(home_path, iea_data_path),
+       country_concordance_path = file.path(home_path, country_concordance_path),
        exemplar_table_path = file.path(home_path, exemplar_table_path),
        fu_analysis_folder = file.path(home_path, fu_analysis_folder),
        machine_data_folder = file.path(home_path, machine_data_folder),

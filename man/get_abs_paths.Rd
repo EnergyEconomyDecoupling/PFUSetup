@@ -11,6 +11,8 @@ get_abs_paths(
   iea_folder_path = file.path(project_path, "IEA extended energy balance data",
     "IEA 2019 energy balance data"),
   iea_data_path = file.path(iea_folder_path, "IEA Extended Energy Balances 2019.csv"),
+  country_concordance_path = file.path(project_path, "Mapping",
+    "Country_Concordance_Full.xlsx"),
   exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
   fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
   ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
@@ -31,6 +33,8 @@ get_abs_paths(
 
 \item{iea_data_path}{The path to the IEA data file, relative to \code{iea_folder_path}.}
 
+\item{country_concordance_path}{The path to the country concordance file, relative to \code{project_path}.}
+
 \item{exemplar_table_path}{The path to the exemplar table, relative to \code{project_path}.}
 
 \item{fu_analysis_folder}{The path to the folder containing final-to-useful exergy information, relative to \code{project_path}.}
@@ -49,17 +53,19 @@ See Details for more information.}
 \value{
 A named list containing paths to important directories and files, including
 \itemize{
-\item{\code{home_path} }{The absolute path to the user's home.}
-\item{\code{dropbox_path} }{The absolute path of the user's Dropbox folder.}
-\item{\code{project_path} }{The absolute path to the project folder.}
-\item{\code{iea_folder_path} }{The absolute path to a folder containing IEA data.}
-\item{\code{iea_data_path} }{The absolute path to the IEA data file for the OECD countries.}
-\item{\code{fu_analysis_path} }{The absolute path to the folder containing final-to-useful exergy information.}
-\item{\code{machine_data_folder} }{The absolute path to the folder containing machine-specific efficiency information.}
-\item{\code{ceda_data_folder} }{The absolute path to the folder containing CEDA environment information.}
-\item{\code{reports_source_folders} }{A vector of absolute paths to folders containing source reports.}
-\item{\code{reports_dest_folder} }{A directory into which completed reports will be written.}
-\item{\code{drake_cache_folder} }{The path to the drake cache.}
+\item{\code{home_path}}{The absolute path to the user's home.}
+\item{\code{dropbox_path}}{The absolute path of the user's Dropbox folder.}
+\item{\code{project_path}}{The absolute path to the project folder.}
+\item{\code{iea_folder_path}}{The absolute path to a folder containing IEA data.}
+\item{\code{iea_data_path}}{The absolute path to the IEA data file for the OECD countries.}
+\item{\code{country_concordance_path}}{The absolute path to the country concordance file.}
+\item{\code{exemplar_table_path}}{The path to the exemplar table.}
+\item{\code{fu_analysis_folder}}{The absolute path to the folder containing final-to-useful exergy information.}
+\item{\code{machine_data_folder}}{The absolute path to the folder containing machine-specific efficiency information.}
+\item{\code{ceda_data_folder}}{The absolute path to the folder containing CEDA environment information.}
+\item{\code{reports_source_folders}}{A vector of absolute paths to folders containing source reports.}
+\item{\code{reports_dest_folder}}{A directory into which completed reports will be written.}
+\item{\code{drake_cache_folder}}{The path to the drake cache.}
 }
 }
 \description{
