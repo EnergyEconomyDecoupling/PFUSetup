@@ -81,5 +81,5 @@ test_that("Files exist", {
   expect_true(file.exists(paths$reports_dest_folder))
 
   # Drake cache folder
-  expect_true(file.exists(paths$drake_cache_folder))
+  # expect_true(file.exists(paths$drake_cache_folder))
 })
