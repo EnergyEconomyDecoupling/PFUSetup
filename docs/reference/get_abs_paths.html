@@ -73,7 +73,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PFUSetup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6</span>
       </span>
     </div>
 
@@ -124,6 +124,8 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
   iea_folder_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"IEA extended energy balance data"</span>,
     <span class='st'>"IEA 2019 energy balance data"</span><span class='op'>)</span>,
   iea_data_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>iea_folder_path</span>, <span class='st'>"IEA Extended Energy Balances 2019.csv"</span><span class='op'>)</span>,
+  country_concordance_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Mapping"</span>,
+    <span class='st'>"Country_Concordance_Full.xlsx"</span><span class='op'>)</span>,
   exemplar_table_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Database plan"</span>, <span class='st'>"Exemplar_Table.xlsx"</span><span class='op'>)</span>,
   fu_analysis_folder <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Country-level exergy accounting data"</span><span class='op'>)</span>,
   ceda_data_folder <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Data"</span>, <span class='st'>"CEDA Data"</span><span class='op'>)</span>,
@@ -155,6 +157,10 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
     <tr>
       <th>iea_data_path</th>
       <td><p>The path to the IEA data file, relative to <code>iea_folder_path</code>.</p></td>
+    </tr>
+    <tr>
+      <th>country_concordance_path</th>
+      <td><p>The path to the country concordance file, relative to <code>project_path</code>.</p></td>
     </tr>
     <tr>
       <th>exemplar_table_path</th>
@@ -189,18 +195,20 @@ See Details for more information.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A named list containing paths to important directories and files, including</p><ul>
-<li><p><code>home_path</code> The absolute path to the user's home.</p></li>
-<li><p><code>dropbox_path</code> The absolute path of the user's Dropbox folder.</p></li>
-<li><p><code>project_path</code> The absolute path to the project folder.</p></li>
-<li><p><code>iea_folder_path</code> The absolute path to a folder containing IEA data.</p></li>
-<li><p><code>iea_data_path</code> The absolute path to the IEA data file for the OECD countries.</p></li>
-<li><p><code>fu_analysis_path</code> The absolute path to the folder containing final-to-useful exergy information.</p></li>
-<li><p><code>machine_data_folder</code> The absolute path to the folder containing machine-specific efficiency information.</p></li>
-<li><p><code>ceda_data_folder</code> The absolute path to the folder containing CEDA environment information.</p></li>
-<li><p><code>reports_source_folders</code> A vector of absolute paths to folders containing source reports.</p></li>
-<li><p><code>reports_dest_folder</code> A directory into which completed reports will be written.</p></li>
-<li><p><code>drake_cache_folder</code> The path to the drake cache.</p></li>
+    <p>A named list containing paths to important directories and files, including:</p><ul>
+<li><p><code>home_path</code>The absolute path to the user's home.</p></li>
+<li><p><code>dropbox_path</code>The absolute path of the user's Dropbox folder.</p></li>
+<li><p><code>project_path</code>The absolute path to the project folder.</p></li>
+<li><p><code>iea_folder_path</code>The absolute path to a folder containing IEA data.</p></li>
+<li><p><code>iea_data_path</code>The absolute path to the IEA data file for the OECD countries.</p></li>
+<li><p><code>country_concordance_path</code>The absolute path to the country concordance file.</p></li>
+<li><p><code>exemplar_table_path</code>The path to the exemplar table.</p></li>
+<li><p><code>fu_analysis_folder</code>The absolute path to the folder containing final-to-useful exergy information.</p></li>
+<li><p><code>machine_data_folder</code>The absolute path to the folder containing machine-specific efficiency information.</p></li>
+<li><p><code>ceda_data_folder</code>The absolute path to the folder containing CEDA environment information.</p></li>
+<li><p><code>reports_source_folders</code>A vector of absolute paths to folders containing source reports.</p></li>
+<li><p><code>reports_dest_folder</code>A directory into which completed reports will be written.</p></li>
+<li><p><code>drake_cache_folder</code>The path to the drake cache.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -215,40 +223,43 @@ pass a non-default value into this function.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>get_abs_paths</span><span class='op'>(</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; $home_path
-#&gt; [1] "C:/Users/earzm"
+#&gt; [1] "/Users/mkh2"
 #&gt; 
 #&gt; $dropbox_path
-#&gt; [1] "C:/Users/earzm/Dropbox"
+#&gt; [1] "/Users/mkh2/Dropbox"
 #&gt; 
 #&gt; $project_path
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database"
 #&gt; 
 #&gt; $iea_folder_path
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data"
 #&gt; 
 #&gt; $iea_data_path
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data/IEA Extended Energy Balances 2019.csv"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2019 energy balance data/IEA Extended Energy Balances 2019.csv"
+#&gt; 
+#&gt; $country_concordance_path
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Mapping/Country_Concordance_Full.xlsx"
 #&gt; 
 #&gt; $exemplar_table_path
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Database plan/Exemplar_Table.xlsx"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Database plan/Exemplar_Table.xlsx"
 #&gt; 
 #&gt; $fu_analysis_folder
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Country-level exergy accounting data"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Country-level exergy accounting data"
 #&gt; 
 #&gt; $machine_data_folder
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Data/Machines - Data"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Data/Machines - Data"
 #&gt; 
 #&gt; $ceda_data_folder
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Data/CEDA Data"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Data/CEDA Data"
 #&gt; 
 #&gt; $reports_source_folders
 #&gt; [1] "reports"
 #&gt; 
 #&gt; $reports_dest_folder
-#&gt; [1] "C:/Users/earzm/Dropbox/Fellowship 1960-2015 PFU database/Reports"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Reports"
 #&gt; 
 #&gt; $drake_cache_folder
-#&gt; [1] "C:/Users/earzm/Documents/Github/PFUSetup/docs/reference/../PFU-Database/.drake"
+#&gt; [1] "/Users/mkh2/github/PFUSetup/docs/reference/../PFU-Database/.drake"
 #&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

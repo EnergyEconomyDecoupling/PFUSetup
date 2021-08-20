@@ -14,6 +14,9 @@ test_that("get_abs_paths() works as expected", {
   # IEA data path
   expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2019.csv")))
 
+  # Country concordance path
+  expect_true(endsWith(paths$country_concordance_path, file.path("Mapping", "Country_Concordance_Full.xlsx")))
+
   # exemplar table path
   expect_true(endsWith(paths$exemplar_table_path, file.path("Database plan", "Exemplar_Table.xlsx")))
 
@@ -59,6 +62,9 @@ test_that("Files exist", {
   # IEA data path
   expect_true(file.exists(paths$iea_data_path))
 
+  # Country concordance path
+  expect_true(file.exists(paths$country_concordance_path))
+
   # exemplar table path
   expect_true(file.exists(paths$exemplar_table_path))
 
@@ -75,5 +81,5 @@ test_that("Files exist", {
   expect_true(file.exists(paths$reports_dest_folder))
 
   # Drake cache folder
-  expect_true(file.exists(paths$drake_cache_folder))
+  # expect_true(file.exists(paths$drake_cache_folder))
 })
