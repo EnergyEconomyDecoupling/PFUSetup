@@ -51,7 +51,7 @@ get_abs_paths(
 See Details for more information.}
 }
 \value{
-A named list containing paths to important directories and files, including
+A named list containing paths to important directories and files, including:
 \itemize{
 \item{\code{home_path}}{The absolute path to the user's home.}
 \item{\code{dropbox_path}}{The absolute path of the user's Dropbox folder.}
