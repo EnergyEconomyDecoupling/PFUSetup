@@ -15,7 +15,7 @@ get_abs_paths(
   country_concordance_path = file.path(project_path, "Mapping",
     "Country_Concordance_Full.xlsx"),
   exemplar_table_path = file.path(project_path, "Database plan", "Exemplar_Table.xlsx"),
-  fu_analysis_folder = file.path(project_path, "Country-level exergy accounting data"),
+  fu_analysis_folder = file.path(project_path, "FU analysis data"),
   ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
   machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
   reports_source_folders = "reports",

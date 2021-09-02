@@ -21,7 +21,7 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$exemplar_table_path, file.path("Database plan", "Exemplar_Table.xlsx")))
 
   # FU analysis folder
-  expect_true(endsWith(paths$fu_analysis_folder, "Country-level exergy accounting data"))
+  expect_true(endsWith(paths$fu_analysis_folder, "FU analysis data"))
 
   # Machine data folder
   expect_true(endsWith(paths$machine_data_folder, "Machines - Data"))
