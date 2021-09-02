@@ -9,10 +9,10 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$project_path, "Fellowship 1960-2015 PFU database"))
 
   # IEA folder path
-  expect_true(endsWith(paths$iea_folder_path, file.path("IEA extended energy balance data", "IEA 2019 energy balance data")))
+  expect_true(endsWith(paths$iea_folder_path, file.path("IEA extended energy balance data", "IEA 2021 energy balance data")))
 
   # IEA data path
-  expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2019.csv")))
+  expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2021 (ktoe).csv")))
 
   # Country concordance path
   expect_true(endsWith(paths$country_concordance_path, file.path("Mapping", "Country_Concordance_Full.xlsx")))
