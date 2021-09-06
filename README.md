@@ -14,6 +14,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![R-CMD-check](https://github.com/EnergyEconomyDecoupling/PFUSetup/workflows/R-CMD-check/badge.svg)](https://github.com/EnergyEconomyDecoupling/PFUSetup/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup/branch/master/graph/badge.svg)](https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup?branch=master)
+[![DOI](https://zenodo.org/badge/289910348.svg)](https://zenodo.org/badge/latestdoi/289910348)
 <!-- badges: end -->
 
 PFUSetup automates the setup process for the PFU database project. Well,
