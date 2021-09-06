@@ -1,3 +1,8 @@
+# PFUSetup 0.1.7 (2021-09-06) 
+
+* Now using IEA's 2021 release, with data to 2019.
+
+
 # PFUSetup 0.1.6 (2021-08-20) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5228360.svg)](https://doi.org/10.5281/zenodo.5228360)
 
 * Added `country_concordance_path` argument.
