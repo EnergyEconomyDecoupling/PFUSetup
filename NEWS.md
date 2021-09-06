@@ -1,4 +1,4 @@
-# PFUSetup 0.1.7 (2021-09-06) 
+# PFUSetup 0.1.7 (2021-09-06) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5476116.svg)](https://doi.org/10.5281/zenodo.5476116)
 
 * Now using IEA's 2021 release, with data to 2019.
 
