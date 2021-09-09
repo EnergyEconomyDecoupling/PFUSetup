@@ -18,7 +18,7 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$country_concordance_path, file.path("Mapping", "Country_Concordance_Full.xlsx")))
 
   # exemplar table path
-  expect_true(endsWith(paths$exemplar_table_path, file.path("Database plan", "Exemplar_Table.xlsx")))
+  expect_true(endsWith(paths$exemplar_table_path, file.path("Mapping", "Exemplar_Table.xlsx")))
 
   # FU analysis folder
   expect_true(endsWith(paths$fu_analysis_folder, "FU analysis data"))
