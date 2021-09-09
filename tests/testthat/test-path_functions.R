@@ -20,6 +20,9 @@ test_that("get_abs_paths() works as expected", {
   # exemplar table path
   expect_true(endsWith(paths$exemplar_table_path, file.path("Mapping", "Exemplar_Table.xlsx")))
 
+  # phi constants table path
+  expect_true(endsWith(paths$phi_constants_path, file.path("Phi - Data", "phi_constants.xlsx")))
+
   # FU analysis folder
   expect_true(endsWith(paths$fu_analysis_folder, "FU analysis data"))
 
@@ -67,6 +70,9 @@ test_that("Files exist", {
 
   # exemplar table path
   expect_true(file.exists(paths$exemplar_table_path))
+
+  # phi constants table path
+  expect_true(file.exists(paths$phi_constants_path))
 
   # FU analysis folder
   expect_true(file.exists(paths$fu_analysis_folder))
