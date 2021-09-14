@@ -1,3 +1,9 @@
+---
+title: "Release notes for `PFUSetup`"
+output: html_document
+---
+
+
 * Added `phi_constants` table to output of `get_abs_paths()`.
 * Exemplar table now sits in Mapping folder.
   Changed `get_abs_paths()` and tests to reflect this change.
