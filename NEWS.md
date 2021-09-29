@@ -4,6 +4,7 @@ output: html_document
 ---
 
 
+* Update documentation for paths.
 * Added `phi_constants` table to output of `get_abs_paths()`.
 * Exemplar table now sits in Mapping folder.
   Changed `get_abs_paths()` and tests to reflect this change.
