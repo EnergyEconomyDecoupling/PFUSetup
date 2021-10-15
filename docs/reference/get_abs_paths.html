@@ -73,7 +73,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PFUSetup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.8</span>
       </span>
     </div>
 
@@ -127,7 +127,9 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
     <span class='st'>"IEA Extended Energy Balances 2021 (ktoe).csv"</span><span class='op'>)</span>,
   country_concordance_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Mapping"</span>,
     <span class='st'>"Country_Concordance_Full.xlsx"</span><span class='op'>)</span>,
-  exemplar_table_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Database plan"</span>, <span class='st'>"Exemplar_Table.xlsx"</span><span class='op'>)</span>,
+  phi_constants_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Data"</span>, <span class='st'>"Phi - Data"</span>,
+    <span class='st'>"phi_constants.xlsx"</span><span class='op'>)</span>,
+  exemplar_table_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Mapping"</span>, <span class='st'>"Exemplar_Table.xlsx"</span><span class='op'>)</span>,
   fu_analysis_folder <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"FU analysis data"</span><span class='op'>)</span>,
   ceda_data_folder <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Data"</span>, <span class='st'>"CEDA Data"</span><span class='op'>)</span>,
   machine_data_folder <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='va'>project_path</span>, <span class='st'>"Data"</span>, <span class='st'>"Machines - Data"</span><span class='op'>)</span>,
@@ -149,35 +151,39 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
     </tr>
     <tr>
       <th>project_path</th>
-      <td><p>The path to the project directory, relative to <code>dropbox_path</code>.</p></td>
+      <td><p>The path to the project directory, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>iea_folder_path</th>
-      <td><p>The path to the IEA data directory, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the IEA data directory, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>iea_data_path</th>
-      <td><p>The path to the IEA data file, relative to <code>iea_folder_path</code>.</p></td>
+      <td><p>The path to the IEA data file, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>country_concordance_path</th>
-      <td><p>The path to the country concordance file, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the country concordance file, relative to <code>home_path</code>.</p></td>
+    </tr>
+    <tr>
+      <th>phi_constants_path</th>
+      <td><p>The path to the exergy-to-energy ratio file containing constant values, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>exemplar_table_path</th>
-      <td><p>The path to the exemplar table, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the exemplar table, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>fu_analysis_folder</th>
-      <td><p>The path to the folder containing final-to-useful exergy information, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the folder containing final-to-useful exergy information, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>ceda_data_folder</th>
-      <td><p>The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>machine_data_folder</th>
-      <td><p>The path to the folder containing machine-specific efficiencies, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the folder containing machine-specific efficiencies, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>reports_source_folders</th>
@@ -185,11 +191,11 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
     </tr>
     <tr>
       <th>reports_dest_folder</th>
-      <td><p>The path to the folder into which reports will be written, relative to <code>project_path</code>.</p></td>
+      <td><p>The path to the folder into which reports will be written, relative to <code>home_path</code>.</p></td>
     </tr>
     <tr>
       <th>drake_cache_folder</th>
-      <td><p>The path to the drake cache. Default is <code>../PFU-Database/.drake</code>.
+      <td><p>The path to the drake cache. Default is <code>../PFU-Database/.drake</code>, relative to <code><a href='https://rdrr.io/r/base/getwd.html'>getwd()</a></code>.
 See Details for more information.</p></td>
     </tr>
     </table>
@@ -203,6 +209,7 @@ See Details for more information.</p></td>
 <li><p><code>iea_folder_path</code>The absolute path to a folder containing IEA data.</p></li>
 <li><p><code>iea_data_path</code>The absolute path to the IEA data file for the OECD countries.</p></li>
 <li><p><code>country_concordance_path</code>The absolute path to the country concordance file.</p></li>
+<li><p><code>phi_constants_path</code>The absolute path to the exergy-to-energy ratio file containing constant values.</p></li>
 <li><p><code>exemplar_table_path</code>The path to the exemplar table.</p></li>
 <li><p><code>fu_analysis_folder</code>The absolute path to the folder containing final-to-useful exergy information.</p></li>
 <li><p><code>machine_data_folder</code>The absolute path to the folder containing machine-specific efficiency information.</p></li>
@@ -242,7 +249,10 @@ pass a non-default value into this function.</p>
 #&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Mapping/Country_Concordance_Full.xlsx"
 #&gt; 
 #&gt; $exemplar_table_path
-#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Database plan/Exemplar_Table.xlsx"
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Mapping/Exemplar_Table.xlsx"
+#&gt; 
+#&gt; $phi_constants_path
+#&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/Data/Phi - Data/phi_constants.xlsx"
 #&gt; 
 #&gt; $fu_analysis_folder
 #&gt; [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/FU analysis data"
