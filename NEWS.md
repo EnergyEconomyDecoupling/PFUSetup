@@ -4,7 +4,7 @@ output: html_document
 ---
 
 
-# PFUSetup 0.1.8 (2021-10-15)
+# PFUSetup 0.1.8 (2021-10-15) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5572350.svg)](https://doi.org/10.5281/zenodo.5572350)
 
 * Update documentation for paths.
 * Added `phi_constants` table to output of `get_abs_paths()`.
