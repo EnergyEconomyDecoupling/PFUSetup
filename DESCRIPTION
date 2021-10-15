@@ -1,7 +1,7 @@
 Package: PFUSetup
 Title: Functions to Set Up the Directory Structure of the PFU Database
-Version: 0.1.7
-Date: 2021-09-06
+Version: 0.1.8
+Date: 2021-10-15
 Authors@R: 
     person(given = "Matthew",
            family = "Heun",
@@ -15,7 +15,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports:
     fs,
     magrittr
