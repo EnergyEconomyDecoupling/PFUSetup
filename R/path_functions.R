@@ -24,6 +24,12 @@
 #' @param ceda_data_folder The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to `home_path`.
 #' @param reports_source_folders A string vector of paths to folders containing report sources.
 #' @param reports_dest_folder The path to the folder into which reports will be written, relative to `home_path`.
+#' @param workflow_output_folder The path to a folder containing zipped versions of the drake cache.
+#'                               Data are stored using the `pins` package.
+#'                               Default is "PFUWorkflowOutput" relative to `project_path`.
+#' @param workflow_releases_folder The path to a folder containing released versions of the PSUT target data frame.
+#'                                 Data are stored using the `pins` package.
+#'                                 Default is "PFUWorkflowReleases" relative to `project_path`.
 #' @param drake_cache_folder The path to the drake cache. Default is `../PFU-Database/.drake`, relative to `getwd()`.
 #'                           See Details for more information.
 #'
@@ -42,6 +48,8 @@
 #'  \item{`ceda_data_folder`}{The absolute path to the folder containing CEDA environment information.}
 #'  \item{`reports_source_folders`}{A vector of absolute paths to folders containing source reports.}
 #'  \item{`reports_dest_folder`}{A directory into which completed reports will be written.}
+#'  \item{`workflow_output_folder`}{The path to a folder that stores zipped versions of the drake cache.}
+#'  \item{`workflow_releases_folder`}{The path to a folder that stores releases of the PSUT target.}
 #'  \item{`drake_cache_folder`}{The path to the drake cache.}
 #' }
 #'
@@ -66,7 +74,10 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
                           reports_source_folders = "reports",
                           reports_dest_folder = file.path(project_path, "Reports"),
-                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")) {
+                          workflow_output_folder = file.path(project_path, "PFUWorkflowOutput"),
+                          workflow_releases_folder = file.path(project_path, "PFUWorkflowReleases"),
+                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
+                          ) {
 
   list(home_path = home_path,
        dropbox_path = file.path(home_path, dropbox_path),
@@ -81,5 +92,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        ceda_data_folder = file.path(home_path, ceda_data_folder),
        reports_source_folders = reports_source_folders,
        reports_dest_folder = file.path(home_path, reports_dest_folder),
+       workflow_output_folder = file.path(home_path, workflow_output_folder),
+       workflow_releases_folder = file.path(home_path, workflow_releases_folder),
        drake_cache_folder = drake_cache_folder)
 }
