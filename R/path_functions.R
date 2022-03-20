@@ -17,6 +17,7 @@
 #' @param iea_folder_path The path to the IEA data directory, relative to `home_path`.
 #' @param iea_data_path The path to the IEA data file, relative to `home_path`.
 #' @param country_concordance_path The path to the country concordance file, relative to `home_path`.
+#' @param aggregation_mapping_path The path to the aggregation mapping file, relative to `home_path`.
 #' @param phi_constants_path The path to the exergy-to-energy ratio file containing constant values, relative to `home_path`.
 #' @param exemplar_table_path The path to the exemplar table, relative to `home_path`.
 #' @param fu_analysis_folder The path to the folder containing final-to-useful exergy information, relative to `home_path`.
@@ -41,6 +42,7 @@
 #'  \item{`iea_folder_path`}{The absolute path to a folder containing IEA data.}
 #'  \item{`iea_data_path`}{The absolute path to the IEA data file for the OECD countries.}
 #'  \item{`country_concordance_path`}{The absolute path to the country concordance file.}
+#'  \item{`aggregation_mapping_path`}{The absolute path to the aggregation mapping file.}
 #'  \item{`phi_constants_path`}{The absolute path to the exergy-to-energy ratio file containing constant values.}
 #'  \item{`exemplar_table_path`}{The path to the exemplar table.}
 #'  \item{`fu_analysis_folder`}{The absolute path to the folder containing final-to-useful exergy information.}
@@ -67,6 +69,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           iea_data_path = file.path(iea_folder_path,
                                                     "IEA Extended Energy Balances 2021 (ktoe).csv"),
                           country_concordance_path = file.path(project_path, "Mapping", "Country_Concordance_Full.xlsx"),
+                          aggregation_mapping_path = file.path(project_path, "Mapping", "aggregation_mapping.xlsx"),
                           phi_constants_path = file.path(project_path, "Data", "Phi - Data", "phi_constants.xlsx"),
                           exemplar_table_path = file.path(project_path, "Mapping", "Exemplar_Table.xlsx"),
                           fu_analysis_folder = file.path(project_path, "FU analysis data"),
@@ -85,6 +88,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        iea_folder_path = file.path(home_path, iea_folder_path),
        iea_data_path = file.path(home_path, iea_data_path),
        country_concordance_path = file.path(home_path, country_concordance_path),
+       aggregation_mapping_path = file.path(home_path, aggregation_mapping_path),
        exemplar_table_path = file.path(home_path, exemplar_table_path),
        phi_constants_path = file.path(home_path, phi_constants_path),
        fu_analysis_folder = file.path(home_path, fu_analysis_folder),
