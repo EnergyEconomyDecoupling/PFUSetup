@@ -14,6 +14,8 @@ get_abs_paths(
     "IEA Extended Energy Balances 2021 (ktoe).csv"),
   country_concordance_path = file.path(project_path, "Mapping",
     "Country_Concordance_Full.xlsx"),
+  aggregation_mapping_path = file.path(project_path, "Mapping",
+    "aggregation_mapping.xlsx"),
   phi_constants_path = file.path(project_path, "Data", "Phi - Data",
     "phi_constants.xlsx"),
   exemplar_table_path = file.path(project_path, "Mapping", "Exemplar_Table.xlsx"),
@@ -39,6 +41,8 @@ get_abs_paths(
 \item{iea_data_path}{The path to the IEA data file, relative to \code{home_path}.}
 
 \item{country_concordance_path}{The path to the country concordance file, relative to \code{home_path}.}
+
+\item{aggregation_mapping_path}{The path to the aggregation mapping file, relative to \code{home_path}.}
 
 \item{phi_constants_path}{The path to the exergy-to-energy ratio file containing constant values, relative to \code{home_path}.}
 
@@ -74,6 +78,7 @@ A named list containing paths to important directories and files, including:
 \item{\code{iea_folder_path}}{The absolute path to a folder containing IEA data.}
 \item{\code{iea_data_path}}{The absolute path to the IEA data file for the OECD countries.}
 \item{\code{country_concordance_path}}{The absolute path to the country concordance file.}
+\item{\code{aggregation_mapping_path}}{The absolute path to the aggregation mapping file.}
 \item{\code{phi_constants_path}}{The absolute path to the exergy-to-energy ratio file containing constant values.}
 \item{\code{exemplar_table_path}}{The path to the exemplar table.}
 \item{\code{fu_analysis_folder}}{The absolute path to the folder containing final-to-useful exergy information.}
