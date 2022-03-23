@@ -4,8 +4,9 @@ output: html_document
 ---
 
 
-* Now includes aggregation mapping file.
+* Now includes path to an aggregation mapping file.
 * Now includes folders for drake cache and `PSUT` target outputs.
+
 
 # PFUSetup 0.1.8 (2021-10-15) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5572350.svg)](https://doi.org/10.5281/zenodo.5572350)
 
