@@ -5,6 +5,13 @@ output: html_document
 
 
 
+# PFUSetup 0.1.10 (2022-03-23)
+
+* New release, same code and functionality as 0.1.9, whose only purpose
+  is to fix DOI problems.
+  Year on the license has been fixed, too.
+
+
 # PFUSetup 0.1.9 (2022-03-23)
 
 * Now includes path to an aggregation mapping file.
