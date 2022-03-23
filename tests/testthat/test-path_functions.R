@@ -17,6 +17,9 @@ test_that("get_abs_paths() works as expected", {
   # Country concordance path
   expect_true(endsWith(paths$country_concordance_path, file.path("Mapping", "Country_Concordance_Full.xlsx")))
 
+  # Aggregation mapping path
+  expect_true(endsWith(paths$aggregation_mapping_path, file.path("Mapping", "aggregation_mapping.xlsx")))
+
   # exemplar table path
   expect_true(endsWith(paths$exemplar_table_path, file.path("Mapping", "Exemplar_Table.xlsx")))
 
@@ -40,6 +43,12 @@ test_that("get_abs_paths() works as expected", {
 
   # Drake cache folder
   expect_true(endsWith(paths$drake_cache_folder, ".drake"))
+
+  # Workflow output folder
+  expect_true(endsWith(paths$workflow_output_folder, "PFUWorkflowOutput"))
+
+  # Workflow releases folder
+  expect_true(endsWith(paths$workflow_releases_folder, "PFUWorkflowReleases"))
 })
 
 
@@ -68,6 +77,9 @@ test_that("Files exist", {
   # Country concordance path
   expect_true(file.exists(paths$country_concordance_path))
 
+  # Aggregation mapping path
+  expect_true(file.exists(paths$aggregation_mapping_path))
+
   # exemplar table path
   expect_true(file.exists(paths$exemplar_table_path))
 
@@ -88,4 +100,10 @@ test_that("Files exist", {
 
   # Drake cache folder
   # expect_true(file.exists(paths$drake_cache_folder))
+
+  # Report workflow output folder
+  expect_true(file.exists(paths$workflow_output_folder))
+
+  # Report workflow releases folder
+  expect_true(file.exists(paths$workflow_releases_folder))
 })

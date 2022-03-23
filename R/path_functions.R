@@ -17,6 +17,7 @@
 #' @param iea_folder_path The path to the IEA data directory, relative to `home_path`.
 #' @param iea_data_path The path to the IEA data file, relative to `home_path`.
 #' @param country_concordance_path The path to the country concordance file, relative to `home_path`.
+#' @param aggregation_mapping_path The path to the aggregation mapping file, relative to `home_path`.
 #' @param phi_constants_path The path to the exergy-to-energy ratio file containing constant values, relative to `home_path`.
 #' @param exemplar_table_path The path to the exemplar table, relative to `home_path`.
 #' @param fu_analysis_folder The path to the folder containing final-to-useful exergy information, relative to `home_path`.
@@ -24,6 +25,12 @@
 #' @param ceda_data_folder The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to `home_path`.
 #' @param reports_source_folders A string vector of paths to folders containing report sources.
 #' @param reports_dest_folder The path to the folder into which reports will be written, relative to `home_path`.
+#' @param workflow_output_folder The path to a folder containing zipped versions of the drake cache.
+#'                               Data are stored using the `pins` package.
+#'                               Default is "PFUWorkflowOutput" relative to `project_path`.
+#' @param workflow_releases_folder The path to a folder containing released versions of the PSUT target data frame.
+#'                                 Data are stored using the `pins` package.
+#'                                 Default is "PFUWorkflowReleases" relative to `project_path`.
 #' @param drake_cache_folder The path to the drake cache. Default is `../PFU-Database/.drake`, relative to `getwd()`.
 #'                           See Details for more information.
 #'
@@ -35,6 +42,7 @@
 #'  \item{`iea_folder_path`}{The absolute path to a folder containing IEA data.}
 #'  \item{`iea_data_path`}{The absolute path to the IEA data file for the OECD countries.}
 #'  \item{`country_concordance_path`}{The absolute path to the country concordance file.}
+#'  \item{`aggregation_mapping_path`}{The absolute path to the aggregation mapping file.}
 #'  \item{`phi_constants_path`}{The absolute path to the exergy-to-energy ratio file containing constant values.}
 #'  \item{`exemplar_table_path`}{The path to the exemplar table.}
 #'  \item{`fu_analysis_folder`}{The absolute path to the folder containing final-to-useful exergy information.}
@@ -42,6 +50,8 @@
 #'  \item{`ceda_data_folder`}{The absolute path to the folder containing CEDA environment information.}
 #'  \item{`reports_source_folders`}{A vector of absolute paths to folders containing source reports.}
 #'  \item{`reports_dest_folder`}{A directory into which completed reports will be written.}
+#'  \item{`workflow_output_folder`}{The path to a folder that stores zipped versions of the drake cache.}
+#'  \item{`workflow_releases_folder`}{The path to a folder that stores releases of the PSUT target.}
 #'  \item{`drake_cache_folder`}{The path to the drake cache.}
 #' }
 #'
@@ -59,6 +69,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           iea_data_path = file.path(iea_folder_path,
                                                     "IEA Extended Energy Balances 2021 (ktoe).csv"),
                           country_concordance_path = file.path(project_path, "Mapping", "Country_Concordance_Full.xlsx"),
+                          aggregation_mapping_path = file.path(project_path, "Mapping", "aggregation_mapping.xlsx"),
                           phi_constants_path = file.path(project_path, "Data", "Phi - Data", "phi_constants.xlsx"),
                           exemplar_table_path = file.path(project_path, "Mapping", "Exemplar_Table.xlsx"),
                           fu_analysis_folder = file.path(project_path, "FU analysis data"),
@@ -66,7 +77,10 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
                           reports_source_folders = "reports",
                           reports_dest_folder = file.path(project_path, "Reports"),
-                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")) {
+                          workflow_output_folder = file.path(project_path, "PFUWorkflowOutput"),
+                          workflow_releases_folder = file.path(project_path, "PFUWorkflowReleases"),
+                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
+                          ) {
 
   list(home_path = home_path,
        dropbox_path = file.path(home_path, dropbox_path),
@@ -74,6 +88,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        iea_folder_path = file.path(home_path, iea_folder_path),
        iea_data_path = file.path(home_path, iea_data_path),
        country_concordance_path = file.path(home_path, country_concordance_path),
+       aggregation_mapping_path = file.path(home_path, aggregation_mapping_path),
        exemplar_table_path = file.path(home_path, exemplar_table_path),
        phi_constants_path = file.path(home_path, phi_constants_path),
        fu_analysis_folder = file.path(home_path, fu_analysis_folder),
@@ -81,5 +96,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        ceda_data_folder = file.path(home_path, ceda_data_folder),
        reports_source_folders = reports_source_folders,
        reports_dest_folder = file.path(home_path, reports_dest_folder),
+       workflow_output_folder = file.path(home_path, workflow_output_folder),
+       workflow_releases_folder = file.path(home_path, workflow_releases_folder),
        drake_cache_folder = drake_cache_folder)
 }

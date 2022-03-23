@@ -14,6 +14,8 @@ get_abs_paths(
     "IEA Extended Energy Balances 2021 (ktoe).csv"),
   country_concordance_path = file.path(project_path, "Mapping",
     "Country_Concordance_Full.xlsx"),
+  aggregation_mapping_path = file.path(project_path, "Mapping",
+    "aggregation_mapping.xlsx"),
   phi_constants_path = file.path(project_path, "Data", "Phi - Data",
     "phi_constants.xlsx"),
   exemplar_table_path = file.path(project_path, "Mapping", "Exemplar_Table.xlsx"),
@@ -22,6 +24,8 @@ get_abs_paths(
   machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
   reports_source_folders = "reports",
   reports_dest_folder = file.path(project_path, "Reports"),
+  workflow_output_folder = file.path(project_path, "PFUWorkflowOutput"),
+  workflow_releases_folder = file.path(project_path, "PFUWorkflowReleases"),
   drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
 )
 }
@@ -38,6 +42,8 @@ get_abs_paths(
 
 \item{country_concordance_path}{The path to the country concordance file, relative to \code{home_path}.}
 
+\item{aggregation_mapping_path}{The path to the aggregation mapping file, relative to \code{home_path}.}
+
 \item{phi_constants_path}{The path to the exergy-to-energy ratio file containing constant values, relative to \code{home_path}.}
 
 \item{exemplar_table_path}{The path to the exemplar table, relative to \code{home_path}.}
@@ -52,6 +58,14 @@ get_abs_paths(
 
 \item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{home_path}.}
 
+\item{workflow_output_folder}{The path to a folder containing zipped versions of the drake cache.
+Data are stored using the \code{pins} package.
+Default is "PFUWorkflowOutput" relative to \code{project_path}.}
+
+\item{workflow_releases_folder}{The path to a folder containing released versions of the PSUT target data frame.
+Data are stored using the \code{pins} package.
+Default is "PFUWorkflowReleases" relative to \code{project_path}.}
+
 \item{drake_cache_folder}{The path to the drake cache. Default is \code{../PFU-Database/.drake}, relative to \code{getwd()}.
 See Details for more information.}
 }
@@ -64,6 +78,7 @@ A named list containing paths to important directories and files, including:
 \item{\code{iea_folder_path}}{The absolute path to a folder containing IEA data.}
 \item{\code{iea_data_path}}{The absolute path to the IEA data file for the OECD countries.}
 \item{\code{country_concordance_path}}{The absolute path to the country concordance file.}
+\item{\code{aggregation_mapping_path}}{The absolute path to the aggregation mapping file.}
 \item{\code{phi_constants_path}}{The absolute path to the exergy-to-energy ratio file containing constant values.}
 \item{\code{exemplar_table_path}}{The path to the exemplar table.}
 \item{\code{fu_analysis_folder}}{The absolute path to the folder containing final-to-useful exergy information.}
@@ -71,6 +86,8 @@ A named list containing paths to important directories and files, including:
 \item{\code{ceda_data_folder}}{The absolute path to the folder containing CEDA environment information.}
 \item{\code{reports_source_folders}}{A vector of absolute paths to folders containing source reports.}
 \item{\code{reports_dest_folder}}{A directory into which completed reports will be written.}
+\item{\code{workflow_output_folder}}{The path to a folder that stores zipped versions of the drake cache.}
+\item{\code{workflow_releases_folder}}{The path to a folder that stores releases of the PSUT target.}
 \item{\code{drake_cache_folder}}{The path to the drake cache.}
 }
 }
