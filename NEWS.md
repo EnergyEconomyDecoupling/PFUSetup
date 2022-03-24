@@ -6,7 +6,7 @@ output: html_document
 
 
 
-# PFUSetup 0.1.10 (2022-03-23)
+# PFUSetup 0.1.11 (2022-03-23)
 
 * Renamed constants for output folders (pins and caches).
 
