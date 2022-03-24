@@ -45,10 +45,10 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$drake_cache_folder, ".drake"))
 
   # Workflow output folder
-  expect_true(endsWith(paths$workflow_output_folder, "PFUWorkflowOutput"))
+  expect_true(endsWith(paths$pipeline_caches_folder, "PipelineCaches"))
 
   # Workflow releases folder
-  expect_true(endsWith(paths$workflow_releases_folder, "PFUWorkflowReleases"))
+  expect_true(endsWith(paths$pipeline_releases_folder, "PipelineReleases"))
 })
 
 
@@ -102,8 +102,8 @@ test_that("Files exist", {
   # expect_true(file.exists(paths$drake_cache_folder))
 
   # Report workflow output folder
-  expect_true(file.exists(paths$workflow_output_folder))
+  expect_true(file.exists(paths$pipeline_caches_folder))
 
   # Report workflow releases folder
-  expect_true(file.exists(paths$workflow_releases_folder))
+  expect_true(file.exists(paths$pipeline_releases_folder))
 })
