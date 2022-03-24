@@ -5,7 +5,13 @@ output: html_document
 
 
 
+
 # PFUSetup 0.1.10 (2022-03-23)
+
+* Renamed constants for output folders (pins and caches).
+
+
+# PFUSetup 0.1.10 (2022-03-23) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6380706.svg)](https://doi.org/10.5281/zenodo.6380706)
 
 * New release, same code and functionality as 0.1.9, whose only purpose
   is to fix DOI problems.

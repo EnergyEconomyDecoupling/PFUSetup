@@ -24,8 +24,8 @@ get_abs_paths(
   machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
   reports_source_folders = "reports",
   reports_dest_folder = file.path(project_path, "Reports"),
-  workflow_output_folder = file.path(project_path, "PFUWorkflowOutput"),
-  workflow_releases_folder = file.path(project_path, "PFUWorkflowReleases"),
+  pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
+  pipeline_releases_folder = file.path(project_path, "PipelineReleases"),
   drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
 )
 }
@@ -58,13 +58,13 @@ get_abs_paths(
 
 \item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{home_path}.}
 
-\item{workflow_output_folder}{The path to a folder containing zipped versions of the drake cache.
-Data are stored using the \code{pins} package.
-Default is "PFUWorkflowOutput" relative to \code{project_path}.}
+\item{pipeline_caches_folder}{The path to a folder containing zipped versions of the pipeline cache.
+Data are stored as .zip files
+Default is "PipelineCaches" relative to \code{project_path}.}
 
-\item{workflow_releases_folder}{The path to a folder containing released versions of the PSUT target data frame.
+\item{pipeline_releases_folder}{The path to a folder containing released versions of the PSUT target data frame.
 Data are stored using the \code{pins} package.
-Default is "PFUWorkflowReleases" relative to \code{project_path}.}
+Default is "PipelineReleases" relative to \code{project_path}.}
 
 \item{drake_cache_folder}{The path to the drake cache. Default is \code{../PFU-Database/.drake}, relative to \code{getwd()}.
 See Details for more information.}
@@ -86,8 +86,8 @@ A named list containing paths to important directories and files, including:
 \item{\code{ceda_data_folder}}{The absolute path to the folder containing CEDA environment information.}
 \item{\code{reports_source_folders}}{A vector of absolute paths to folders containing source reports.}
 \item{\code{reports_dest_folder}}{A directory into which completed reports will be written.}
-\item{\code{workflow_output_folder}}{The path to a folder that stores zipped versions of the drake cache.}
-\item{\code{workflow_releases_folder}}{The path to a folder that stores releases of the PSUT target.}
+\item{\code{pipeline_caches_folder}}{The path to a folder that stores zipped versions of the pipeline cache.}
+\item{\code{pipeline_releases_folder}}{The path to a folder that stores releases of various targets.}
 \item{\code{drake_cache_folder}}{The path to the drake cache.}
 }
 }
