@@ -17,7 +17,7 @@ macOS
 matsindf
 OSs
 PFU
-PFUWorkflowOutput
-PFUWorkflowReleases
+PipelineCaches
+PipelineReleases
 PSUT
 Sys
