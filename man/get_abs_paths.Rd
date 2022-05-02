@@ -12,6 +12,12 @@ get_abs_paths(
     "IEA 2021 energy balance data"),
   iea_data_path = file.path(iea_folder_path,
     "IEA Extended Energy Balances 2021 (ktoe).csv"),
+  mw_data_path = file.path(project_path, "Data", "Muscle Work - Data"),
+  fao_data_path = file.path(mw_data_path, "fao_qcl_data.rds"),
+  ilo_data_path = file.path(mw_data_path, "ilo_hmw_data.rds"),
+  hmw_analysis_data_path = file.path(mw_data_path, "hmw_analysis_data.xlsx"),
+  amw_analysis_data_path = file.path(mw_data_path, "amw_analysis_data.xlsx"),
+  mw_concordance_path = file.path(mw_data_path, "FAO_ISO_MW_Mapping.xlsx"),
   country_concordance_path = file.path(project_path, "Mapping",
     "Country_Concordance_Full.xlsx"),
   aggregation_mapping_path = file.path(project_path, "Mapping",
@@ -39,6 +45,18 @@ get_abs_paths(
 \item{iea_folder_path}{The path to the IEA data directory, relative to \code{home_path}.}
 
 \item{iea_data_path}{The path to the IEA data file, relative to \code{home_path}.}
+
+\item{mw_data_path}{The path to the Muscle Work data directory, relative to \code{home_path}.}
+
+\item{fao_data_path}{The path to the FAO live animals data file, relative to \code{home_path}.}
+
+\item{ilo_data_path}{The path to the ILO employment data file, relative to \code{home_path}.}
+
+\item{hmw_analysis_data_path}{The path to the human muscle work analysis file, relative to \code{home_path}.}
+
+\item{amw_analysis_data_path}{The path to the animal muscle work file, relative to \code{home_path}.}
+
+\item{mw_concordance_path}{The path to the muscle work country concordance file, relative to \code{home_path}.}
 
 \item{country_concordance_path}{The path to the country concordance file, relative to \code{home_path}.}
 
@@ -77,6 +95,12 @@ A named list containing paths to important directories and files, including:
 \item{\code{project_path}}{The absolute path to the project folder.}
 \item{\code{iea_folder_path}}{The absolute path to a folder containing IEA data.}
 \item{\code{iea_data_path}}{The absolute path to the IEA data file for the OECD countries.}
+\item{\code{mw_data_path}}{The absolute path to the Muscle Work data directory.}
+\item{\code{fao_data_path}}{The absolute path to the FAO live animals data file.}
+\item{\code{ilo_data_path}}{The absolute path to the ILO employment data file.}
+\item{\code{hmw_analysis_data_path}}{The absolute path to the human muscle work analysis file.}
+\item{\code{amw_analysis_data_path}}{The absolute path to the animal muscle work file.}
+\item{\code{mw_concordance_path}}{The absolute path to the muscle work country concordance file.}
 \item{\code{country_concordance_path}}{The absolute path to the country concordance file.}
 \item{\code{aggregation_mapping_path}}{The absolute path to the aggregation mapping file.}
 \item{\code{phi_constants_path}}{The absolute path to the exergy-to-energy ratio file containing constant values.}
