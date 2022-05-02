@@ -16,6 +16,12 @@
 #' @param project_path The path to the project directory, relative to `home_path`.
 #' @param iea_folder_path The path to the IEA data directory, relative to `home_path`.
 #' @param iea_data_path The path to the IEA data file, relative to `home_path`.
+#' @param mw_data_path The path to the Muscle Work data directory, relative to `home_path`.
+#' @param fao_data_path The path to the FAO live animals data file, relative to `home_path`.
+#' @param ilo_data_path The path to the ILO employment data file, relative to `home_path`.
+#' @param hmw_analysis_data_path The path to the human muscle work analysis file, relative to `home_path`.
+#' @param amw_analysis_data_path The path to the animal muscle work file, relative to `home_path`.
+#' @param mw_concordance_path The path to the muscle work country concordance file, relative to `home_path`.
 #' @param country_concordance_path The path to the country concordance file, relative to `home_path`.
 #' @param aggregation_mapping_path The path to the aggregation mapping file, relative to `home_path`.
 #' @param phi_constants_path The path to the exergy-to-energy ratio file containing constant values, relative to `home_path`.
@@ -41,6 +47,12 @@
 #'  \item{`project_path`}{The absolute path to the project folder.}
 #'  \item{`iea_folder_path`}{The absolute path to a folder containing IEA data.}
 #'  \item{`iea_data_path`}{The absolute path to the IEA data file for the OECD countries.}
+#'  \item{`mw_data_path`}{The absolute path to the Muscle Work data directory.}
+#'  \item{`fao_data_path`}{The absolute path to the FAO live animals data file.}
+#'  \item{`ilo_data_path`}{The absolute path to the ILO employment data file.}
+#'  \item{`hmw_analysis_data_path`}{The absolute path to the human muscle work analysis file.}
+#'  \item{`amw_analysis_data_path`}{The absolute path to the animal muscle work file.}
+#'  \item{`mw_concordance_path`}{The absolute path to the muscle work country concordance file.}
 #'  \item{`country_concordance_path`}{The absolute path to the country concordance file.}
 #'  \item{`aggregation_mapping_path`}{The absolute path to the aggregation mapping file.}
 #'  \item{`phi_constants_path`}{The absolute path to the exergy-to-energy ratio file containing constant values.}
@@ -68,6 +80,18 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                                                       "IEA 2021 energy balance data"),
                           iea_data_path = file.path(iea_folder_path,
                                                     "IEA Extended Energy Balances 2021 (ktoe).csv"),
+                          mw_data_path = file.path(project_path,
+                                                   "Data/Muscle Work - Data"),
+                          fao_data_path = file.path(mw_data_path,
+                                                    "fao_qcl_data.rds"),
+                          ilo_data_path = file.path(mw_data_path,
+                                                    "ilo_hmw_data.rds"),
+                          hmw_analysis_data_path = file.path(mw_data_path,
+                                                             "hmw_analysis_data.xlsx"),
+                          amw_analysis_data_path = file.path(mw_data_path,
+                                                             "amw_analysis_data.xlsx"),
+                          mw_concordance_path = file.path(mw_data_path,
+                                                          "FAO_ISO_MW_Mapping.xlsx"),
                           country_concordance_path = file.path(project_path, "Mapping", "Country_Concordance_Full.xlsx"),
                           aggregation_mapping_path = file.path(project_path, "Mapping", "aggregation_mapping.xlsx"),
                           phi_constants_path = file.path(project_path, "Data", "Phi - Data", "phi_constants.xlsx"),
@@ -87,6 +111,12 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        project_path = file.path(home_path, project_path),
        iea_folder_path = file.path(home_path, iea_folder_path),
        iea_data_path = file.path(home_path, iea_data_path),
+       mw_data_path = file.path(home_path, mw_data_path),
+       fao_data_path = file.path(home_path, fao_data_path),
+       ilo_data_path = file.path(home_path, ilo_data_path),
+       hmw_analysis_data_path = file.path(home_path, hmw_analysis_data_path),
+       amw_analysis_data_path = file.path(home_path, amw_analysis_data_path),
+       mw_concordance_path = file.path(home_path, mw_concordance_path),
        country_concordance_path = file.path(home_path, country_concordance_path),
        aggregation_mapping_path = file.path(home_path, aggregation_mapping_path),
        exemplar_table_path = file.path(home_path, exemplar_table_path),
