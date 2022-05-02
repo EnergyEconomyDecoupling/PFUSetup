@@ -14,6 +14,24 @@ test_that("get_abs_paths() works as expected", {
   # IEA data path
   expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2021 (ktoe).csv")))
 
+  # Muscle work directory path
+  expect_true(endsWith(paths$mw_data_path, "Muscle Work - Data"))
+
+  # FAO data path
+  expect_true(endsWith(paths$fao_data_path, "fao_qcl_data.rds"))
+
+  # ILO data path
+  expect_true(endsWith(paths$ilo_data_path, "ilo_hmw_data.rds"))
+
+  # Human muscle work analysis data path
+  expect_true(endsWith(paths$hmw_analysis_data_path, "hmw_analysis_data.xlsx"))
+
+  # Animal muscle work analysis data path
+  expect_true(endsWith(paths$amw_analysis_data_path, "amw_analysis_data.xlsx"))
+
+  # Muscle work country concordance data path
+  expect_true(endsWith(paths$mw_concordance_path, "FAO_ISO_MW_Mapping.xlsx"))
+
   # Country concordance path
   expect_true(endsWith(paths$country_concordance_path, file.path("Mapping", "Country_Concordance_Full.xlsx")))
 

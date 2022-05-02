@@ -3,7 +3,7 @@ title: "Release notes for `PFUSetup`"
 output: html_document
 ---
 
-
+* Adding constants required by the `MWtools` packagae for Muscle Work analysis.
 
 
 # PFUSetup 0.1.11 (2022-03-23) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6380998.svg)](https://doi.org/10.5281/zenodo.6380998)
