@@ -67,6 +67,8 @@
 #'  \item{`drake_cache_folder`}{The path to the drake cache.}
 #' }
 #'
+#' @importFrom fs path_home
+#'
 #' @export
 #'
 #' @examples
@@ -104,8 +106,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           reports_dest_folder = file.path(project_path, "Reports"),
                           pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
                           pipeline_releases_folder = file.path(project_path, "PipelineReleases"),
-                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
-                          ) {
+                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")) {
 
   list(home_path = home_path,
        dropbox_path = file.path(home_path, dropbox_path),

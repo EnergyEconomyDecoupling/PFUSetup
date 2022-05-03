@@ -2,4 +2,5 @@
 
 export("%>%")
 export(get_abs_paths)
+importFrom(fs,path_home)
 importFrom(magrittr,"%>%")
