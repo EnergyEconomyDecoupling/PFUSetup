@@ -59,9 +59,6 @@ test_that("get_abs_paths() works as expected", {
   # Report destination folder
   expect_true(endsWith(paths$reports_dest_folder, "Reports"))
 
-  # Drake cache folder
-  expect_true(endsWith(paths$drake_cache_folder, ".drake"))
-
   # Workflow output folder
   expect_true(endsWith(paths$pipeline_caches_folder, "PipelineCaches"))
 
@@ -75,7 +72,7 @@ test_that("Files exist", {
   # which are unlikely to have access to the folders.
   testthat::skip_on_ci()
 
-  paths <- get_abs_paths(drake_cache_folder = testthat::test_path("..", "..", "..", "PFU-Database", ".drake"))
+  paths <- get_abs_paths()
 
   # Home path
   expect_true(file.exists(paths$home_path))

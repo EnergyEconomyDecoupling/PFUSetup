@@ -31,8 +31,7 @@ get_abs_paths(
   reports_source_folders = "reports",
   reports_dest_folder = file.path(project_path, "Reports"),
   pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
-  pipeline_releases_folder = file.path(project_path, "PipelineReleases"),
-  drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
+  pipeline_releases_folder = file.path(project_path, "PipelineReleases")
 )
 }
 \arguments{

@@ -105,8 +105,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           reports_source_folders = "reports",
                           reports_dest_folder = file.path(project_path, "Reports"),
                           pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
-                          pipeline_releases_folder = file.path(project_path, "PipelineReleases"),
-                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")) {
+                          pipeline_releases_folder = file.path(project_path, "PipelineReleases")) {
 
   list(home_path = home_path,
        dropbox_path = file.path(home_path, dropbox_path),
@@ -129,6 +128,5 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        reports_source_folders = reports_source_folders,
        reports_dest_folder = file.path(home_path, reports_dest_folder),
        pipeline_caches_folder = file.path(home_path, pipeline_caches_folder),
-       pipeline_releases_folder = file.path(home_path, pipeline_releases_folder),
-       drake_cache_folder = drake_cache_folder)
+       pipeline_releases_folder = file.path(home_path, pipeline_releases_folder))
 }
