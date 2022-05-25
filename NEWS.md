@@ -3,7 +3,9 @@ title: "Release notes for `PFUSetup`"
 output: html_document
 ---
 
-* Adding constants required by the `MWtools` package for Muscle Work analysis.
+* Eliminated references to drake cache path.
+  We no longer use the `drake` package.
+* Adding constants required by the `MWTools` package for Muscle Work analysis.
 
 
 # PFUSetup 0.1.11 (2022-03-23) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6380998.svg)](https://doi.org/10.5281/zenodo.6380998)
