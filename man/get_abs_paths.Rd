@@ -82,9 +82,6 @@ Default is "PipelineCaches" relative to \code{project_path}.}
 \item{pipeline_releases_folder}{The path to a folder containing released versions of the PSUT target data frame.
 Data are stored using the \code{pins} package.
 Default is "PipelineReleases" relative to \code{project_path}.}
-
-\item{drake_cache_folder}{The path to the drake cache. Default is \code{../PFU-Database/.drake}, relative to \code{getwd()}.
-See Details for more information.}
 }
 \value{
 A named list containing paths to important directories and files, including:
@@ -111,7 +108,6 @@ A named list containing paths to important directories and files, including:
 \item{\code{reports_dest_folder}}{A directory into which completed reports will be written.}
 \item{\code{pipeline_caches_folder}}{The path to a folder that stores zipped versions of the pipeline cache.}
 \item{\code{pipeline_releases_folder}}{The path to a folder that stores releases of various targets.}
-\item{\code{drake_cache_folder}}{The path to the drake cache.}
 }
 }
 \description{
@@ -120,12 +116,6 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.
 }
 \details{
 The default argument for \code{home_path} gets the value for \code{fs::path_home()}.
-
-The default value for \code{drake_cache_folder} assumes that the \code{PFUSetup} folder
-(this project's folder) is a sibling of the working directory
-from which the drake workflow is run.
-If this assumption is not true, users are free to
-pass a non-default value into this function.
 }
 \examples{
 get_abs_paths()

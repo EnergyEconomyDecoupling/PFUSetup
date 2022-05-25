@@ -5,12 +5,6 @@
 #'
 #' The default argument for `home_path` gets the value for `fs::path_home()`.
 #'
-#' The default value for `drake_cache_folder` assumes that the `PFUSetup` folder
-#' (this project's folder) is a sibling of the working directory
-#' from which the drake workflow is run.
-#' If this assumption is not true, users are free to
-#' pass a non-default value into this function.
-#'
 #' @param home_path The absolute path to the user's home directory.
 #' @param dropbox_path The path to the user's Dropbox directory, relative to `home_path`.
 #' @param project_path The path to the project directory, relative to `home_path`.
@@ -37,8 +31,6 @@
 #' @param pipeline_releases_folder The path to a folder containing released versions of the PSUT target data frame.
 #'                                 Data are stored using the `pins` package.
 #'                                 Default is "PipelineReleases" relative to `project_path`.
-#' @param drake_cache_folder The path to the drake cache. Default is `../PFU-Database/.drake`, relative to `getwd()`.
-#'                           See Details for more information.
 #'
 #' @return A named list containing paths to important directories and files, including:
 #' \itemize{
@@ -64,7 +56,6 @@
 #'  \item{`reports_dest_folder`}{A directory into which completed reports will be written.}
 #'  \item{`pipeline_caches_folder`}{The path to a folder that stores zipped versions of the pipeline cache.}
 #'  \item{`pipeline_releases_folder`}{The path to a folder that stores releases of various targets.}
-#'  \item{`drake_cache_folder`}{The path to the drake cache.}
 #' }
 #'
 #' @importFrom fs path_home
