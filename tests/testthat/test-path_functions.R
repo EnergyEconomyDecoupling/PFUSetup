@@ -14,6 +14,24 @@ test_that("get_abs_paths() works as expected", {
   # IEA data path
   expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2021 (ktoe).csv")))
 
+  # Muscle work directory path
+  expect_true(endsWith(paths$mw_data_path, "Muscle Work - Data"))
+
+  # FAO data path
+  expect_true(endsWith(paths$fao_data_path, "fao_qcl_data.rds"))
+
+  # ILO data path
+  expect_true(endsWith(paths$ilo_data_path, "ilo_hmw_data.rds"))
+
+  # Human muscle work analysis data path
+  expect_true(endsWith(paths$hmw_analysis_data_path, "hmw_analysis_data.xlsx"))
+
+  # Animal muscle work analysis data path
+  expect_true(endsWith(paths$amw_analysis_data_path, "amw_analysis_data.xlsx"))
+
+  # Muscle work country concordance data path
+  expect_true(endsWith(paths$mw_concordance_path, "FAO_ISO_MW_Mapping.xlsx"))
+
   # Country concordance path
   expect_true(endsWith(paths$country_concordance_path, file.path("Mapping", "Country_Concordance_Full.xlsx")))
 
@@ -41,9 +59,6 @@ test_that("get_abs_paths() works as expected", {
   # Report destination folder
   expect_true(endsWith(paths$reports_dest_folder, "Reports"))
 
-  # Drake cache folder
-  expect_true(endsWith(paths$drake_cache_folder, ".drake"))
-
   # Workflow output folder
   expect_true(endsWith(paths$pipeline_caches_folder, "PipelineCaches"))
 
@@ -57,7 +72,7 @@ test_that("Files exist", {
   # which are unlikely to have access to the folders.
   testthat::skip_on_ci()
 
-  paths <- get_abs_paths(drake_cache_folder = testthat::test_path("..", "..", "..", "PFU-Database", ".drake"))
+  paths <- get_abs_paths()
 
   # Home path
   expect_true(file.exists(paths$home_path))

@@ -5,17 +5,17 @@
 #'
 #' The default argument for `home_path` gets the value for `fs::path_home()`.
 #'
-#' The default value for `drake_cache_folder` assumes that the `PFUSetup` folder
-#' (this project's folder) is a sibling of the working directory
-#' from which the drake workflow is run.
-#' If this assumption is not true, users are free to
-#' pass a non-default value into this function.
-#'
 #' @param home_path The absolute path to the user's home directory.
 #' @param dropbox_path The path to the user's Dropbox directory, relative to `home_path`.
 #' @param project_path The path to the project directory, relative to `home_path`.
 #' @param iea_folder_path The path to the IEA data directory, relative to `home_path`.
 #' @param iea_data_path The path to the IEA data file, relative to `home_path`.
+#' @param mw_data_path The path to the Muscle Work data directory, relative to `home_path`.
+#' @param fao_data_path The path to the FAO live animals data file, relative to `home_path`.
+#' @param ilo_data_path The path to the ILO employment data file, relative to `home_path`.
+#' @param hmw_analysis_data_path The path to the human muscle work analysis file, relative to `home_path`.
+#' @param amw_analysis_data_path The path to the animal muscle work file, relative to `home_path`.
+#' @param mw_concordance_path The path to the muscle work country concordance file, relative to `home_path`.
 #' @param country_concordance_path The path to the country concordance file, relative to `home_path`.
 #' @param aggregation_mapping_path The path to the aggregation mapping file, relative to `home_path`.
 #' @param phi_constants_path The path to the exergy-to-energy ratio file containing constant values, relative to `home_path`.
@@ -31,8 +31,6 @@
 #' @param pipeline_releases_folder The path to a folder containing released versions of the PSUT target data frame.
 #'                                 Data are stored using the `pins` package.
 #'                                 Default is "PipelineReleases" relative to `project_path`.
-#' @param drake_cache_folder The path to the drake cache. Default is `../PFU-Database/.drake`, relative to `getwd()`.
-#'                           See Details for more information.
 #'
 #' @return A named list containing paths to important directories and files, including:
 #' \itemize{
@@ -41,6 +39,12 @@
 #'  \item{`project_path`}{The absolute path to the project folder.}
 #'  \item{`iea_folder_path`}{The absolute path to a folder containing IEA data.}
 #'  \item{`iea_data_path`}{The absolute path to the IEA data file for the OECD countries.}
+#'  \item{`mw_data_path`}{The absolute path to the Muscle Work data directory.}
+#'  \item{`fao_data_path`}{The absolute path to the FAO live animals data file.}
+#'  \item{`ilo_data_path`}{The absolute path to the ILO employment data file.}
+#'  \item{`hmw_analysis_data_path`}{The absolute path to the human muscle work analysis file.}
+#'  \item{`amw_analysis_data_path`}{The absolute path to the animal muscle work file.}
+#'  \item{`mw_concordance_path`}{The absolute path to the muscle work country concordance file.}
 #'  \item{`country_concordance_path`}{The absolute path to the country concordance file.}
 #'  \item{`aggregation_mapping_path`}{The absolute path to the aggregation mapping file.}
 #'  \item{`phi_constants_path`}{The absolute path to the exergy-to-energy ratio file containing constant values.}
@@ -52,8 +56,9 @@
 #'  \item{`reports_dest_folder`}{A directory into which completed reports will be written.}
 #'  \item{`pipeline_caches_folder`}{The path to a folder that stores zipped versions of the pipeline cache.}
 #'  \item{`pipeline_releases_folder`}{The path to a folder that stores releases of various targets.}
-#'  \item{`drake_cache_folder`}{The path to the drake cache.}
 #' }
+#'
+#' @importFrom fs path_home
 #'
 #' @export
 #'
@@ -68,6 +73,19 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                                                       "IEA 2021 energy balance data"),
                           iea_data_path = file.path(iea_folder_path,
                                                     "IEA Extended Energy Balances 2021 (ktoe).csv"),
+                          mw_data_path = file.path(project_path,
+                                                   "Data",
+                                                   "Muscle Work - Data"),
+                          fao_data_path = file.path(mw_data_path,
+                                                    "fao_qcl_data.rds"),
+                          ilo_data_path = file.path(mw_data_path,
+                                                    "ilo_hmw_data.rds"),
+                          hmw_analysis_data_path = file.path(mw_data_path,
+                                                             "hmw_analysis_data.xlsx"),
+                          amw_analysis_data_path = file.path(mw_data_path,
+                                                             "amw_analysis_data.xlsx"),
+                          mw_concordance_path = file.path(mw_data_path,
+                                                          "FAO_ISO_MW_Mapping.xlsx"),
                           country_concordance_path = file.path(project_path, "Mapping", "Country_Concordance_Full.xlsx"),
                           aggregation_mapping_path = file.path(project_path, "Mapping", "aggregation_mapping.xlsx"),
                           phi_constants_path = file.path(project_path, "Data", "Phi - Data", "phi_constants.xlsx"),
@@ -78,15 +96,19 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           reports_source_folders = "reports",
                           reports_dest_folder = file.path(project_path, "Reports"),
                           pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
-                          pipeline_releases_folder = file.path(project_path, "PipelineReleases"),
-                          drake_cache_folder = file.path(getwd(), "..", "PFU-Database", ".drake")
-                          ) {
+                          pipeline_releases_folder = file.path(project_path, "PipelineReleases")) {
 
   list(home_path = home_path,
        dropbox_path = file.path(home_path, dropbox_path),
        project_path = file.path(home_path, project_path),
        iea_folder_path = file.path(home_path, iea_folder_path),
        iea_data_path = file.path(home_path, iea_data_path),
+       mw_data_path = file.path(home_path, mw_data_path),
+       fao_data_path = file.path(home_path, fao_data_path),
+       ilo_data_path = file.path(home_path, ilo_data_path),
+       hmw_analysis_data_path = file.path(home_path, hmw_analysis_data_path),
+       amw_analysis_data_path = file.path(home_path, amw_analysis_data_path),
+       mw_concordance_path = file.path(home_path, mw_concordance_path),
        country_concordance_path = file.path(home_path, country_concordance_path),
        aggregation_mapping_path = file.path(home_path, aggregation_mapping_path),
        exemplar_table_path = file.path(home_path, exemplar_table_path),
@@ -97,6 +119,5 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        reports_source_folders = reports_source_folders,
        reports_dest_folder = file.path(home_path, reports_dest_folder),
        pipeline_caches_folder = file.path(home_path, pipeline_caches_folder),
-       pipeline_releases_folder = file.path(home_path, pipeline_releases_folder),
-       drake_cache_folder = drake_cache_folder)
+       pipeline_releases_folder = file.path(home_path, pipeline_releases_folder))
 }

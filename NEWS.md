@@ -4,9 +4,18 @@ output: html_document
 ---
 
 
+# PFUSetup 0.1.12 (2023-01-28)
+
+* Updated GitHub actions.
+* Eliminated references to drake cache path.
+  We no longer use the `drake` package.
+* Added constants required by the `MWTools` package for Muscle Work analysis.
+* No new tests.
+    - Still at 36 tests, all passing.
+    - Test coverage remains at 100%.
 
 
-# PFUSetup 0.1.11 (2022-03-23)
+# PFUSetup 0.1.11 (2022-03-23) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6380998.svg)](https://doi.org/10.5281/zenodo.6380998)
 
 * Renamed constants for output folders (pins and caches).
 
