@@ -4,7 +4,7 @@ output: html_document
 ---
 
 
-# PFUSetup 0.1.12 (2023-01-28)
+# PFUSetup 0.1.12 (2023-01-28) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7580050.svg)](https://doi.org/10.5281/zenodo.7580050)
 
 * Updated GitHub actions.
 * Eliminated references to drake cache path.
