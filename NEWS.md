@@ -3,6 +3,9 @@ title: "Release notes for `PFUSetup`"
 output: html_document
 ---
 
+
+# PFUSetup 0.1.12 (2023-01-28)
+
 * Eliminated references to drake cache path.
   We no longer use the `drake` package.
 * Adding constants required by the `MWTools` package for Muscle Work analysis.
