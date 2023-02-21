@@ -12,26 +12,26 @@ get_abs_paths(
     "IEA 2021 energy balance data"),
   iea_data_path = file.path(iea_folder_path,
     "IEA Extended Energy Balances 2021 (ktoe).csv"),
-  mw_data_path = file.path(project_path, "Data", "Muscle Work - Data"),
-  fao_data_path = file.path(mw_data_path, "fao_qcl_data.rds"),
-  ilo_data_path = file.path(mw_data_path, "ilo_hmw_data.rds"),
-  hmw_analysis_data_path = file.path(mw_data_path, "hmw_analysis_data.xlsx"),
-  amw_analysis_data_path = file.path(mw_data_path, "amw_analysis_data.xlsx"),
-  mw_concordance_path = file.path(mw_data_path, "FAO_ISO_MW_Mapping.xlsx"),
-  country_concordance_path = file.path(project_path, "Mapping",
-    "Country_Concordance_Full.xlsx"),
-  aggregation_mapping_path = file.path(project_path, "Mapping",
-    "aggregation_mapping.xlsx"),
-  phi_constants_path = file.path(project_path, "Data", "Phi - Data",
+  version = "v1.0",
+  inputData_path = file.path(project_path, "InputData", version),
+  outputData_path = file.path(project_path, "OuputData"),
+  fao_data_path = file.path(inputData_path, "fao_qcl_data.rds"),
+  ilo_data_path = file.path(inputData_path, "ilo_hmw_data.rds"),
+  hmw_analysis_data_path = file.path(inputData_path, "hmw_analysis_data.xlsx"),
+  amw_analysis_data_path = file.path(inputData_path, "amw_analysis_data.xlsx"),
+  mw_concordance_path = file.path(inputData_path, "FAO_ISO_MW_Mapping.xlsx"),
+  country_concordance_path = file.path(inputData_path, "Country_Concordance_Full.xlsx"),
+  aggregation_mapping_path = file.path(inputData_path, "aggregation_mapping.xlsx"),
+  phi_constants_path = file.path(inputData_path, "Data", "Phi - Data",
     "phi_constants.xlsx"),
-  exemplar_table_path = file.path(project_path, "Mapping", "Exemplar_Table.xlsx"),
-  fu_analysis_folder = file.path(project_path, "FU analysis data"),
-  ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
-  machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
+  exemplar_table_path = file.path(inputData_path, "Exemplar_Table.xlsx"),
+  fu_analysis_folder = file.path(inputData_path, "FU analysis data"),
+  ceda_data_folder = file.path(inputData_path, "CEDA Data"),
+  machine_data_folder = file.path(inputData_path, "Machines - Data"),
   reports_source_folders = "reports",
-  reports_dest_folder = file.path(project_path, "Reports"),
-  pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
-  pipeline_releases_folder = file.path(project_path, "PipelineReleases")
+  reports_dest_folder = file.path(outputData_path, "Reports"),
+  pipeline_caches_folder = file.path(outputData_path, "PipelineCaches"),
+  pipeline_releases_folder = file.path(outputData_path, "PipelineReleases")
 )
 }
 \arguments{
@@ -45,7 +45,11 @@ get_abs_paths(
 
 \item{iea_data_path}{The path to the IEA data file, relative to \code{home_path}.}
 
-\item{mw_data_path}{The path to the Muscle Work data directory, relative to \code{home_path}.}
+\item{version}{The version of the inputData.}
+
+\item{inputData_path}{The path to the inputData directory.}
+
+\item{outputData_path}{THe path to the outputData directory.}
 
 \item{fao_data_path}{The path to the FAO live animals data file, relative to \code{home_path}.}
 
@@ -91,7 +95,8 @@ A named list containing paths to important directories and files, including:
 \item{\code{project_path}}{The absolute path to the project folder.}
 \item{\code{iea_folder_path}}{The absolute path to a folder containing IEA data.}
 \item{\code{iea_data_path}}{The absolute path to the IEA data file for the OECD countries.}
-\item{\code{mw_data_path}}{The absolute path to the Muscle Work data directory.}
+\item{\code{inputData_path}}{The absolute path to the inputData directory.}
+\item{\code{outputData_path}}{The absolute path to the outputData directory.}
 \item{\code{fao_data_path}}{The absolute path to the FAO live animals data file.}
 \item{\code{ilo_data_path}}{The absolute path to the ILO employment data file.}
 \item{\code{hmw_analysis_data_path}}{The absolute path to the human muscle work analysis file.}

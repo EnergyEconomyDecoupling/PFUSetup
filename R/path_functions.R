@@ -10,7 +10,9 @@
 #' @param project_path The path to the project directory, relative to `home_path`.
 #' @param iea_folder_path The path to the IEA data directory, relative to `home_path`.
 #' @param iea_data_path The path to the IEA data file, relative to `home_path`.
-#' @param mw_data_path The path to the Muscle Work data directory, relative to `home_path`.
+#' @param version The version of the inputData.
+#' @param inputData_path The path to the inputData directory.
+#' @param outputData_path THe path to the outputData directory.
 #' @param fao_data_path The path to the FAO live animals data file, relative to `home_path`.
 #' @param ilo_data_path The path to the ILO employment data file, relative to `home_path`.
 #' @param hmw_analysis_data_path The path to the human muscle work analysis file, relative to `home_path`.
@@ -39,7 +41,8 @@
 #'  \item{`project_path`}{The absolute path to the project folder.}
 #'  \item{`iea_folder_path`}{The absolute path to a folder containing IEA data.}
 #'  \item{`iea_data_path`}{The absolute path to the IEA data file for the OECD countries.}
-#'  \item{`mw_data_path`}{The absolute path to the Muscle Work data directory.}
+#'  \item{`inputData_path`}{The absolute path to the inputData directory.}
+#'  \item{`outputData_path`}{The absolute path to the outputData directory.}
 #'  \item{`fao_data_path`}{The absolute path to the FAO live animals data file.}
 #'  \item{`ilo_data_path`}{The absolute path to the ILO employment data file.}
 #'  \item{`hmw_analysis_data_path`}{The absolute path to the human muscle work analysis file.}
@@ -66,44 +69,44 @@
 #' get_abs_paths()
 get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           dropbox_path = "Dropbox",
-                          project_path = file.path(dropbox_path,
-                                                   "Fellowship 1960-2015 PFU database"),
+                          project_path =  file.path(dropbox_path,
+                                                    "Fellowship 1960-2015 PFU database"),
                           iea_folder_path = file.path(project_path,
                                                       "IEA extended energy balance data",
                                                       "IEA 2021 energy balance data"),
                           iea_data_path = file.path(iea_folder_path,
                                                     "IEA Extended Energy Balances 2021 (ktoe).csv"),
-                          mw_data_path = file.path(project_path,
-                                                   "Data",
-                                                   "Muscle Work - Data"),
-                          fao_data_path = file.path(mw_data_path,
+                          version = "v1.0",
+                          inputData_path = file.path(project_path, "InputData", version),
+                          outputData_path = file.path(project_path, "OuputData"),
+                          fao_data_path = file.path(inputData_path,
                                                     "fao_qcl_data.rds"),
-                          ilo_data_path = file.path(mw_data_path,
+                          ilo_data_path = file.path(inputData_path,
                                                     "ilo_hmw_data.rds"),
-                          hmw_analysis_data_path = file.path(mw_data_path,
+                          hmw_analysis_data_path = file.path(inputData_path,
                                                              "hmw_analysis_data.xlsx"),
-                          amw_analysis_data_path = file.path(mw_data_path,
+                          amw_analysis_data_path = file.path(inputData_path,
                                                              "amw_analysis_data.xlsx"),
-                          mw_concordance_path = file.path(mw_data_path,
-                                                          "FAO_ISO_MW_Mapping.xlsx"),
-                          country_concordance_path = file.path(project_path, "Mapping", "Country_Concordance_Full.xlsx"),
-                          aggregation_mapping_path = file.path(project_path, "Mapping", "aggregation_mapping.xlsx"),
-                          phi_constants_path = file.path(project_path, "Data", "Phi - Data", "phi_constants.xlsx"),
-                          exemplar_table_path = file.path(project_path, "Mapping", "Exemplar_Table.xlsx"),
-                          fu_analysis_folder = file.path(project_path, "FU analysis data"),
-                          ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
-                          machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
+                          mw_concordance_path = file.path(inputData_path, "FAO_ISO_MW_Mapping.xlsx"),
+                          country_concordance_path = file.path(inputData_path, "Country_Concordance_Full.xlsx"),
+                          aggregation_mapping_path = file.path(inputData_path, "aggregation_mapping.xlsx"),
+                          phi_constants_path = file.path(inputData_path, "Data", "Phi - Data", "phi_constants.xlsx"),
+                          exemplar_table_path = file.path(inputData_path, "Exemplar_Table.xlsx"),
+                          fu_analysis_folder = file.path(inputData_path, "FU analysis data"),
+                          ceda_data_folder = file.path(inputData_path, "CEDA Data"),
+                          machine_data_folder = file.path(inputData_path, "Machines - Data"),
                           reports_source_folders = "reports",
-                          reports_dest_folder = file.path(project_path, "Reports"),
-                          pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
-                          pipeline_releases_folder = file.path(project_path, "PipelineReleases")) {
+                          reports_dest_folder = file.path(outputData_path, "Reports"),
+                          pipeline_caches_folder = file.path(outputData_path, "PipelineCaches"),
+                          pipeline_releases_folder = file.path(outputData_path, "PipelineReleases")) {
 
   list(home_path = home_path,
        dropbox_path = file.path(home_path, dropbox_path),
        project_path = file.path(home_path, project_path),
        iea_folder_path = file.path(home_path, iea_folder_path),
+       inputData_path = file.path(home_path, inputData_path),
+       outputData_path = file.path(home_path, outputData_path),
        iea_data_path = file.path(home_path, iea_data_path),
-       mw_data_path = file.path(home_path, mw_data_path),
        fao_data_path = file.path(home_path, fao_data_path),
        ilo_data_path = file.path(home_path, ilo_data_path),
        hmw_analysis_data_path = file.path(home_path, hmw_analysis_data_path),
