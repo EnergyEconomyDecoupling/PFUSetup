@@ -14,7 +14,7 @@ get_abs_paths(
     "IEA Extended Energy Balances 2021 (ktoe).csv"),
   version = "v1.0",
   inputData_path = file.path(project_path, "InputData", version),
-  outputData_path = file.path(project_path, "OuputData"),
+  outputData_path = file.path(project_path, "OutputData"),
   fao_data_path = file.path(inputData_path, "fao_qcl_data.rds"),
   ilo_data_path = file.path(inputData_path, "ilo_hmw_data.rds"),
   hmw_analysis_data_path = file.path(inputData_path, "hmw_analysis_data.xlsx"),
