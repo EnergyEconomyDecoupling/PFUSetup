@@ -12,7 +12,7 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$iea_folder_path, file.path("IEA extended energy balance data", "IEA 2021 energy balance data")))
 
   # IEA data path
-  expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2021 (ktoe).csv")))
+  expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2021 (TJ).csv")))
 
   # Muscle work directory path
   expect_true(endsWith(paths$mw_data_path, "Muscle Work - Data"))
