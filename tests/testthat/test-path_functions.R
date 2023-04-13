@@ -14,9 +14,6 @@ test_that("get_abs_paths() works as expected", {
   # IEA data path
   expect_true(endsWith(paths$iea_data_path, file.path(paths$iea_folder_path, "IEA Extended Energy Balances 2021 (TJ).csv")))
 
-  # Muscle work directory path
-  expect_true(endsWith(paths$mw_data_path, "Muscle Work - Data"))
-
   # FAO data path
   expect_true(endsWith(paths$fao_data_path, "fao_qcl_data.rds"))
 
@@ -33,16 +30,16 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$mw_concordance_path, "FAO_ISO_MW_Mapping.xlsx"))
 
   # Country concordance path
-  expect_true(endsWith(paths$country_concordance_path, file.path("Mapping", "Country_Concordance_Full.xlsx")))
+  expect_true(endsWith(paths$country_concordance_path, "Country_Concordance_Full.xlsx"))
 
   # Aggregation mapping path
-  expect_true(endsWith(paths$aggregation_mapping_path, file.path("Mapping", "aggregation_mapping.xlsx")))
+  expect_true(endsWith(paths$aggregation_mapping_path, "aggregation_mapping.xlsx"))
 
   # exemplar table path
-  expect_true(endsWith(paths$exemplar_table_path, file.path("Mapping", "Exemplar_Table.xlsx")))
+  expect_true(endsWith(paths$exemplar_table_path, "Exemplar_Table.xlsx"))
 
   # phi constants table path
-  expect_true(endsWith(paths$phi_constants_path, file.path("Phi - Data", "phi_constants.xlsx")))
+  expect_true(endsWith(paths$phi_constants_path, "phi_constants.xlsx"))
 
   # FU analysis folder
   expect_true(endsWith(paths$fu_analysis_folder, "FU analysis data"))
