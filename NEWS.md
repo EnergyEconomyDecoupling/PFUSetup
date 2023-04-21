@@ -4,6 +4,9 @@ output: html_document
 ---
 
 
+* Now defaulting to 2022 release of IEA World Extended Energy Balance (WEEB) data.
+
+
 # PFUSetup 0.1.12 (2023-01-28) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7580050.svg)](https://doi.org/10.5281/zenodo.7580050)
 
 * Updated GitHub actions.
