@@ -3,6 +3,7 @@ title: "Release notes for `PFUSetup`"
 output: html_document
 ---
 
+# PFUSetup 0.1.13 (2023-04-24)
 
 * Now defaulting to 2022 release of IEA World Extended Energy Balance (WEEB) data.
 
