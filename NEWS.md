@@ -3,8 +3,12 @@ title: "Release notes for `PFUSetup`"
 output: html_document
 ---
 
+# PFUSetup 0.1.13 (2023-04-24)
 
-# PFUSetup 0.1.12 (2023-01-28)
+* Now defaulting to 2022 release of IEA World Extended Energy Balance (WEEB) data.
+
+
+# PFUSetup 0.1.12 (2023-01-28) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7580050.svg)](https://doi.org/10.5281/zenodo.7580050)
 
 * Updated GitHub actions.
 * Eliminated references to drake cache path.

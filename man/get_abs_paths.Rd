@@ -9,29 +9,28 @@ get_abs_paths(
   dropbox_path = "Dropbox",
   project_path = file.path(dropbox_path, "Fellowship 1960-2015 PFU database"),
   iea_folder_path = file.path(project_path, "IEA extended energy balance data",
-    "IEA 2021 energy balance data"),
+    "IEA 2022 energy balance data"),
   iea_data_path = file.path(iea_folder_path,
-    "IEA Extended Energy Balances 2021 (ktoe).csv"),
-  mw_data_path = file.path(project_path, "Data", "Muscle Work - Data"),
-  fao_data_path = file.path(mw_data_path, "fao_qcl_data.rds"),
-  ilo_data_path = file.path(mw_data_path, "ilo_hmw_data.rds"),
-  hmw_analysis_data_path = file.path(mw_data_path, "hmw_analysis_data.xlsx"),
-  amw_analysis_data_path = file.path(mw_data_path, "amw_analysis_data.xlsx"),
-  mw_concordance_path = file.path(mw_data_path, "FAO_ISO_MW_Mapping.xlsx"),
-  country_concordance_path = file.path(project_path, "Mapping",
-    "Country_Concordance_Full.xlsx"),
-  aggregation_mapping_path = file.path(project_path, "Mapping",
-    "aggregation_mapping.xlsx"),
-  phi_constants_path = file.path(project_path, "Data", "Phi - Data",
-    "phi_constants.xlsx"),
-  exemplar_table_path = file.path(project_path, "Mapping", "Exemplar_Table.xlsx"),
-  fu_analysis_folder = file.path(project_path, "FU analysis data"),
-  ceda_data_folder = file.path(project_path, "Data", "CEDA Data"),
-  machine_data_folder = file.path(project_path, "Data", "Machines - Data"),
+    "IEA Extended Energy Balances 2022 (TJ).csv"),
+  version = "v1.1",
+  input_data_path = file.path(project_path, "InputData", version),
+  output_data_path = file.path(project_path, "OutputData"),
+  fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
+  ilo_data_path = file.path(input_data_path, "ilo_hmw_data.rds"),
+  hmw_analysis_data_path = file.path(input_data_path, "hmw_analysis_data.xlsx"),
+  amw_analysis_data_path = file.path(input_data_path, "amw_analysis_data.xlsx"),
+  mw_concordance_path = file.path(input_data_path, "FAO_ISO_MW_Mapping.xlsx"),
+  country_concordance_path = file.path(input_data_path, "Country_Concordance_Full.xlsx"),
+  aggregation_mapping_path = file.path(input_data_path, "aggregation_mapping.xlsx"),
+  phi_constants_path = file.path(input_data_path, "phi_constants.xlsx"),
+  exemplar_table_path = file.path(input_data_path, "Exemplar_Table.xlsx"),
+  fu_analysis_folder = file.path(input_data_path, "FU analysis data"),
+  ceda_data_folder = file.path(input_data_path, "CEDA Data"),
+  machine_data_folder = file.path(input_data_path, "Machines - Data"),
   reports_source_folders = "reports",
-  reports_dest_folder = file.path(project_path, "Reports"),
-  pipeline_caches_folder = file.path(project_path, "PipelineCaches"),
-  pipeline_releases_folder = file.path(project_path, "PipelineReleases")
+  reports_dest_folder = file.path(output_data_path, "Reports"),
+  pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
+  pipeline_releases_folder = file.path(output_data_path, "PipelineReleases")
 )
 }
 \arguments{
@@ -45,7 +44,11 @@ get_abs_paths(
 
 \item{iea_data_path}{The path to the IEA data file, relative to \code{home_path}.}
 
-\item{mw_data_path}{The path to the Muscle Work data directory, relative to \code{home_path}.}
+\item{version}{The version of the input data.}
+
+\item{input_data_path}{The path to the input data directory.}
+
+\item{output_data_path}{The path to the output data directory.}
 
 \item{fao_data_path}{The path to the FAO live animals data file, relative to \code{home_path}.}
 
@@ -86,28 +89,29 @@ Default is "PipelineReleases" relative to \code{project_path}.}
 \value{
 A named list containing paths to important directories and files, including:
 \itemize{
-\item{\code{home_path}}{The absolute path to the user's home.}
-\item{\code{dropbox_path}}{The absolute path of the user's Dropbox folder.}
-\item{\code{project_path}}{The absolute path to the project folder.}
-\item{\code{iea_folder_path}}{The absolute path to a folder containing IEA data.}
-\item{\code{iea_data_path}}{The absolute path to the IEA data file for the OECD countries.}
-\item{\code{mw_data_path}}{The absolute path to the Muscle Work data directory.}
-\item{\code{fao_data_path}}{The absolute path to the FAO live animals data file.}
-\item{\code{ilo_data_path}}{The absolute path to the ILO employment data file.}
-\item{\code{hmw_analysis_data_path}}{The absolute path to the human muscle work analysis file.}
-\item{\code{amw_analysis_data_path}}{The absolute path to the animal muscle work file.}
-\item{\code{mw_concordance_path}}{The absolute path to the muscle work country concordance file.}
-\item{\code{country_concordance_path}}{The absolute path to the country concordance file.}
-\item{\code{aggregation_mapping_path}}{The absolute path to the aggregation mapping file.}
-\item{\code{phi_constants_path}}{The absolute path to the exergy-to-energy ratio file containing constant values.}
-\item{\code{exemplar_table_path}}{The path to the exemplar table.}
-\item{\code{fu_analysis_folder}}{The absolute path to the folder containing final-to-useful exergy information.}
-\item{\code{machine_data_folder}}{The absolute path to the folder containing machine-specific efficiency information.}
-\item{\code{ceda_data_folder}}{The absolute path to the folder containing CEDA environment information.}
-\item{\code{reports_source_folders}}{A vector of absolute paths to folders containing source reports.}
-\item{\code{reports_dest_folder}}{A directory into which completed reports will be written.}
-\item{\code{pipeline_caches_folder}}{The path to a folder that stores zipped versions of the pipeline cache.}
-\item{\code{pipeline_releases_folder}}{The path to a folder that stores releases of various targets.}
+\item{home_path}{The absolute path to the user's home.}
+\item{dropbox_path}{The absolute path of the user's Dropbox folder.}
+\item{project_path}{The absolute path to the project folder.}
+\item{iea_folder_path}{The absolute path to a folder containing IEA data.}
+\item{iea_data_path}{The absolute path to the IEA data file for the OECD countries.}
+\item{input_data_path}{The absolute path to the input data directory.}
+\item{output_data_path}{The absolute path to the output data directory.}
+\item{fao_data_path}{The absolute path to the FAO live animals data file.}
+\item{ilo_data_path}{The absolute path to the ILO employment data file.}
+\item{hmw_analysis_data_path}{The absolute path to the human muscle work analysis file.}
+\item{amw_analysis_data_path}{The absolute path to the animal muscle work file.}
+\item{mw_concordance_path}{The absolute path to the muscle work country concordance file.}
+\item{country_concordance_path}{The absolute path to the country concordance file.}
+\item{aggregation_mapping_path}{The absolute path to the aggregation mapping file.}
+\item{phi_constants_path}{The absolute path to the exergy-to-energy ratio file containing constant values.}
+\item{exemplar_table_path}{The path to the exemplar table.}
+\item{fu_analysis_folder}{The absolute path to the folder containing final-to-useful exergy information.}
+\item{machine_data_folder}{The absolute path to the folder containing machine-specific efficiency information.}
+\item{ceda_data_folder}{The absolute path to the folder containing CEDA environment information.}
+\item{reports_source_folders}{A vector of absolute paths to folders containing source reports.}
+\item{reports_dest_folder}{A directory into which completed reports will be written.}
+\item{pipeline_caches_folder}{The path to a folder that stores zipped versions of the pipeline cache.}
+\item{pipeline_releases_folder}{The path to a folder that stores releases of various targets.}
 }
 }
 \description{
