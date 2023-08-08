@@ -3,6 +3,14 @@ title: "Release notes for `PFUSetup`"
 output: html_document
 ---
 
+
+Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zenodo.5228359), 
+which always resolves to the latest release.
+
+
+* Now uses DOI for lon-term citation.
+
+
 # PFUSetup 0.1.13 (2023-04-24) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7859068.svg)](https://doi.org/10.5281/zenodo.7859068)
 
 * Now defaulting to 2022 release of IEA World Extended Energy Balance (WEEB) data.
