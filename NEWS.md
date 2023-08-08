@@ -8,7 +8,7 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
-* Now uses DOI for lon-term citation.
+* Now uses DOI for long-term citation.
 
 
 # PFUSetup 0.1.13 (2023-04-24) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7859068.svg)](https://doi.org/10.5281/zenodo.7859068)
