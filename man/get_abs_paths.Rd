@@ -6,13 +6,14 @@
 \usage{
 get_abs_paths(
   home_path = fs::path_home() \%>\% as.character(),
-  dropbox_path = "Dropbox",
-  project_path = file.path(dropbox_path, "Fellowship 1960-2015 PFU database"),
+  cloud_storage_path = "Dropbox",
+  project_path = file.path(cloud_storage_path, "Fellowship 1960-2015 PFU database"),
+  iea_year = "2023",
   iea_folder_path = file.path(project_path, "IEA extended energy balance data",
-    "IEA 2022 energy balance data"),
-  iea_data_path = file.path(iea_folder_path,
-    "IEA Extended Energy Balances 2022 (TJ).csv"),
-  version = "v1.1",
+    paste("IEA", iea_year, "energy balance data")),
+  iea_data_path = file.path(iea_folder_path, paste("IEA Extended Energy Balances",
+    iea_year, "(TJ).csv")),
+  version = "v1.2",
   input_data_path = file.path(project_path, "InputData", version),
   output_data_path = file.path(project_path, "OutputData"),
   fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
@@ -36,9 +37,11 @@ get_abs_paths(
 \arguments{
 \item{home_path}{The absolute path to the user's home directory.}
 
-\item{dropbox_path}{The path to the user's Dropbox directory, relative to \code{home_path}.}
+\item{cloud_storage_path}{The path to the user's cloud storage directory, relative to \code{home_path}.}
 
 \item{project_path}{The path to the project directory, relative to \code{home_path}.}
+
+\item{iea_year}{The year of IEA data release, as a string.}
 
 \item{iea_folder_path}{The path to the IEA data directory, relative to \code{home_path}.}
 
@@ -46,9 +49,9 @@ get_abs_paths(
 
 \item{version}{The version of the input data.}
 
-\item{input_data_path}{The path to the input data directory.}
+\item{input_data_path}{The path to the input data directory, relative to \code{home_path}.}
 
-\item{output_data_path}{The path to the output data directory.}
+\item{output_data_path}{The path to the output data directory, relative to \code{home_path}.}
 
 \item{fao_data_path}{The path to the FAO live animals data file, relative to \code{home_path}.}
 
@@ -78,11 +81,11 @@ get_abs_paths(
 
 \item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{home_path}.}
 
-\item{pipeline_caches_folder}{The path to a folder containing zipped versions of the pipeline cache.
+\item{pipeline_caches_folder}{The path to a folder containing zipped versions of the pipeline cache, relative to \code{home_path}.
 Data are stored as .zip files
 Default is "PipelineCaches" relative to \code{project_path}.}
 
-\item{pipeline_releases_folder}{The path to a folder containing released versions of the PSUT target data frame.
+\item{pipeline_releases_folder}{The path to a folder containing released versions of the PSUT target data frame, relative to \code{home_path}.
 Data are stored using the \code{pins} package.
 Default is "PipelineReleases" relative to \code{project_path}.}
 }
@@ -90,7 +93,7 @@ Default is "PipelineReleases" relative to \code{project_path}.}
 A named list containing paths to important directories and files, including:
 \itemize{
 \item{home_path}{The absolute path to the user's home.}
-\item{dropbox_path}{The absolute path of the user's Dropbox folder.}
+\item{cloud_storage_path}{The absolute path of the user's cloud storage folder.}
 \item{project_path}{The absolute path to the project folder.}
 \item{iea_folder_path}{The absolute path to a folder containing IEA data.}
 \item{iea_data_path}{The absolute path to the IEA data file for the OECD countries.}

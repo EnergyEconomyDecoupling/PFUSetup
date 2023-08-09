@@ -6,13 +6,14 @@
 #' The default argument for `home_path` gets the value for `fs::path_home()`.
 #'
 #' @param home_path The absolute path to the user's home directory.
-#' @param dropbox_path The path to the user's Dropbox directory, relative to `home_path`.
+#' @param cloud_storage_path The path to the user's cloud storage directory, relative to `home_path`.
 #' @param project_path The path to the project directory, relative to `home_path`.
+#' @param iea_year The year of IEA data release, as a string.
 #' @param iea_folder_path The path to the IEA data directory, relative to `home_path`.
 #' @param iea_data_path The path to the IEA data file, relative to `home_path`.
 #' @param version The version of the input data.
-#' @param input_data_path The path to the input data directory.
-#' @param output_data_path The path to the output data directory.
+#' @param input_data_path The path to the input data directory, relative to `home_path`.
+#' @param output_data_path The path to the output data directory, relative to `home_path`.
 #' @param fao_data_path The path to the FAO live animals data file, relative to `home_path`.
 #' @param ilo_data_path The path to the ILO employment data file, relative to `home_path`.
 #' @param hmw_analysis_data_path The path to the human muscle work analysis file, relative to `home_path`.
@@ -27,17 +28,17 @@
 #' @param ceda_data_folder The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to `home_path`.
 #' @param reports_source_folders A string vector of paths to folders containing report sources.
 #' @param reports_dest_folder The path to the folder into which reports will be written, relative to `home_path`.
-#' @param pipeline_caches_folder The path to a folder containing zipped versions of the pipeline cache.
+#' @param pipeline_caches_folder The path to a folder containing zipped versions of the pipeline cache, relative to `home_path`.
 #'                               Data are stored as .zip files
 #'                               Default is "PipelineCaches" relative to `project_path`.
-#' @param pipeline_releases_folder The path to a folder containing released versions of the PSUT target data frame.
+#' @param pipeline_releases_folder The path to a folder containing released versions of the PSUT target data frame, relative to `home_path`.
 #'                                 Data are stored using the `pins` package.
 #'                                 Default is "PipelineReleases" relative to `project_path`.
 #'
 #' @return A named list containing paths to important directories and files, including:
 #' \itemize{
 #'  \item{home_path}{The absolute path to the user's home.}
-#'  \item{dropbox_path}{The absolute path of the user's Dropbox folder.}
+#'  \item{cloud_storage_path}{The absolute path of the user's cloud storage folder.}
 #'  \item{project_path}{The absolute path to the project folder.}
 #'  \item{iea_folder_path}{The absolute path to a folder containing IEA data.}
 #'  \item{iea_data_path}{The absolute path to the IEA data file for the OECD countries.}
@@ -68,15 +69,16 @@
 #' @examples
 #' get_abs_paths()
 get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
-                          dropbox_path = "Dropbox",
-                          project_path =  file.path(dropbox_path,
+                          cloud_storage_path = "Dropbox",
+                          project_path =  file.path(cloud_storage_path,
                                                     "Fellowship 1960-2015 PFU database"),
+                          iea_year= "2023",
                           iea_folder_path = file.path(project_path,
                                                       "IEA extended energy balance data",
-                                                      "IEA 2022 energy balance data"),
+                                                      paste("IEA", iea_year, "energy balance data")),
                           iea_data_path = file.path(iea_folder_path,
-                                                    "IEA Extended Energy Balances 2022 (TJ).csv"),
-                          version = "v1.1",
+                                                    paste("IEA Extended Energy Balances", iea_year, "(TJ).csv")),
+                          version = "v1.2",
                           input_data_path = file.path(project_path, "InputData", version),
                           output_data_path = file.path(project_path, "OutputData"),
                           fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
@@ -96,8 +98,13 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
                           pipeline_releases_folder = file.path(output_data_path, "PipelineReleases")) {
 
+  if (home_path == "" & cloud_storage_path == "") {
+    csp <- ""
+  } else {
+    csp <- file.path(home_path, cloud_storage_path)
+  }
   list(home_path = home_path,
-       dropbox_path = file.path(home_path, dropbox_path),
+       cloud_storage_path = csp,
        project_path = file.path(home_path, project_path),
        iea_folder_path = file.path(home_path, iea_folder_path),
        input_data_path = file.path(home_path, input_data_path),
