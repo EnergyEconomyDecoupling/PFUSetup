@@ -5,6 +5,11 @@
 #'
 #' The default argument for `home_path` gets the value for `fs::path_home()`.
 #'
+#' Although this function is called [get_abs_paths()],
+#' it can return relative paths if both `home_path` and `cloud_storage_path`
+#' are set to "" (an empty string) and
+#' `project_path` is set to the root folder of the project.
+#'
 #' @param home_path The absolute path to the user's home directory.
 #' @param cloud_storage_path The path to the user's cloud storage directory, relative to `home_path`.
 #' @param project_path The path to the project directory, relative to `home_path`.
@@ -68,6 +73,9 @@
 #'
 #' @examples
 #' get_abs_paths()
+#' # Set relative paths with empty strings
+#' get_abs_paths(home_path = "", cloud_storage_path = "",
+#'               project_path = "my_project_path")
 get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           cloud_storage_path = "Dropbox",
                           project_path =  file.path(cloud_storage_path,

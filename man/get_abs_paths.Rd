@@ -123,7 +123,15 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.
 }
 \details{
 The default argument for \code{home_path} gets the value for \code{fs::path_home()}.
+
+Although this function is called \code{\link[=get_abs_paths]{get_abs_paths()}},
+it can return relative paths if both \code{home_path} and \code{cloud_storage_path}
+are set to "" (an empty string) and
+\code{project_path} is set to the root folder of the project.
 }
 \examples{
 get_abs_paths()
+# Set relative paths with empty strings
+get_abs_paths(home_path = "", cloud_storage_path = "",
+              project_path = "my_project_path")
 }
