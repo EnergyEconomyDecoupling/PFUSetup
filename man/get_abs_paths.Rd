@@ -8,7 +8,7 @@ get_abs_paths(
   home_path = fs::path_home() \%>\% as.character(),
   cloud_storage_path = "Dropbox",
   project_path = file.path(cloud_storage_path, "Fellowship 1960-2015 PFU database"),
-  iea_year = "2023",
+  iea_year = "2022",
   iea_folder_path = file.path(project_path, "IEA extended energy balance data",
     paste("IEA", iea_year, "energy balance data")),
   iea_data_path = file.path(iea_folder_path, paste("IEA Extended Energy Balances",

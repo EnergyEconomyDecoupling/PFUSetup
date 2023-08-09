@@ -123,21 +123,23 @@ test_that("Files exist", {
 
 test_that("get_abs_paths() works with empty strings for home_path and cloud_storage_path", {
   version <- "this_version"
+  iea_year <- "iea_year"
   paths <- get_abs_paths(home_path = "",
                          cloud_storage_path = "",
                          project_path = "p_path",
-                         version = version)
+                         version = version,
+                         iea_year = iea_year)
 
   expect_equal(paths$home_path, "")
   expect_equal(paths$cloud_storage_path, "")
   slash_ppath <- paste0(.Platform$file.sep, "p_path")
   expect_equal(paths$project_path, slash_ppath)
   expect_equal(paths$iea_folder_path, file.path(slash_ppath, "IEA extended energy balance data",
-                                                "IEA 2023 energy balance data"))
+                                                paste("IEA", iea_year, "energy balance data")))
   expect_equal(paths$input_data_path, file.path(slash_ppath, "InputData", version))
   expect_equal(paths$output_data_path, file.path(slash_ppath, "OutputData"))
   expect_equal(paths$iea_data_path, file.path(paths$iea_folder_path,
-                                              "IEA Extended Energy Balances 2023 (TJ).csv"))
+                                              paste("IEA Extended Energy Balances", "iea_year", "(TJ).csv")))
   expect_equal(paths$fao_data_path, file.path(paths$input_data_path, "fao_qcl_data.rds"))
   expect_equal(paths$ilo_data_path, file.path(paths$input_data_path, "ilo_hmw_data.rds"))
   expect_equal(paths$hmw_analysis_data_path, file.path(paths$input_data_path,
