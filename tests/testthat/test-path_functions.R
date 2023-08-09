@@ -132,7 +132,8 @@ test_that("get_abs_paths() works with empty strings for home_path and cloud_stor
 
   expect_equal(paths$home_path, "")
   expect_equal(paths$cloud_storage_path, "")
-  slash_ppath <- paste0(.Platform$file.sep, "p_path")
+  # slash_ppath <- paste0(.Platform$file.sep, "p_path")
+  slash_ppath <- "p_path"
   expect_equal(paths$project_path, slash_ppath)
   expect_equal(paths$iea_folder_path, file.path(slash_ppath, "IEA extended energy balance data",
                                                 paste("IEA", iea_year, "energy balance data")))

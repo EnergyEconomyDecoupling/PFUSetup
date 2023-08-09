@@ -31,7 +31,8 @@ get_abs_paths(
   reports_source_folders = "reports",
   reports_dest_folder = file.path(output_data_path, "Reports"),
   pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
-  pipeline_releases_folder = file.path(output_data_path, "PipelineReleases")
+  pipeline_releases_folder = file.path(output_data_path, "PipelineReleases"),
+  fsep = .Platform$file.sep
 )
 }
 \arguments{
@@ -88,6 +89,9 @@ Default is "PipelineCaches" relative to \code{project_path}.}
 \item{pipeline_releases_folder}{The path to a folder containing released versions of the PSUT target data frame, relative to \code{home_path}.
 Data are stored using the \code{pins} package.
 Default is "PipelineReleases" relative to \code{project_path}.}
+
+\item{fsep}{The file separator used when constructing paths.
+Default is \code{.Platform$file.sep}.}
 }
 \value{
 A named list containing paths to important directories and files, including:
@@ -128,6 +132,8 @@ Although this function is called \code{\link[=get_abs_paths]{get_abs_paths()}},
 it can return relative paths if both \code{home_path} and \code{cloud_storage_path}
 are set to "" (an empty string) and
 \code{project_path} is set to the root folder of the project.
+In that event, the leading file separator (\code{fsep}) is removed
+from the path (if it exists).
 }
 \examples{
 get_abs_paths()
