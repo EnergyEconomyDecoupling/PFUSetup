@@ -16,7 +16,8 @@ get_abs_paths(
   input_data_path = file.path(project_path, "InputData", version),
   output_data_path = file.path(project_path, "OutputData"),
   fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
-  ilo_data_path = file.path(input_data_path, "ilo_hmw_data.rds"),
+  ilo_employment_data_path = file.path(input_data_path, "ilo_employment_data.rds"),
+  ilo_workingHours_data_path = file.path(input_data_path, "ilo_workingHours_data.rds"),
   hmw_analysis_data_path = file.path(input_data_path, "hmw_analysis_data.xlsx"),
   amw_analysis_data_path = file.path(input_data_path, "amw_analysis_data.xlsx"),
   mw_concordance_path = file.path(input_data_path, "FAO_ISO_MW_Mapping.xlsx"),
@@ -52,7 +53,9 @@ get_abs_paths(
 
 \item{fao_data_path}{The path to the FAO live animals data file, relative to \code{home_path}.}
 
-\item{ilo_data_path}{The path to the ILO employment data file, relative to \code{home_path}.}
+\item{ilo_employment_data_path}{The path to the ILO employment data file, relative to \code{home_path}.}
+
+\item{ilo_workingHours_data_path}{The path to the ILO working hours data file, relative to \code{home_path}.}
 
 \item{hmw_analysis_data_path}{The path to the human muscle work analysis file, relative to \code{home_path}.}
 
@@ -97,7 +100,8 @@ A named list containing paths to important directories and files, including:
 \item{input_data_path}{The absolute path to the input data directory.}
 \item{output_data_path}{The absolute path to the output data directory.}
 \item{fao_data_path}{The absolute path to the FAO live animals data file.}
-\item{ilo_data_path}{The absolute path to the ILO employment data file.}
+\item{ilo_employment_data_path}{The absolute path to the ILO employment data file.}
+\item{ilo_workingHours_data_path}{The absolute path to the ILO working hours data file.}
 \item{hmw_analysis_data_path}{The absolute path to the human muscle work analysis file.}
 \item{amw_analysis_data_path}{The absolute path to the animal muscle work file.}
 \item{mw_concordance_path}{The absolute path to the muscle work country concordance file.}
