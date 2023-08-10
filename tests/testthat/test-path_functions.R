@@ -17,8 +17,11 @@ test_that("get_abs_paths() works as expected", {
   # FAO data path
   expect_true(endsWith(paths$fao_data_path, "fao_qcl_data.rds"))
 
-  # ILO data path
-  expect_true(endsWith(paths$ilo_data_path, "ilo_hmw_data.rds"))
+  # ILO working hours data path
+  expect_true(endsWith(paths$ilo_workingHours_data_path, "ilo_workingHours_data.rds"))
+
+  # ILO employment data path
+  expect_true(endsWith(paths$ilo_employment_data_path, "ilo_employment_data.rds"))
 
   # Human muscle work analysis data path
   expect_true(endsWith(paths$hmw_analysis_data_path, "hmw_analysis_data.xlsx"))

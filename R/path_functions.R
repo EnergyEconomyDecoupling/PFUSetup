@@ -14,7 +14,8 @@
 #' @param input_data_path The path to the input data directory.
 #' @param output_data_path The path to the output data directory.
 #' @param fao_data_path The path to the FAO live animals data file, relative to `home_path`.
-#' @param ilo_data_path The path to the ILO employment data file, relative to `home_path`.
+#' @param ilo_employment_data_path The path to the ILO employment data file, relative to `home_path`.
+#' @param ilo_workingHours_data_path The path to the ILO working hours data file, relative to `home_path`.
 #' @param hmw_analysis_data_path The path to the human muscle work analysis file, relative to `home_path`.
 #' @param amw_analysis_data_path The path to the animal muscle work file, relative to `home_path`.
 #' @param mw_concordance_path The path to the muscle work country concordance file, relative to `home_path`.
@@ -44,7 +45,8 @@
 #'  \item{input_data_path}{The absolute path to the input data directory.}
 #'  \item{output_data_path}{The absolute path to the output data directory.}
 #'  \item{fao_data_path}{The absolute path to the FAO live animals data file.}
-#'  \item{ilo_data_path}{The absolute path to the ILO employment data file.}
+#'  \item{ilo_employment_data_path}{The absolute path to the ILO employment data file.}
+#'  \item{ilo_workingHours_data_path}{The absolute path to the ILO working hours data file.}
 #'  \item{hmw_analysis_data_path}{The absolute path to the human muscle work analysis file.}
 #'  \item{amw_analysis_data_path}{The absolute path to the animal muscle work file.}
 #'  \item{mw_concordance_path}{The absolute path to the muscle work country concordance file.}
@@ -80,7 +82,8 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           input_data_path = file.path(project_path, "InputData", version),
                           output_data_path = file.path(project_path, "OutputData"),
                           fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
-                          ilo_data_path = file.path(input_data_path, "ilo_hmw_data.rds"),
+                          ilo_employment_data_path = file.path(input_data_path, "ilo_employment_data.rds"),
+                          ilo_workingHours_data_path = file.path(input_data_path, "ilo_workingHours_data.rds"),
                           hmw_analysis_data_path = file.path(input_data_path, "hmw_analysis_data.xlsx"),
                           amw_analysis_data_path = file.path(input_data_path, "amw_analysis_data.xlsx"),
                           mw_concordance_path = file.path(input_data_path, "FAO_ISO_MW_Mapping.xlsx"),
@@ -104,7 +107,8 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
        output_data_path = file.path(home_path, output_data_path),
        iea_data_path = file.path(home_path, iea_data_path),
        fao_data_path = file.path(home_path, fao_data_path),
-       ilo_data_path = file.path(home_path, ilo_data_path),
+       ilo_employment_data_path = file.path(home_path, ilo_employment_data_path),
+       ilo_workingHours_data_path = file.path(home_path, ilo_workingHours_data_path),
        hmw_analysis_data_path = file.path(home_path, hmw_analysis_data_path),
        amw_analysis_data_path = file.path(home_path, amw_analysis_data_path),
        mw_concordance_path = file.path(home_path, mw_concordance_path),
