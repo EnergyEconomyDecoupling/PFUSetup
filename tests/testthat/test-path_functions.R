@@ -18,7 +18,7 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$fao_data_path, "fao_qcl_data.rds"))
 
   # ILO working hours data path
-  expect_true(endsWith(paths$ilo_workingHours_data_path, "ilo_workingHours_data.rds"))
+  expect_true(endsWith(paths$ilo_working_hours_data_path, "ilo_working_hours_data.rds"))
 
   # ILO employment data path
   expect_true(endsWith(paths$ilo_employment_data_path, "ilo_employment_data.rds"))
@@ -143,7 +143,8 @@ test_that("get_abs_paths() works with empty strings for home_path and cloud_stor
   expect_equal(paths$iea_data_path, file.path(paths$iea_folder_path,
                                               paste("IEA Extended Energy Balances", "iea_year", "(TJ).csv")))
   expect_equal(paths$fao_data_path, file.path(paths$input_data_path, "fao_qcl_data.rds"))
-  expect_equal(paths$ilo_data_path, file.path(paths$input_data_path, "ilo_hmw_data.rds"))
+  expect_equal(paths$ilo_employment_data_path, file.path(paths$input_data_path, "ilo_employment_data.rds"))
+  expect_equal(paths$ilo_working_hours_data_path, file.path(paths$input_data_path, "ilo_working_hours_data.rds"))
   expect_equal(paths$hmw_analysis_data_path, file.path(paths$input_data_path,
                                                        "hmw_analysis_data.xlsx"))
   expect_equal(paths$amw_analysis_data_path, file.path(paths$input_data_path,

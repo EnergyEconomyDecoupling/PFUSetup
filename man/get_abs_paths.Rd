@@ -18,7 +18,7 @@ get_abs_paths(
   output_data_path = file.path(project_path, "OutputData"),
   fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
   ilo_employment_data_path = file.path(input_data_path, "ilo_employment_data.rds"),
-  ilo_workingHours_data_path = file.path(input_data_path, "ilo_workingHours_data.rds"),
+  ilo_working_hours_data_path = file.path(input_data_path, "ilo_working_hours_data.rds"),
   hmw_analysis_data_path = file.path(input_data_path, "hmw_analysis_data.xlsx"),
   amw_analysis_data_path = file.path(input_data_path, "amw_analysis_data.xlsx"),
   mw_concordance_path = file.path(input_data_path, "FAO_ISO_MW_Mapping.xlsx"),
@@ -27,8 +27,8 @@ get_abs_paths(
   phi_constants_path = file.path(input_data_path, "phi_constants.xlsx"),
   exemplar_table_path = file.path(input_data_path, "Exemplar_Table.xlsx"),
   fu_analysis_folder = file.path(input_data_path, "FU analysis data"),
-  ceda_data_folder = file.path(input_data_path, "CEDA Data"),
   machine_data_folder = file.path(input_data_path, "Machines - Data"),
+  ceda_data_folder = file.path(input_data_path, "CEDA Data"),
   reports_source_folders = "reports",
   reports_dest_folder = file.path(output_data_path, "Reports"),
   pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
@@ -59,7 +59,7 @@ get_abs_paths(
 
 \item{ilo_employment_data_path}{The path to the ILO employment data file, relative to \code{home_path}.}
 
-\item{ilo_workingHours_data_path}{The path to the ILO working hours data file, relative to \code{home_path}.}
+\item{ilo_working_hours_data_path}{The path to the ILO working hours data file, relative to \code{home_path}.}
 
 \item{hmw_analysis_data_path}{The path to the human muscle work analysis file, relative to \code{home_path}.}
 
@@ -77,9 +77,9 @@ get_abs_paths(
 
 \item{fu_analysis_folder}{The path to the folder containing final-to-useful exergy information, relative to \code{home_path}.}
 
-\item{ceda_data_folder}{The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to \code{home_path}.}
-
 \item{machine_data_folder}{The path to the folder containing machine-specific efficiencies, relative to \code{home_path}.}
+
+\item{ceda_data_folder}{The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to \code{home_path}.}
 
 \item{reports_source_folders}{A string vector of paths to folders containing report sources.}
 
@@ -108,7 +108,7 @@ A named list containing paths to important directories and files, including:
 \item{output_data_path}{The absolute path to the output data directory.}
 \item{fao_data_path}{The absolute path to the FAO live animals data file.}
 \item{ilo_employment_data_path}{The absolute path to the ILO employment data file.}
-\item{ilo_workingHours_data_path}{The absolute path to the ILO working hours data file.}
+\item{ilo_working_hours_data_path}{The absolute path to the ILO working hours data file.}
 \item{hmw_analysis_data_path}{The absolute path to the human muscle work analysis file.}
 \item{amw_analysis_data_path}{The absolute path to the animal muscle work file.}
 \item{mw_concordance_path}{The absolute path to the muscle work country concordance file.}
