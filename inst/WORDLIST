@@ -6,6 +6,7 @@ Centre
 CMD
 Codecov
 DOI
+doi
 dest
 dropbox
 EnergyEconomyDecoupling
@@ -34,3 +35,4 @@ PipelineReleases
 PSUT
 Sys
 WEEB
+zenodo

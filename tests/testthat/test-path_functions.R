@@ -3,7 +3,7 @@ test_that("get_abs_paths() works as expected", {
   paths <- get_abs_paths()
 
   # Dropbox path
-  expect_true(endsWith(paths$dropbox_path, "Dropbox"))
+  expect_true(endsWith(paths$cloud_storage_path, "Dropbox"))
 
   # Project path
   expect_true(endsWith(paths$project_path, "Fellowship 1960-2015 PFU database"))
@@ -17,8 +17,11 @@ test_that("get_abs_paths() works as expected", {
   # FAO data path
   expect_true(endsWith(paths$fao_data_path, "fao_qcl_data.rds"))
 
-  # ILO data path
-  expect_true(endsWith(paths$ilo_data_path, "ilo_hmw_data.rds"))
+  # ILO working hours data path
+  expect_true(endsWith(paths$ilo_working_hours_data_path, "ilo_working_hours_data.rds"))
+
+  # ILO employment data path
+  expect_true(endsWith(paths$ilo_employment_data_path, "ilo_employment_data.rds"))
 
   # Human muscle work analysis data path
   expect_true(endsWith(paths$hmw_analysis_data_path, "hmw_analysis_data.xlsx"))
@@ -75,7 +78,7 @@ test_that("Files exist", {
   expect_true(file.exists(paths$home_path))
 
   # Dropbox path
-  expect_true(file.exists(paths$dropbox_path))
+  expect_true(file.exists(paths$cloud_storage_path))
 
   # Project path
   expect_true(file.exists(paths$project_path))
@@ -119,3 +122,49 @@ test_that("Files exist", {
   # Report workflow releases folder
   expect_true(file.exists(paths$pipeline_releases_folder))
 })
+
+
+test_that("get_abs_paths() works with empty strings for home_path and cloud_storage_path", {
+  version <- "this_version"
+  iea_year <- "iea_year"
+  paths <- get_abs_paths(home_path = "",
+                         cloud_storage_path = "",
+                         project_path = "p_path",
+                         version = version,
+                         iea_year = iea_year)
+
+  expect_equal(paths$home_path, "")
+  expect_equal(paths$cloud_storage_path, "")
+  expect_equal(paths$project_path, "p_path")
+  expect_equal(paths$iea_folder_path, file.path("p_path", "IEA extended energy balance data",
+                                                paste("IEA", iea_year, "energy balance data")))
+  expect_equal(paths$input_data_path, file.path("p_path", "InputData", version))
+  expect_equal(paths$output_data_path, file.path("p_path", "OutputData"))
+  expect_equal(paths$iea_data_path, file.path(paths$iea_folder_path,
+                                              paste("IEA Extended Energy Balances", "iea_year", "(TJ).csv")))
+  expect_equal(paths$fao_data_path, file.path(paths$input_data_path, "fao_qcl_data.rds"))
+  expect_equal(paths$ilo_employment_data_path, file.path(paths$input_data_path, "ilo_employment_data.rds"))
+  expect_equal(paths$ilo_working_hours_data_path, file.path(paths$input_data_path, "ilo_working_hours_data.rds"))
+  expect_equal(paths$hmw_analysis_data_path, file.path(paths$input_data_path,
+                                                       "hmw_analysis_data.xlsx"))
+  expect_equal(paths$amw_analysis_data_path, file.path(paths$input_data_path,
+                                                       "amw_analysis_data.xlsx"))
+  expect_equal(paths$country_concordance_path, file.path(paths$input_data_path,
+                                                       "Country_Concordance_Full.xlsx"))
+  expect_equal(paths$aggregation_mapping_path, file.path(paths$input_data_path,
+                                                         "aggregation_mapping.xlsx"))
+  expect_equal(paths$exemplar_table_path, file.path(paths$input_data_path,
+                                                    "Exemplar_Table.xlsx"))
+  expect_equal(paths$fu_analysis_folder, file.path(paths$input_data_path,
+                                                   "FU analysis data"))
+  expect_equal(paths$ceda_data_folder, file.path(paths$input_data_path,
+                                                 "CEDA Data"))
+  expect_equal(paths$machine_data_folder, file.path(paths$input_data_path,
+                                                    "Machines - Data"))
+  expect_equal(paths$reports_source_folders, "reports")
+  expect_equal(paths$reports_dest_folder, file.path(paths$output_data_path, "Reports"))
+  expect_equal(paths$pipeline_caches_folder, file.path(paths$output_data_path, "PipelineCaches"))
+  expect_equal(paths$pipeline_releases_folder, file.path(paths$output_data_path, "PipelineReleases"))
+})
+
+

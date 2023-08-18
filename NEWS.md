@@ -3,7 +3,22 @@ title: "Release notes for `PFUSetup`"
 output: html_document
 ---
 
-# PFUSetup 0.1.13 (2023-04-24)
+
+Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zenodo.5228359), 
+which always resolves to the latest release.
+
+
+# PFUSetup 0.1.14 (2023-08-18)
+
+* Now uses DOI for long-term citation.
+* Relative paths if `home_path` and `cloud_storage_path` are both
+  set to an empty string (`""`).
+* New tests for relative paths.
+    - Now at 58 tests, all passing.
+    - Test coverage remains at 100%.
+
+
+# PFUSetup 0.1.13 (2023-04-24) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7859068.svg)](https://doi.org/10.5281/zenodo.7859068)
 
 * Now defaulting to 2022 release of IEA World Extended Energy Balance (WEEB) data.
 * No new tests.
