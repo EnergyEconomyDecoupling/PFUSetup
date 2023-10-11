@@ -33,6 +33,8 @@ get_abs_paths(
   reports_dest_folder = file.path(output_data_path, "Reports"),
   pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
   pipeline_releases_folder = file.path(output_data_path, "PipelineReleases"),
+  versions_and_products_path = file.path(pipeline_releases_folder,
+    "versions and products.xlsx"),
   fsep = .Platform$file.sep
 )
 }
@@ -93,6 +95,10 @@ Default is "PipelineCaches" relative to \code{project_path}.}
 Data are stored using the \code{pins} package.
 Default is "PipelineReleases" relative to \code{project_path}.}
 
+\item{versions_and_products_path}{The path to the versions and products file containing lists of all versions and products,
+relative to \code{project_path}.
+Default is "versions_and_products.xlsx".}
+
 \item{fsep}{The file separator used when constructing paths.
 Default is \code{.Platform$file.sep}.}
 }
@@ -123,6 +129,7 @@ A named list containing paths to important directories and files, including:
 \item{reports_dest_folder}{A directory into which completed reports will be written.}
 \item{pipeline_caches_folder}{The path to a folder that stores zipped versions of the pipeline cache.}
 \item{pipeline_releases_folder}{The path to a folder that stores releases of various targets.}
+\item{versions_and_products_path}{The path to the versions and products file.}
 }
 }
 \description{
