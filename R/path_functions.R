@@ -42,6 +42,9 @@
 #' @param pipeline_releases_folder The path to a folder containing released versions of the PSUT target data frame, relative to `home_path`.
 #'                                 Data are stored using the `pins` package.
 #'                                 Default is "PipelineReleases" relative to `project_path`.
+#' @param versions_and_products_path The path to the versions and products file containing lists of all versions and products,
+#'                                   relative to `project_path`.
+#'                                   Default is "versions_and_products.xlsx".
 #' @param fsep The file separator used when constructing paths.
 #'             Default is `.Platform$file.sep`.
 #'
@@ -71,6 +74,7 @@
 #'  \item{reports_dest_folder}{A directory into which completed reports will be written.}
 #'  \item{pipeline_caches_folder}{The path to a folder that stores zipped versions of the pipeline cache.}
 #'  \item{pipeline_releases_folder}{The path to a folder that stores releases of various targets.}
+#'  \item{versions_and_products_path}{The path to the versions and products file.}
 #' }
 #'
 #' @importFrom fs path_home
@@ -112,6 +116,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           reports_dest_folder = file.path(output_data_path, "Reports"),
                           pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
                           pipeline_releases_folder = file.path(output_data_path, "PipelineReleases"),
+                          versions_and_products_path = file.path(pipeline_releases_folder, "versions and products.xlsx"),
                           fsep = .Platform$file.sep) {
 
   if (home_path == "" & cloud_storage_path == "") {
@@ -144,7 +149,8 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
               reports_source_folders = reports_source_folders,
               reports_dest_folder = file.path(home_path, reports_dest_folder, fsep = fsep),
               pipeline_caches_folder = file.path(home_path, pipeline_caches_folder, fsep = fsep),
-              pipeline_releases_folder = file.path(home_path, pipeline_releases_folder, fsep = fsep))
+              pipeline_releases_folder = file.path(home_path, pipeline_releases_folder, fsep = fsep),
+              versions_and_products_path = file.path(home_path, versions_and_products_path, fsep = fsep))
   if (remove_leading_file_seps) {
     out <- lapply(out, FUN = function(path) {
       gsub(pattern = paste0("^", fsep), replacement = "", x = path)
