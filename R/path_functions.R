@@ -70,6 +70,7 @@
 #'  \item{fu_analysis_folder}{The absolute path to the folder containing final-to-useful exergy information.}
 #'  \item{machine_data_folder}{The absolute path to the folder containing machine-specific efficiency information.}
 #'  \item{ceda_data_folder}{The absolute path to the folder containing CEDA environment information.}
+#'  \item{exiobase_energy_flows_path}{The absolute path to the folder containing Exiobase energy flows information.}
 #'  \item{reports_source_folders}{A vector of absolute paths to folders containing source reports.}
 #'  \item{reports_dest_folder}{A directory into which completed reports will be written.}
 #'  \item{pipeline_caches_folder}{The path to a folder that stores zipped versions of the pipeline cache.}
@@ -112,6 +113,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           fu_analysis_folder = file.path(input_data_path, "FU analysis data"),
                           machine_data_folder = file.path(input_data_path, "Machines - Data"),
                           ceda_data_folder = file.path(input_data_path, "CEDA Data"),
+                          exiobase_energy_flows_path = file.path(input_data_path, "exiobase_energy_flows_concordance.xlsx"),
                           reports_source_folders = "reports",
                           reports_dest_folder = file.path(output_data_path, "Reports"),
                           pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
@@ -146,6 +148,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
               fu_analysis_folder = file.path(home_path, fu_analysis_folder, fsep = fsep),
               machine_data_folder = file.path(home_path, machine_data_folder, fsep = fsep),
               ceda_data_folder = file.path(home_path, ceda_data_folder, fsep = fsep),
+              exiobase_energy_flows_path = file.path(home_path, exiobase_energy_flows_path, fsep = fsep),
               reports_source_folders = reports_source_folders,
               reports_dest_folder = file.path(home_path, reports_dest_folder, fsep = fsep),
               pipeline_caches_folder = file.path(home_path, pipeline_caches_folder, fsep = fsep),
