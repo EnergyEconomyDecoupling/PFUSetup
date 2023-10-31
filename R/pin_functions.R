@@ -73,7 +73,7 @@ pin_versions <- function(database_version,
 #'
 #' @examples
 #' \dontrun{
-#' read_pin_version(database_version = 1.2, pin_name = "phi_vecs") |>
+#' read_pin_version(pin_name = "phi_vecs", database_version = 1.2) |>
 #'   head()
 #'}
 read_pin_version <- function(pin_name,

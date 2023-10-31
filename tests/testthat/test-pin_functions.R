@@ -33,7 +33,6 @@ test_that("read_pin_version() works as expected", {
 
   testthat::skip_on_ci()
 
-  phi_vecs <- pin_versions(1.2)[["phi_vecs"]] |>
-    read_pin_version(pin_name = "phi_vecs")
+  phi_vecs <- read_pin_version(pin_name = "phi_vecs", database_version = 1.2)
   expect_equal(names(phi_vecs), c("Country", "Year", "phi"))
 })
