@@ -5,19 +5,20 @@
 \title{Read a version of a pinned CL-PFU database product}
 \usage{
 read_pin_version(
-  pin_version_string,
+  database_version,
   pin_name,
+  pin_version_string = pin_versions(database_version)[[pin_name]],
   pipeline_releases_folder = get_abs_paths()[["pipeline_releases_folder"]]
 )
 }
 \arguments{
+\item{database_version}{A string, prefixed with "v" for the version of interest.
+Any number will be prefixed by "v" and converted to a string internally.}
+
 \item{pin_name}{The string name of the pin to be read. Can be the pin name or a product name. See examples.}
 
 \item{pipeline_releases_folder}{The path to the pipeline releases folder.
 Default is \code{get_abs_paths()[["pipeline_releases_folder"]]}.}
-
-\item{database_version}{A string, prefixed with "v" for the version of interest.
-Any number will be prefixed by "v" and converted to a string internally.}
 }
 \value{
 The pinned object represented by the name and the version string.

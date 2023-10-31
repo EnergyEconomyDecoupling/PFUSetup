@@ -71,12 +71,13 @@ pin_versions <- function(database_version,
 #'
 #' @examples
 #' \dontrun{
-#' pin_versions(1.2)[["phi_vecs"]] |>
-#'   read_pin_version(pin_name = "phi_vecs") |>
+#' read_pin_version(database_version = 1.2, pin_name = "phi_vecs") |>
 #'   head()
+#'
 #'}
-read_pin_version <- function(pin_version_string,
+read_pin_version <- function(database_version,
                              pin_name,
+                             pin_version_string = pin_versions(database_version)[[pin_name]],
                              pipeline_releases_folder = get_abs_paths()[["pipeline_releases_folder"]]) {
 
   pipeline_releases_folder |>
