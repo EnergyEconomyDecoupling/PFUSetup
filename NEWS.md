@@ -8,6 +8,10 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+* Added new functions `pin_versions()` and `read_pin_version()` 
+  to assist development of computational pipelines.
+
+
 # PFUSetup 0.1.14 (2023-08-18) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8264422.svg)](https://doi.org/10.5281/zenodo.8264422)
 
 * Now uses DOI for long-term citation.
