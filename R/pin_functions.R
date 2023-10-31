@@ -37,7 +37,7 @@ pin_names <- function(version,
                       version_prefix = "v") {
   # Get the version table.
   cols <- readxl::read_excel(path = versions_and_products_path, sheet = version_table_tab) |>
-    dplyr::select(product_column, pin_name_column, version_string)
+    dplyr::select(tidyselect::any_of(c(product_column, pin_name_column, version_string)))
 
   # Create an outgoing list containing version strings
   # named with product names and with pin names.
