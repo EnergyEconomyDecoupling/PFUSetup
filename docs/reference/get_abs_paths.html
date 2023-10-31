@@ -12,7 +12,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway."><!-- mathj
     
     <a class="navbar-brand me-2" href="../index.html">PFUSetup</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.13</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.15</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,15 +52,17 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 <span>  home_path <span class="op">=</span> <span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/path_expand.html" class="external-link">path_home</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  cloud_storage_path <span class="op">=</span> <span class="st">"Dropbox"</span>,</span>
 <span>  project_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">cloud_storage_path</span>, <span class="st">"Fellowship 1960-2015 PFU database"</span><span class="op">)</span>,</span>
+<span>  iea_year <span class="op">=</span> <span class="st">"2022"</span>,</span>
 <span>  iea_folder_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">project_path</span>, <span class="st">"IEA extended energy balance data"</span>,</span>
-<span>    <span class="st">"IEA 2022 energy balance data"</span><span class="op">)</span>,</span>
-<span>  iea_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">iea_folder_path</span>,</span>
-<span>    <span class="st">"IEA Extended Energy Balances 2022 (TJ).csv"</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"IEA"</span>, <span class="va">iea_year</span>, <span class="st">"energy balance data"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  iea_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">iea_folder_path</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"IEA Extended Energy Balances"</span>,</span>
+<span>    <span class="va">iea_year</span>, <span class="st">"(TJ).csv"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  version <span class="op">=</span> <span class="st">"v1.1"</span>,</span>
 <span>  input_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">project_path</span>, <span class="st">"InputData"</span>, <span class="va">version</span><span class="op">)</span>,</span>
 <span>  output_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">project_path</span>, <span class="st">"OutputData"</span><span class="op">)</span>,</span>
 <span>  fao_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"fao_qcl_data.rds"</span><span class="op">)</span>,</span>
-<span>  ilo_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"ilo_hmw_data.rds"</span><span class="op">)</span>,</span>
+<span>  ilo_employment_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"ilo_employment_data.rds"</span><span class="op">)</span>,</span>
+<span>  ilo_working_hours_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"ilo_working_hours_data.rds"</span><span class="op">)</span>,</span>
 <span>  hmw_analysis_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"hmw_analysis_data.xlsx"</span><span class="op">)</span>,</span>
 <span>  amw_analysis_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"amw_analysis_data.xlsx"</span><span class="op">)</span>,</span>
 <span>  mw_concordance_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"FAO_ISO_MW_Mapping.xlsx"</span><span class="op">)</span>,</span>
@@ -69,12 +71,15 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 <span>  phi_constants_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"phi_constants.xlsx"</span><span class="op">)</span>,</span>
 <span>  exemplar_table_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"Exemplar_Table.xlsx"</span><span class="op">)</span>,</span>
 <span>  fu_analysis_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"FU analysis data"</span><span class="op">)</span>,</span>
-<span>  ceda_data_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"CEDA Data"</span><span class="op">)</span>,</span>
 <span>  machine_data_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"Machines - Data"</span><span class="op">)</span>,</span>
+<span>  ceda_data_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"CEDA Data"</span><span class="op">)</span>,</span>
 <span>  reports_source_folders <span class="op">=</span> <span class="st">"reports"</span>,</span>
 <span>  reports_dest_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">output_data_path</span>, <span class="st">"Reports"</span><span class="op">)</span>,</span>
 <span>  pipeline_caches_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">output_data_path</span>, <span class="st">"PipelineCaches"</span><span class="op">)</span>,</span>
-<span>  pipeline_releases_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">output_data_path</span>, <span class="st">"PipelineReleases"</span><span class="op">)</span></span>
+<span>  pipeline_releases_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">output_data_path</span>, <span class="st">"PipelineReleases"</span><span class="op">)</span>,</span>
+<span>  versions_and_products_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">pipeline_releases_folder</span>,</span>
+<span>    <span class="st">"versions and products.xlsx"</span><span class="op">)</span>,</span>
+<span>  fsep <span class="op">=</span> <span class="va">.Platform</span><span class="op">$</span><span class="va">file.sep</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -85,11 +90,15 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 
 
 <dt>cloud_storage_path</dt>
-<dd><p>The path to the user's Dropbox directory, relative to <code>home_path</code>.</p></dd>
+<dd><p>The path to the user's cloud storage directory, relative to <code>home_path</code>.</p></dd>
 
 
 <dt>project_path</dt>
 <dd><p>The path to the project directory, relative to <code>home_path</code>.</p></dd>
+
+
+<dt>iea_year</dt>
+<dd><p>The year of IEA data release, as a string.</p></dd>
 
 
 <dt>iea_folder_path</dt>
@@ -105,19 +114,23 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 
 
 <dt>input_data_path</dt>
-<dd><p>The path to the input data directory.</p></dd>
+<dd><p>The path to the input data directory, relative to <code>home_path</code>.</p></dd>
 
 
 <dt>output_data_path</dt>
-<dd><p>The path to the output data directory.</p></dd>
+<dd><p>The path to the output data directory, relative to <code>home_path</code>.</p></dd>
 
 
 <dt>fao_data_path</dt>
 <dd><p>The path to the FAO live animals data file, relative to <code>home_path</code>.</p></dd>
 
 
-<dt>ilo_data_path</dt>
+<dt>ilo_employment_data_path</dt>
 <dd><p>The path to the ILO employment data file, relative to <code>home_path</code>.</p></dd>
+
+
+<dt>ilo_working_hours_data_path</dt>
+<dd><p>The path to the ILO working hours data file, relative to <code>home_path</code>.</p></dd>
 
 
 <dt>hmw_analysis_data_path</dt>
@@ -152,12 +165,12 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 <dd><p>The path to the folder containing final-to-useful exergy information, relative to <code>home_path</code>.</p></dd>
 
 
-<dt>ceda_data_folder</dt>
-<dd><p>The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to <code>home_path</code>.</p></dd>
-
-
 <dt>machine_data_folder</dt>
 <dd><p>The path to the folder containing machine-specific efficiencies, relative to <code>home_path</code>.</p></dd>
+
+
+<dt>ceda_data_folder</dt>
+<dd><p>The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to <code>home_path</code>.</p></dd>
 
 
 <dt>reports_source_folders</dt>
@@ -169,15 +182,26 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 
 
 <dt>pipeline_caches_folder</dt>
-<dd><p>The path to a folder containing zipped versions of the pipeline cache.
+<dd><p>The path to a folder containing zipped versions of the pipeline cache, relative to <code>home_path</code>.
 Data are stored as .zip files
 Default is "PipelineCaches" relative to <code>project_path</code>.</p></dd>
 
 
 <dt>pipeline_releases_folder</dt>
-<dd><p>The path to a folder containing released versions of the PSUT target data frame.
+<dd><p>The path to a folder containing released versions of the PSUT target data frame, relative to <code>home_path</code>.
 Data are stored using the <code>pins</code> package.
 Default is "PipelineReleases" relative to <code>project_path</code>.</p></dd>
+
+
+<dt>versions_and_products_path</dt>
+<dd><p>The path to the versions and products file containing lists of all versions and products,
+relative to <code>project_path</code>.
+Default is "versions_and_products.xlsx".</p></dd>
+
+
+<dt>fsep</dt>
+<dd><p>The file separator used when constructing paths.
+Default is <code>.Platform$file.sep</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -185,14 +209,15 @@ Default is "PipelineReleases" relative to <code>project_path</code>.</p></dd>
     
 
 <p>A named list containing paths to important directories and files, including:</p><ul><li><p>home_pathThe absolute path to the user's home.</p></li>
-<li><p>cloud_storage_pathThe absolute path of the user's Dropbox folder.</p></li>
+<li><p>cloud_storage_pathThe absolute path of the user's cloud storage folder.</p></li>
 <li><p>project_pathThe absolute path to the project folder.</p></li>
 <li><p>iea_folder_pathThe absolute path to a folder containing IEA data.</p></li>
 <li><p>iea_data_pathThe absolute path to the IEA data file for the OECD countries.</p></li>
 <li><p>input_data_pathThe absolute path to the input data directory.</p></li>
 <li><p>output_data_pathThe absolute path to the output data directory.</p></li>
 <li><p>fao_data_pathThe absolute path to the FAO live animals data file.</p></li>
-<li><p>ilo_data_pathThe absolute path to the ILO employment data file.</p></li>
+<li><p>ilo_employment_data_pathThe absolute path to the ILO employment data file.</p></li>
+<li><p>ilo_working_hours_data_pathThe absolute path to the ILO working hours data file.</p></li>
 <li><p>hmw_analysis_data_pathThe absolute path to the human muscle work analysis file.</p></li>
 <li><p>amw_analysis_data_pathThe absolute path to the animal muscle work file.</p></li>
 <li><p>mw_concordance_pathThe absolute path to the muscle work country concordance file.</p></li>
@@ -207,10 +232,17 @@ Default is "PipelineReleases" relative to <code>project_path</code>.</p></dd>
 <li><p>reports_dest_folderA directory into which completed reports will be written.</p></li>
 <li><p>pipeline_caches_folderThe path to a folder that stores zipped versions of the pipeline cache.</p></li>
 <li><p>pipeline_releases_folderThe path to a folder that stores releases of various targets.</p></li>
+<li><p>versions_and_products_pathThe path to the versions and products file.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The default argument for <code>home_path</code> gets the value for <code><a href="https://fs.r-lib.org/reference/path_expand.html" class="external-link">fs::path_home()</a></code>.</p>
+<p>Although this function is called <code>get_abs_paths()</code>,
+it can return relative paths if both <code>home_path</code> and <code>cloud_storage_path</code>
+are set to "" (an empty string) and
+<code>project_path</code> is set to the root folder of the project.
+In that event, the leading file separator (<code>fsep</code>) is removed
+from the path (if it exists).</p>
     </div>
 
     <div class="section level2">
@@ -240,8 +272,11 @@ Default is "PipelineReleases" relative to <code>project_path</code>.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $fao_data_path</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/fao_qcl_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/ilo_hmw_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_employment_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/ilo_employment_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_working_hours_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/ilo_working_hours_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hmw_analysis_data_path</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/hmw_analysis_data.xlsx"</span>
@@ -284,6 +319,87 @@ Default is "PipelineReleases" relative to <code>project_path</code>.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $pipeline_releases_folder</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/OutputData/PipelineReleases"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $versions_and_products_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/OutputData/PipelineReleases/versions and products.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span><span class="co"># Set relative paths with empty strings</span></span></span>
+<span class="r-in"><span><span class="fu">get_abs_paths</span><span class="op">(</span>home_path <span class="op">=</span> <span class="st">""</span>, cloud_storage_path <span class="op">=</span> <span class="st">""</span>,</span></span>
+<span class="r-in"><span>              project_path <span class="op">=</span> <span class="st">"my_project_path"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $home_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $cloud_storage_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $project_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $iea_folder_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/IEA extended energy balance data/IEA 2022 energy balance data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $input_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $output_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/OutputData"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $iea_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/IEA extended energy balance data/IEA 2022 energy balance data/IEA Extended Energy Balances 2022 (TJ).csv"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $fao_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/fao_qcl_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_employment_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/ilo_employment_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_working_hours_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/ilo_working_hours_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $hmw_analysis_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/hmw_analysis_data.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $amw_analysis_data_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/amw_analysis_data.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $mw_concordance_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/FAO_ISO_MW_Mapping.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $country_concordance_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/Country_Concordance_Full.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $aggregation_mapping_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/aggregation_mapping.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $exemplar_table_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/Exemplar_Table.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $phi_constants_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/phi_constants.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $fu_analysis_folder</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/FU analysis data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $machine_data_folder</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/Machines - Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ceda_data_folder</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/CEDA Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $reports_source_folders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "reports"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $reports_dest_folder</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/OutputData/Reports"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $pipeline_caches_folder</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/OutputData/PipelineCaches"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $pipeline_releases_folder</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/OutputData/PipelineReleases"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $versions_and_products_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/OutputData/PipelineReleases/versions and products.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
