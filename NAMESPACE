@@ -2,6 +2,7 @@
 
 export("%>%")
 export(get_abs_paths)
-export(pin_names)
+export(pin_versions)
+export(read_pin_version)
 importFrom(fs,path_home)
 importFrom(magrittr,"%>%")
