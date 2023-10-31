@@ -1,0 +1,27 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Recca
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Matthew
+    family-names: Heun
+    email: matthew.heun@me.com
+    affiliation: Calvin University
+    orcid: 'https://orcid.org/0000-0002-7438-214X'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.5228359
+    description: DOI for all versions of the package
+repository-code: 'https://github.com/MatthewHeun/Recca'
+url: 'https://matthewheun.github.io/Recca/'
+abstract: >-
+  In the context of the broader CL-PFU database,
+  the PFUSetup package provides information on input files
+  and results common to all machines running
+  the CL-PFU database code.
+license: MIT
