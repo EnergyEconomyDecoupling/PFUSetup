@@ -12,7 +12,7 @@ read_pin_version(
 )
 }
 \arguments{
-\item{pin_name}{The string name of the pin to be read. Can be the pin name or a product name. See examples.}
+\item{pin_name}{The string name of the pin to be read.}
 
 \item{database_version}{A string, prefixed with "v" for the version of interest.
 Any number will be prefixed by "v" and converted to a string internally.}

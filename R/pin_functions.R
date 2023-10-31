@@ -41,25 +41,21 @@ pin_versions <- function(database_version,
 
   # Get the version table.
   cols <- readxl::read_excel(path = versions_and_products_path, sheet = version_table_tab) |>
-    dplyr::select(dplyr::any_of(c(product_column, pin_name_column, database_version)))
+    dplyr::select(dplyr::any_of(c(pin_name_column, database_version)))
 
   if (!(database_version %in% names(cols))) {
     stop(paste("Unknown database version:", database_version))
   }
 
-  # Create an outgoing list containing version strings
-  # named with product names and with pin names.
-  c(cols[[database_version]] |>
-      magrittr::set_names(cols[[pin_name_column]]),
-    cols[[database_version]] |>
-      magrittr::set_names(cols[[product_column]])) |>
+  cols[[database_version]] |>
+      magrittr::set_names(cols[[pin_name_column]]) |>
     as.list()
 }
 
 
 #' Read a version of a pinned CL-PFU database product
 #'
-#' @param pin_name The string name of the pin to be read. Can be the pin name or a product name. See examples.
+#' @param pin_name The string name of the pin to be read.
 #' @param database_version A string, prefixed with "v" for the version of interest.
 #'                         Any number will be prefixed by "v" and converted to a string internally.
 #' @param pin_version_string The version string for pin `pin_name` associated with `database_version`.
@@ -81,7 +77,13 @@ read_pin_version <- function(pin_name,
                              pin_version_string = pin_versions(database_version)[[pin_name]],
                              pipeline_releases_folder = get_abs_paths()[["pipeline_releases_folder"]]) {
 
-  pipeline_releases_folder |>
-    pins::board_folder(versioned = TRUE) |>
+  pinboard <- pipeline_releases_folder |>
+    pins::board_folder(versioned = TRUE)
+  # Check if the pin exists
+  if (! pins::pin_exists(pinboard, name = pin_name)) {
+    stop(paste("CL-PFU database product", pin_name, "does not exist."))
+  }
+
+  pinboard |>
     pins::pin_read(name = pin_name, version = pin_version_string)
 }
