@@ -1,24 +1,27 @@
 Package: PFUSetup
 Title: Functions to Set Up the Directory Structure of the PFU Database
 Version: 0.1.15
-Date: 2023-08-18
+Date: 2023-10-31
 Authors@R: 
     person(given = "Matthew",
            family = "Heun",
            role = c("aut", "cre"),
            email = "matthew.heun@me.com",
            comment = c(ORCID = "0000-0002-7438-214X"))
-Description: In the context of the broader Primary-Final-Useful project, 
-             the PFUSetup package provides directory and other information
-             common to all machines running the PFU code.
+Description: In the context of the broader CL-PFU database, 
+             the PFUSetup package provides information on input files 
+             and results common to all machines running 
+             the CL-PFU database code.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
+    dplyr,
     fs,
-    magrittr
+    magrittr, 
+    pins, 
+    readxl
 Suggests: 
     covr,
     spelling,
