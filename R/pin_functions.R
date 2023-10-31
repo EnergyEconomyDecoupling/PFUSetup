@@ -59,9 +59,11 @@ pin_versions <- function(database_version,
 
 #' Read a version of a pinned CL-PFU database product
 #'
+#' @param pin_name The string name of the pin to be read. Can be the pin name or a product name. See examples.
 #' @param database_version A string, prefixed with "v" for the version of interest.
 #'                         Any number will be prefixed by "v" and converted to a string internally.
-#' @param pin_name The string name of the pin to be read. Can be the pin name or a product name. See examples.
+#' @param pin_version_string The version string for pin `pin_name` associated with `database_version`.
+#'                           Default is `pin_versions(database_version)[[pin_name]]`.
 #' @param pipeline_releases_folder The path to the pipeline releases folder.
 #'                                 Default is `get_abs_paths()[["pipeline_releases_folder"]]`.
 #'
@@ -73,10 +75,9 @@ pin_versions <- function(database_version,
 #' \dontrun{
 #' read_pin_version(database_version = 1.2, pin_name = "phi_vecs") |>
 #'   head()
-#'
 #'}
-read_pin_version <- function(database_version,
-                             pin_name,
+read_pin_version <- function(pin_name,
+                             database_version,
                              pin_version_string = pin_versions(database_version)[[pin_name]],
                              pipeline_releases_folder = get_abs_paths()[["pipeline_releases_folder"]]) {
 
