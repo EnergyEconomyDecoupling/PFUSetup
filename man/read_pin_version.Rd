@@ -17,6 +17,9 @@ read_pin_version(
 \item{database_version}{A string, prefixed with "v" for the version of interest.
 Any number will be prefixed by "v" and converted to a string internally.}
 
+\item{pin_version_string}{The version string for pin \code{pin_name} associated with \code{database_version}.
+Default is \code{pin_versions(database_version)[[pin_name]]}.}
+
 \item{pipeline_releases_folder}{The path to the pipeline releases folder.
 Default is \code{get_abs_paths()[["pipeline_releases_folder"]]}.}
 }
@@ -28,8 +31,7 @@ Read a version of a pinned CL-PFU database product
 }
 \examples{
 \dontrun{
-read_pin_version(database_version = 1.2, pin_name = "phi_vecs") |>
+read_pin_version(pin_name = "phi_vecs", database_version = 1.2) |>
   head()
-
 }
 }

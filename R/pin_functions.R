@@ -41,7 +41,7 @@ pin_versions <- function(database_version,
 
   # Get the version table.
   cols <- readxl::read_excel(path = versions_and_products_path, sheet = version_table_tab) |>
-    dplyr::select(tidyselect::any_of(c(product_column, pin_name_column, database_version)))
+    dplyr::select(dplyr::any_of(c(product_column, pin_name_column, database_version)))
 
   if (!(database_version %in% names(cols))) {
     stop(paste("Unknown database version:", database_version))
