@@ -17,8 +17,8 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.5228359
     description: DOI for all versions of the package
-repository-code: 'https://github.com/MatthewHeun/Recca'
-url: 'https://matthewheun.github.io/Recca/'
+repository-code: 'https://github.com/EnergyEconomyDecoupling/PFUSetup'
+url: 'https://energyeconomydecoupling.github.io/PFUSetup/'
 abstract: >-
   In the context of the broader CL-PFU database,
   the PFUSetup package provides information on input files
