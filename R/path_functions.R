@@ -34,6 +34,7 @@
 #' @param fu_analysis_folder The path to the folder containing final-to-useful exergy information, relative to `home_path`.
 #' @param machine_data_folder The path to the folder containing machine-specific efficiencies, relative to `home_path`.
 #' @param ceda_data_folder The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to `home_path`.
+#' @param exiobase_energy_flows_path The path to exiobase energy flows.
 #' @param reports_source_folders A string vector of paths to folders containing report sources.
 #' @param reports_dest_folder The path to the folder into which reports will be written, relative to `home_path`.
 #' @param pipeline_caches_folder The path to a folder containing zipped versions of the pipeline cache, relative to `home_path`.
