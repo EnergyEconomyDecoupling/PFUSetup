@@ -13,7 +13,7 @@ get_abs_paths(
     paste("IEA", iea_year, "energy balance data")),
   iea_data_path = file.path(iea_folder_path, paste("IEA Extended Energy Balances",
     iea_year, "(TJ).csv")),
-  version = "v1.1",
+  version = "v1.2",
   input_data_path = file.path(project_path, "InputData", version),
   output_data_path = file.path(project_path, "OutputData"),
   fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
@@ -29,6 +29,8 @@ get_abs_paths(
   fu_analysis_folder = file.path(input_data_path, "FU analysis data"),
   machine_data_folder = file.path(input_data_path, "Machines - Data"),
   ceda_data_folder = file.path(input_data_path, "CEDA Data"),
+  exiobase_energy_flows_path = file.path(input_data_path,
+    "exiobase_energy_flows_concordance.xlsx"),
   reports_source_folders = "reports",
   reports_dest_folder = file.path(output_data_path, "Reports"),
   pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
@@ -125,6 +127,7 @@ A named list containing paths to important directories and files, including:
 \item{fu_analysis_folder}{The absolute path to the folder containing final-to-useful exergy information.}
 \item{machine_data_folder}{The absolute path to the folder containing machine-specific efficiency information.}
 \item{ceda_data_folder}{The absolute path to the folder containing CEDA environment information.}
+\item{exiobase_energy_flows_path}{The absolute path to the folder containing Exiobase energy flows information.}
 \item{reports_source_folders}{A vector of absolute paths to folders containing source reports.}
 \item{reports_dest_folder}{A directory into which completed reports will be written.}
 \item{pipeline_caches_folder}{The path to a folder that stores zipped versions of the pipeline cache.}

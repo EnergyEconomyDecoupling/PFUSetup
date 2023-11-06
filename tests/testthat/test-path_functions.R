@@ -59,6 +59,9 @@ test_that("get_abs_paths() works as expected", {
   # Report destination folder
   expect_true(endsWith(paths$reports_dest_folder, "Reports"))
 
+  # exiobase file path
+  expect_true(endsWith(paths$exiobase_energy_flows_path, "exiobase_energy_flows_concordance.xlsx"))
+
   # Workflow output folder
   expect_true(endsWith(paths$pipeline_caches_folder, "PipelineCaches"))
 
@@ -109,6 +112,9 @@ test_that("Files exist", {
 
   # CEDA data folder
   expect_true(file.exists(paths$ceda_data_folder))
+
+  # Exiobase data folder
+  expect_true(file.exists(paths$exiobase_energy_flows_path))
 
   # Report destination folder
   expect_true(file.exists(paths$reports_dest_folder))
