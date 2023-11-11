@@ -1,7 +1,7 @@
 Package: PFUSetup
 Title: Functions to Set Up the Directory Structure of the PFU Database
-Version: 0.1.15
-Date: 2023-10-31
+Version: 0.1.16
+Date: 2023-11-06
 Authors@R: 
     person(given = "Matthew",
            family = "Heun",
@@ -20,7 +20,6 @@ Imports:
     dplyr,
     fs,
     magrittr, 
-    pins, 
     readxl
 Suggests: 
     covr,

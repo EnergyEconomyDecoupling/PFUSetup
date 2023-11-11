@@ -7,7 +7,13 @@ output: html_document
 Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zenodo.5228359), 
 which always resolves to the latest release.
 
-# PFUSetup 0.1.15
+# PFUSetup 0.1.16
+
+* `pin_versions()` now moved to package PFUPipelineTools.
+* Paths to Exiobase energy flows now added.
+
+
+# PFUSetup 0.1.15 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10059871.svg)](https://doi.org/10.5281/zenodo.10059871)
 
 * Added new functions `pin_versions()` and `read_pin_version()` 
   to assist development of computational pipelines.
