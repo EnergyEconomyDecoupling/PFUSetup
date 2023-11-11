@@ -31,15 +31,3 @@ test_that("pin_versions() works as expected", {
   expect_equal(pin_vs_string$agg_eta_pfu_csv, "20230621T172311Z-d4cbf")
   expect_equal(pin_vs_string$psut_re_all_chop_all_ds_all_gr_all, "20230621T124407Z-c5f3c")
 })
-
-
-test_that("read_pin_version() works as expected", {
-
-  testthat::skip_on_ci()
-
-  phi_vecs <- read_pin_version(pin_name = "phi_vecs", database_version = 1.2)
-  expect_equal(names(phi_vecs), c("Country", "Year", "phi"))
-
-  phi_vecs_string <- read_pin_version(pin_name = "phi_vecs", database_version = "v1.2")
-  expect_equal(names(phi_vecs), c("Country", "Year", "phi"))
-})

@@ -20,7 +20,6 @@ Imports:
     dplyr,
     fs,
     magrittr, 
-    pins, 
     readxl
 Suggests: 
     covr,
