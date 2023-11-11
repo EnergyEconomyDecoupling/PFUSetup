@@ -85,6 +85,8 @@ get_abs_paths(
 
 \item{ceda_data_folder}{The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to \code{home_path}.}
 
+\item{exiobase_energy_flows_path}{The path to exiobase energy flows.}
+
 \item{reports_source_folders}{A string vector of paths to folders containing report sources.}
 
 \item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{home_path}.}
