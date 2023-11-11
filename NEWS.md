@@ -9,6 +9,7 @@ which always resolves to the latest release.
 
 # PFUSetup 0.1.16
 
+* `pin_versions()` now moved to package PFUPipelineTools.
 * Paths to Exiobase energy flows now added.
 
 
