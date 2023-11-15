@@ -13,7 +13,7 @@
 #'                                   that contains a concordance table of versions
 #'                                   and pin names.
 #'                                   Default is `get_abs_paths()[["versions_and_products_path"]]`.
-#' @param version_table_tab The name of the `version_table` tab in the
+#' @param product_table_tab The name of the `version_table` tab in the
 #'                          versions and products file.
 #'                          Default is "version_table".
 #' @param product_column The name of the product column in the version table.
@@ -32,7 +32,7 @@
 #' pin_versions(1.1)
 pin_versions <- function(database_version,
                          versions_and_products_path = get_abs_paths()[["versions_and_products_path"]],
-                         version_table_tab = "version_table",
+                         product_table_tab = "product_table",
                          product_column = "product",
                          pin_name_column = "pin_name") {
   if (is.numeric(database_version)) {
@@ -40,7 +40,7 @@ pin_versions <- function(database_version,
   }
 
   # Get the version table.
-  cols <- readxl::read_excel(path = versions_and_products_path, sheet = version_table_tab) |>
+  cols <- readxl::read_excel(path = versions_and_products_path, sheet = product_table_tab) |>
     dplyr::select(dplyr::any_of(c(pin_name_column, database_version)))
 
   if (!(database_version %in% names(cols))) {

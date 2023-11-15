@@ -12,7 +12,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway."><!-- mathj
     
     <a class="navbar-brand me-2" href="../index.html">PFUSetup</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.15</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.17</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +57,7 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"IEA"</span>, <span class="va">iea_year</span>, <span class="st">"energy balance data"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>  iea_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">iea_folder_path</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"IEA Extended Energy Balances"</span>,</span>
 <span>    <span class="va">iea_year</span>, <span class="st">"(TJ).csv"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  version <span class="op">=</span> <span class="st">"v1.1"</span>,</span>
+<span>  version <span class="op">=</span> <span class="st">"v1.2"</span>,</span>
 <span>  input_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">project_path</span>, <span class="st">"InputData"</span>, <span class="va">version</span><span class="op">)</span>,</span>
 <span>  output_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">project_path</span>, <span class="st">"OutputData"</span><span class="op">)</span>,</span>
 <span>  fao_data_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"fao_qcl_data.rds"</span><span class="op">)</span>,</span>
@@ -73,6 +73,8 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 <span>  fu_analysis_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"FU analysis data"</span><span class="op">)</span>,</span>
 <span>  machine_data_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"Machines - Data"</span><span class="op">)</span>,</span>
 <span>  ceda_data_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>, <span class="st">"CEDA Data"</span><span class="op">)</span>,</span>
+<span>  exiobase_energy_flows_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">input_data_path</span>,</span>
+<span>    <span class="st">"exiobase_energy_flows_concordance.xlsx"</span><span class="op">)</span>,</span>
 <span>  reports_source_folders <span class="op">=</span> <span class="st">"reports"</span>,</span>
 <span>  reports_dest_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">output_data_path</span>, <span class="st">"Reports"</span><span class="op">)</span>,</span>
 <span>  pipeline_caches_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">output_data_path</span>, <span class="st">"PipelineCaches"</span><span class="op">)</span>,</span>
@@ -173,6 +175,10 @@ and is appropriate for the Fellowship project for Dr. Paul Brockway.</p>
 <dd><p>The path to the folder containing CEDA (Centre for Environmental Data Analysis) data, relative to <code>home_path</code>.</p></dd>
 
 
+<dt>exiobase_energy_flows_path</dt>
+<dd><p>The path to exiobase energy flows.</p></dd>
+
+
 <dt>reports_source_folders</dt>
 <dd><p>A string vector of paths to folders containing report sources.</p></dd>
 
@@ -228,6 +234,7 @@ Default is <code>.Platform$file.sep</code>.</p></dd>
 <li><p>fu_analysis_folderThe absolute path to the folder containing final-to-useful exergy information.</p></li>
 <li><p>machine_data_folderThe absolute path to the folder containing machine-specific efficiency information.</p></li>
 <li><p>ceda_data_folderThe absolute path to the folder containing CEDA environment information.</p></li>
+<li><p>exiobase_energy_flows_pathThe absolute path to the folder containing Exiobase energy flows information.</p></li>
 <li><p>reports_source_foldersA vector of absolute paths to folders containing source reports.</p></li>
 <li><p>reports_dest_folderA directory into which completed reports will be written.</p></li>
 <li><p>pipeline_caches_folderThe path to a folder that stores zipped versions of the pipeline cache.</p></li>
@@ -261,7 +268,7 @@ from the path (if it exists).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2022 energy balance data"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $input_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $output_data_path</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/OutputData"</span>
@@ -270,43 +277,46 @@ from the path (if it exists).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/IEA extended energy balance data/IEA 2022 energy balance data/IEA Extended Energy Balances 2022 (TJ).csv"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $fao_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/fao_qcl_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/fao_qcl_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_employment_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/ilo_employment_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/ilo_employment_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_working_hours_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/ilo_working_hours_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/ilo_working_hours_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hmw_analysis_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/hmw_analysis_data.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/hmw_analysis_data.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $amw_analysis_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/amw_analysis_data.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/amw_analysis_data.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $mw_concordance_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/FAO_ISO_MW_Mapping.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/FAO_ISO_MW_Mapping.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $country_concordance_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/Country_Concordance_Full.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/Country_Concordance_Full.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $aggregation_mapping_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/aggregation_mapping.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/aggregation_mapping.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $exemplar_table_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/Exemplar_Table.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/Exemplar_Table.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $phi_constants_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/phi_constants.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/phi_constants.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $fu_analysis_folder</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/FU analysis data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/FU analysis data"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $machine_data_folder</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/Machines - Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/Machines - Data"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ceda_data_folder</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.1/CEDA Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/CEDA Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $exiobase_energy_flows_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Users/mkh2/Dropbox/Fellowship 1960-2015 PFU database/InputData/v1.2/exiobase_energy_flows_concordance.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $reports_source_folders</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "reports"</span>
@@ -339,7 +349,7 @@ from the path (if it exists).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/IEA extended energy balance data/IEA 2022 energy balance data"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $input_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $output_data_path</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/OutputData"</span>
@@ -348,43 +358,46 @@ from the path (if it exists).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/IEA extended energy balance data/IEA 2022 energy balance data/IEA Extended Energy Balances 2022 (TJ).csv"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $fao_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/fao_qcl_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/fao_qcl_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_employment_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/ilo_employment_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/ilo_employment_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ilo_working_hours_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/ilo_working_hours_data.rds"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/ilo_working_hours_data.rds"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $hmw_analysis_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/hmw_analysis_data.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/hmw_analysis_data.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $amw_analysis_data_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/amw_analysis_data.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/amw_analysis_data.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $mw_concordance_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/FAO_ISO_MW_Mapping.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/FAO_ISO_MW_Mapping.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $country_concordance_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/Country_Concordance_Full.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/Country_Concordance_Full.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $aggregation_mapping_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/aggregation_mapping.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/aggregation_mapping.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $exemplar_table_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/Exemplar_Table.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/Exemplar_Table.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $phi_constants_path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/phi_constants.xlsx"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/phi_constants.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $fu_analysis_folder</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/FU analysis data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/FU analysis data"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $machine_data_folder</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/Machines - Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/Machines - Data"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $ceda_data_folder</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.1/CEDA Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/CEDA Data"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $exiobase_energy_flows_path</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "my_project_path/InputData/v1.2/exiobase_energy_flows_concordance.xlsx"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $reports_source_folders</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "reports"</span>

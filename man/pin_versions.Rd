@@ -7,7 +7,7 @@
 pin_versions(
   database_version,
   versions_and_products_path = get_abs_paths()[["versions_and_products_path"]],
-  version_table_tab = "version_table",
+  product_table_tab = "product_table",
   product_column = "product",
   pin_name_column = "pin_name"
 )
@@ -21,7 +21,7 @@ that contains a concordance table of versions
 and pin names.
 Default is \code{get_abs_paths()[["versions_and_products_path"]]}.}
 
-\item{version_table_tab}{The name of the \code{version_table} tab in the
+\item{product_table_tab}{The name of the \code{version_table} tab in the
 versions and products file.
 Default is "version_table".}
 
