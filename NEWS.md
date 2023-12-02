@@ -8,6 +8,8 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+# PFUSetup 0.1.18 (2023-12-02)
+
 * Added code of conduct and contributing pages to documentation.
 * No new tests.
     * Still at 77 tests, all passing.
