@@ -8,6 +8,12 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+* Added code of conduct and contributing pages to documentation.
+* No new tests.
+    * Still at 77 tests, all passing.
+    * Test coverage remains at 100%.
+
+
 # PFUSetup 0.1.17 (2023-11-15) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10137351.svg)](https://doi.org/10.5281/zenodo.10137351)
 
 * Changed name of tab in versions and products.xlsx file.
