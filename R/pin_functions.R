@@ -28,8 +28,10 @@
 #' @export
 #'
 #' @examples
-#' pin_versions("v1.1")
-#' pin_versions(1.1)
+#' \dontrun{
+#' pin_versions("v1.2")
+#' pin_versions(1.2)
+#' }
 pin_versions <- function(database_version,
                          versions_and_products_path = get_abs_paths()[["versions_and_products_path"]],
                          product_table_tab = "product_table",
