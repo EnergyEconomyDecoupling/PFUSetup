@@ -8,6 +8,8 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+# PFUSetup 0.1.20 (2023-12-10)
+
 * Fixed a bug in examples running on GitHub Actions.
 * No new tests.
     * Still at 77 tests, all passing.
