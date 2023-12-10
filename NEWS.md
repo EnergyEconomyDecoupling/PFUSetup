@@ -8,6 +8,10 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+
+* Moved pkgdown website to `gh-pages` branch.
+
+
 # PFUSetup 0.1.18 (2023-12-02) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10251609.svg)](https://doi.org/10.5281/zenodo.10251609)
 
 * Added code of conduct and contributing pages to documentation.
