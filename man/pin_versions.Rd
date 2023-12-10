@@ -46,6 +46,8 @@ The return value is a named list where the values are the pin version strings
 and the name are either product names or pin version strings.
 }
 \examples{
-pin_versions("v1.1")
-pin_versions(1.1)
+\dontrun{
+pin_versions("v1.2")
+pin_versions(1.2)
+}
 }

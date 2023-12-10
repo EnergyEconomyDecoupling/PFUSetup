@@ -8,8 +8,15 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+# PFUSetup 0.1.20 (2023-12-10)
 
-# PFUSetup 0.1.19 (2023-12-10)
+* Fixed a bug in examples running on GitHub Actions.
+* No new tests.
+    * Still at 77 tests, all passing.
+    * Test coverage remains at 100%.
+
+
+# PFUSetup 0.1.19 (2023-12-10) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10342612.svg)](https://doi.org/10.5281/zenodo.10342612)
 
 * Moved pkgdown website to `gh-pages` branch.
 * No new tests.
