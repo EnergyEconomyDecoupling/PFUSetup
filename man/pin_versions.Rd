@@ -47,7 +47,7 @@ and the name are either product names or pin version strings.
 }
 \examples{
 \dontrun{
-pin_versions("v1.1")
-pin_versions(1.1)
+pin_versions("v1.2")
+pin_versions(1.2)
 }
 }

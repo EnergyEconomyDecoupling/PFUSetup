@@ -1,6 +1,6 @@
 Package: PFUSetup
 Title: Functions to Set Up the Directory Structure of the PFU Database
-Version: 0.1.19
+Version: 0.1.20
 Date: 2023-12-10
 Authors@R: 
     person(given = "Matthew",
