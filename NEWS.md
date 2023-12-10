@@ -12,6 +12,9 @@ which always resolves to the latest release.
 # PFUSetup 0.1.19 (2023-12-10)
 
 * Moved pkgdown website to `gh-pages` branch.
+* No new tests.
+    * Still at 77 tests, all passing.
+    * Test coverage remains at 100%.
 
 
 # PFUSetup 0.1.18 (2023-12-02) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10251609.svg)](https://doi.org/10.5281/zenodo.10251609)
