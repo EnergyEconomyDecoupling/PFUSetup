@@ -9,6 +9,8 @@ which always resolves to the latest release.
 
 
 
+# PFUSetup 0.1.19 (2023-12-10)
+
 * Moved pkgdown website to `gh-pages` branch.
 
 
