@@ -14,7 +14,6 @@ knitr::opts_chunk$set(
 ```
 
 
-# PFUSetup
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/Recca)](https://cran.r-project.org/package=PFUSetup)
@@ -26,14 +25,28 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/EnergyEconomyDecoupling/PFUSetup/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnergyEconomyDecoupling/PFUSetup/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-PFUSetup automates the setup process for the PFU database project.
-Well, at least it figures out the locations of several directories
-common to all installations of the PFU database in a platform- and machine-independent manner.
+
+# PFUSetup
+
+
+## Statement of need
+
+Several packages are involved in creating the CL-PFU database.
+Each of those packages needs access to directories and files
+on a variety of machines. 
+A way to organize and standardize those directory and file 
+paths was needed. 
+
+This package (`PFUSetup`) addresses that need.
+`PFUSetup` automates the setup process for the CL-PFU database
+by finding the locations of several directories
+common to all installations of the CL-PFU database 
+in a platform- and machine-independent manner.
 
 
 ## Installation
 
-You can install the latest version of PFUSetup from [GitHub](https://github.com/) with:
+You can install the latest version of `PFUSetup` from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
