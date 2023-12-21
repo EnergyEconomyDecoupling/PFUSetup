@@ -32,7 +32,7 @@
     
     <a class="navbar-brand me-2" href="index.html">PFUSetup</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.20</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.21</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,16 +59,20 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><div class="section level1">
+  <main id="main" class="col-md-9">
+<div class="section level1">
 <div class="page-header"><h1 id="pfusetup">PFUSetup<a class="anchor" aria-label="anchor" href="#pfusetup"></a>
 </h1></div>
-<!-- badges: start -->
-
-<p>PFUSetup automates the setup process for the PFU database project. Well, at least it figures out the locations of several directories common to all installations of the PFU database in a platform- and machine-independent manner.</p>
+<div class="section level2">
+<h2 id="statement-of-need">Statement of need<a class="anchor" aria-label="anchor" href="#statement-of-need"></a>
+</h2>
+<p>Several packages are involved in creating the CL-PFU database. Each of those packages needs access to directories and files on a variety of machines. A way to organize and standardize those directory and file paths was needed.</p>
+<p>This package (<code>PFUSetup</code>) addresses that need. <code>PFUSetup</code> automates the setup process for the CL-PFU database by finding the locations of several directories common to all installations of the CL-PFU database in a platform- and machine-independent manner.</p>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the latest version of PFUSetup from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the latest version of <code>PFUSetup</code> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"EnergyEconomyDecoupling/PFUSetup"</span><span class="op">)</span></span></code></pre></div>
@@ -87,6 +91,7 @@
 <p>Find more information, including vignettes and function documentation, at <a href="https://EnergyEconomyDecoupling.github.io/PFUSetup/" class="external-link uri">https://EnergyEconomyDecoupling.github.io/PFUSetup/</a>.</p>
 </div>
 </div>
+
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
@@ -126,6 +131,7 @@
 <li><a href="https://github.com/EnergyEconomyDecoupling/PFUSetup/actions" class="external-link"><img src="https://github.com/EnergyEconomyDecoupling/PFUSetup/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup?branch=master" class="external-link"><img src="https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://zenodo.org/badge/latestdoi/289910348" class="external-link"><img src="https://zenodo.org/badge/289910348.svg" alt="DOI"></a></li>
+<li><a href="https://github.com/EnergyEconomyDecoupling/PFUSetup/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/EnergyEconomyDecoupling/PFUSetup/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 
