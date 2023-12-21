@@ -1,8 +1,5 @@
 
 <!-- README.md is generated from README.Rmd. Please edit README.Rmd -->
-
-# PFUSetup
-
 <!-- badges: start -->
 
 [![CRAN
@@ -15,16 +12,26 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Codecov test
 coverage](https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup/branch/master/graph/badge.svg)](https://codecov.io/gh/EnergyEconomyDecoupling/PFUSetup?branch=master)
 [![DOI](https://zenodo.org/badge/289910348.svg)](https://zenodo.org/badge/latestdoi/289910348)
+[![R-CMD-check](https://github.com/EnergyEconomyDecoupling/PFUSetup/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnergyEconomyDecoupling/PFUSetup/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-PFUSetup automates the setup process for the PFU database project. Well,
-at least it figures out the locations of several directories common to
-all installations of the PFU database in a platform- and
-machine-independent manner.
+# PFUSetup
+
+## Statement of need
+
+Several packages are involved in creating the CL-PFU database. Each of
+those packages needs access to directories and files on a variety of
+machines. A way to organize and standardize those directory and file
+paths was needed.
+
+This package (`PFUSetup`) addresses that need. `PFUSetup` automates the
+setup process for the CL-PFU database by finding the locations of
+several directories common to all installations of the CL-PFU database
+in a platform- and machine-independent manner.
 
 ## Installation
 
-You can install the latest version of PFUSetup from
+You can install the latest version of `PFUSetup` from
 [GitHub](https://github.com/) with:
 
 ``` r
