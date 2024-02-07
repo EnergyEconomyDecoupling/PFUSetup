@@ -21,6 +21,7 @@
 #' @param version The version of the input data.
 #' @param input_data_path The path to the input data directory, relative to `home_path`.
 #' @param output_data_path The path to the output data directory, relative to `home_path`.
+#' @param schema_path The path to the database schema file, relative to `home_path`.
 #' @param fao_data_path The path to the FAO live animals data file, relative to `home_path`.
 #' @param ilo_employment_data_path The path to the ILO employment data file, relative to `home_path`.
 #' @param ilo_working_hours_data_path The path to the ILO working hours data file, relative to `home_path`.
@@ -46,6 +47,8 @@
 #' @param versions_and_products_path The path to the versions and products file containing lists of all versions and products,
 #'                                   relative to `project_path`.
 #'                                   Default is "versions_and_products.xlsx".
+#' @param scheme_path The path to the database schema file relative to `project_path`.
+#'                    Default is
 #' @param fsep The file separator used when constructing paths.
 #'             Default is `.Platform$file.sep`.
 #'
@@ -58,6 +61,7 @@
 #'  \item{iea_data_path}{The absolute path to the IEA data file for the OECD countries.}
 #'  \item{input_data_path}{The absolute path to the input data directory.}
 #'  \item{output_data_path}{The absolute path to the output data directory.}
+#'  \item{schema_path}{The absolute path to a Excel schema file.}
 #'  \item{fao_data_path}{The absolute path to the FAO live animals data file.}
 #'  \item{ilo_employment_data_path}{The absolute path to the ILO employment data file.}
 #'  \item{ilo_working_hours_data_path}{The absolute path to the ILO working hours data file.}
@@ -101,6 +105,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
                           version = "v1.2",
                           input_data_path = file.path(project_path, "InputData", version),
                           output_data_path = file.path(project_path, "OutputData"),
+                          schema_path = file.path(input_data_path, "Schema.xlsx"),
                           fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
                           ilo_employment_data_path = file.path(input_data_path, "ilo_employment_data.rds"),
                           ilo_working_hours_data_path = file.path(input_data_path, "ilo_working_hours_data.rds"),
@@ -135,6 +140,7 @@ get_abs_paths <- function(home_path = fs::path_home() %>% as.character(),
               iea_folder_path = file.path(home_path, iea_folder_path, fsep = fsep),
               input_data_path = file.path(home_path, input_data_path, fsep = fsep),
               output_data_path = file.path(home_path, output_data_path, fsep = fsep),
+              schema_path = file.path(home_path, schema_path, fsep = fsep),
               iea_data_path = file.path(home_path, iea_data_path, fsep = fsep),
               fao_data_path = file.path(home_path, fao_data_path, fsep = fsep),
               ilo_employment_data_path = file.path(home_path, ilo_employment_data_path, fsep = fsep),

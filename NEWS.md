@@ -8,6 +8,10 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+* Added path the database schema setup file,
+  by default called `Schema.xlsx`.
+
+
 # PFUSetup 0.1.21 (2023-12-21) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10420424.svg)](https://doi.org/10.5281/zenodo.10420424)
 
 * Added statement of need to README file.

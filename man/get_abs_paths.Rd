@@ -16,6 +16,7 @@ get_abs_paths(
   version = "v1.2",
   input_data_path = file.path(project_path, "InputData", version),
   output_data_path = file.path(project_path, "OutputData"),
+  schema_path = file.path(input_data_path, "Schema.xlsx"),
   fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
   ilo_employment_data_path = file.path(input_data_path, "ilo_employment_data.rds"),
   ilo_working_hours_data_path = file.path(input_data_path, "ilo_working_hours_data.rds"),
@@ -58,6 +59,8 @@ get_abs_paths(
 \item{input_data_path}{The path to the input data directory, relative to \code{home_path}.}
 
 \item{output_data_path}{The path to the output data directory, relative to \code{home_path}.}
+
+\item{schema_path}{The path to the database schema file, relative to \code{home_path}.}
 
 \item{fao_data_path}{The path to the FAO live animals data file, relative to \code{home_path}.}
 
@@ -105,6 +108,9 @@ Default is "versions_and_products.xlsx".}
 
 \item{fsep}{The file separator used when constructing paths.
 Default is \code{.Platform$file.sep}.}
+
+\item{scheme_path}{The path to the database schema file relative to \code{project_path}.
+Default is}
 }
 \value{
 A named list containing paths to important directories and files, including:
@@ -116,6 +122,7 @@ A named list containing paths to important directories and files, including:
 \item{iea_data_path}{The absolute path to the IEA data file for the OECD countries.}
 \item{input_data_path}{The absolute path to the input data directory.}
 \item{output_data_path}{The absolute path to the output data directory.}
+\item{schema_path}{The absolute path to a Excel schema file.}
 \item{fao_data_path}{The absolute path to the FAO live animals data file.}
 \item{ilo_employment_data_path}{The absolute path to the ILO employment data file.}
 \item{ilo_working_hours_data_path}{The absolute path to the ILO working hours data file.}
