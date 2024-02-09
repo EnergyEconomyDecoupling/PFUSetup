@@ -9,7 +9,7 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$project_path, "Fellowship 1960-2015 PFU database"))
 
   # Schema path
-  expect_true(endsWith(paths$schema_path, "Schema.xlsx"))
+  expect_true(endsWith(paths$schema_path, "SchemaAndSimpleTables.xlsx"))
 
   # IEA folder path
   expect_true(endsWith(paths$iea_folder_path, file.path("IEA extended energy balance data", "IEA 2022 energy balance data")))

@@ -16,7 +16,7 @@ get_abs_paths(
   version = "v1.2",
   input_data_path = file.path(project_path, "InputData", version),
   output_data_path = file.path(project_path, "OutputData"),
-  schema_path = file.path(input_data_path, "Schema.xlsx"),
+  schema_path = file.path(input_data_path, "SchemaAndSimpleTables.xlsx"),
   fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
   ilo_employment_data_path = file.path(input_data_path, "ilo_employment_data.rds"),
   ilo_working_hours_data_path = file.path(input_data_path, "ilo_working_hours_data.rds"),
