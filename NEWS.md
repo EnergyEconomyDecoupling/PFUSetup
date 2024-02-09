@@ -9,7 +9,7 @@ which always resolves to the latest release.
 
 
 * Added path the database schema setup file,
-  by default called `Schema.xlsx`.
+  by default called `SchemaAndSimpleTables.xlsx`.
 
 
 # PFUSetup 0.1.21 (2023-12-21) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10420424.svg)](https://doi.org/10.5281/zenodo.10420424)
