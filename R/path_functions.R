@@ -95,7 +95,7 @@
 get_abs_paths <- function(home_path = fs::path_home() |> as.character(),
                           cloud_storage_path = "OneDrive - University of Leeds",
                           project_path =  file.path(cloud_storage_path,
-                                                    "Fellowship 1960-2015 PFU database"),
+                                                    "Fellowship 1960-2015 PFU database research"),
                           iea_year = "2022",
                           iea_folder_path = file.path(project_path,
                                                       "IEA extended energy balance data",
