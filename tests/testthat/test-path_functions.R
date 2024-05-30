@@ -3,7 +3,7 @@ test_that("get_abs_paths() works as expected", {
   paths <- get_abs_paths()
 
   # Dropbox path
-  expect_true(endsWith(paths$cloud_storage_path, "Dropbox"))
+  expect_true(endsWith(paths$cloud_storage_path, "OneDrive - University of Leeds"))
 
   # Project path
   expect_true(endsWith(paths$project_path, "Fellowship 1960-2015 PFU database"))
