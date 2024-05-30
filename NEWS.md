@@ -8,6 +8,7 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+* Convert to using OneDrive for the default project location.
 * Added path the database schema setup file,
   by default called `SchemaAndSimpleTables.xlsx`.
 
