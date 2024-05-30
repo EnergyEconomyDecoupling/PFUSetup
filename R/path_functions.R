@@ -12,6 +12,37 @@
 #' In that event, the leading file separator (`fsep`) is removed
 #' from the path (if it exists).
 #'
+#' Output items include:
+#' \describe{
+#'  \item{home_path}{The absolute path to the user's home.}
+#'  \item{cloud_storage_path}{The absolute path of the user's cloud storage folder.}
+#'  \item{project_path}{The absolute path to the project folder.}
+#'  \item{iea_folder_path}{The absolute path to a folder containing IEA data.}
+#'  \item{iea_data_path}{The absolute path to the IEA data file for the OECD countries.}
+#'  \item{input_data_path}{The absolute path to the input data directory.}
+#'  \item{output_data_path}{The absolute path to the output data directory.}
+#'  \item{schema_path}{The absolute path to a Excel schema file.}
+#'  \item{fao_data_path}{The absolute path to the FAO live animals data file.}
+#'  \item{ilo_employment_data_path}{The absolute path to the ILO employment data file.}
+#'  \item{ilo_working_hours_data_path}{The absolute path to the ILO working hours data file.}
+#'  \item{hmw_analysis_data_path}{The absolute path to the human muscle work analysis file.}
+#'  \item{amw_analysis_data_path}{The absolute path to the animal muscle work file.}
+#'  \item{mw_concordance_path}{The absolute path to the muscle work country concordance file.}
+#'  \item{country_concordance_path}{The absolute path to the country concordance file.}
+#'  \item{aggregation_mapping_path}{The absolute path to the aggregation mapping file.}
+#'  \item{phi_constants_path}{The absolute path to the exergy-to-energy ratio file containing constant values.}
+#'  \item{exemplar_table_path}{The path to the exemplar table.}
+#'  \item{fu_analysis_folder}{The absolute path to the folder containing final-to-useful exergy information.}
+#'  \item{machine_data_folder}{The absolute path to the folder containing machine-specific efficiency information.}
+#'  \item{ceda_data_folder}{The absolute path to the folder containing CEDA environment information.}
+#'  \item{exiobase_energy_flows_path}{The absolute path to the folder containing Exiobase energy flows information.}
+#'  \item{reports_source_folders}{A vector of absolute paths to folders containing source reports.}
+#'  \item{reports_dest_folder}{A directory into which completed reports will be written.}
+#'  \item{pipeline_caches_folder}{The path to a folder that stores zipped versions of the pipeline cache.}
+#'  \item{pipeline_releases_folder}{The path to a folder that stores releases of various targets.}
+#'  \item{versions_and_products_path}{The path to the versions and products file.}
+#' }
+#'
 #' @param home_path The absolute path to the user's home directory.
 #' @param cloud_storage_path The path to the user's cloud storage directory, relative to `home_path`.
 #' @param project_path The path to the project directory, relative to `home_path`.
@@ -47,41 +78,13 @@
 #' @param versions_and_products_path The path to the versions and products file containing lists of all versions and products,
 #'                                   relative to `project_path`.
 #'                                   Default is "versions_and_products.xlsx".
-#' @param scheme_path The path to the database schema file relative to `project_path`.
+#' @param schema_path The path to the database schema file relative to `project_path`.
 #'                    Default is
 #' @param fsep The file separator used when constructing paths.
 #'             Default is `.Platform$file.sep`.
 #'
-#' @return A named list containing paths to important directories and files, including:
-#' \itemize{
-#'  \item{home_path}{The absolute path to the user's home.}
-#'  \item{cloud_storage_path}{The absolute path of the user's cloud storage folder.}
-#'  \item{project_path}{The absolute path to the project folder.}
-#'  \item{iea_folder_path}{The absolute path to a folder containing IEA data.}
-#'  \item{iea_data_path}{The absolute path to the IEA data file for the OECD countries.}
-#'  \item{input_data_path}{The absolute path to the input data directory.}
-#'  \item{output_data_path}{The absolute path to the output data directory.}
-#'  \item{schema_path}{The absolute path to a Excel schema file.}
-#'  \item{fao_data_path}{The absolute path to the FAO live animals data file.}
-#'  \item{ilo_employment_data_path}{The absolute path to the ILO employment data file.}
-#'  \item{ilo_working_hours_data_path}{The absolute path to the ILO working hours data file.}
-#'  \item{hmw_analysis_data_path}{The absolute path to the human muscle work analysis file.}
-#'  \item{amw_analysis_data_path}{The absolute path to the animal muscle work file.}
-#'  \item{mw_concordance_path}{The absolute path to the muscle work country concordance file.}
-#'  \item{country_concordance_path}{The absolute path to the country concordance file.}
-#'  \item{aggregation_mapping_path}{The absolute path to the aggregation mapping file.}
-#'  \item{phi_constants_path}{The absolute path to the exergy-to-energy ratio file containing constant values.}
-#'  \item{exemplar_table_path}{The path to the exemplar table.}
-#'  \item{fu_analysis_folder}{The absolute path to the folder containing final-to-useful exergy information.}
-#'  \item{machine_data_folder}{The absolute path to the folder containing machine-specific efficiency information.}
-#'  \item{ceda_data_folder}{The absolute path to the folder containing CEDA environment information.}
-#'  \item{exiobase_energy_flows_path}{The absolute path to the folder containing Exiobase energy flows information.}
-#'  \item{reports_source_folders}{A vector of absolute paths to folders containing source reports.}
-#'  \item{reports_dest_folder}{A directory into which completed reports will be written.}
-#'  \item{pipeline_caches_folder}{The path to a folder that stores zipped versions of the pipeline cache.}
-#'  \item{pipeline_releases_folder}{The path to a folder that stores releases of various targets.}
-#'  \item{versions_and_products_path}{The path to the versions and products file.}
-#' }
+#' @return A named list containing paths to important directories and files.
+#'         See details for output items.
 #'
 #' @importFrom fs path_home
 #'

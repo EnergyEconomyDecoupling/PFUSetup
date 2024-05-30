@@ -61,7 +61,8 @@ get_abs_paths(
 
 \item{output_data_path}{The path to the output data directory, relative to \code{home_path}.}
 
-\item{schema_path}{The path to the database schema file, relative to \code{home_path}.}
+\item{schema_path}{The path to the database schema file relative to \code{project_path}.
+Default is}
 
 \item{fao_data_path}{The path to the FAO live animals data file, relative to \code{home_path}.}
 
@@ -109,13 +110,27 @@ Default is "versions_and_products.xlsx".}
 
 \item{fsep}{The file separator used when constructing paths.
 Default is \code{.Platform$file.sep}.}
-
-\item{scheme_path}{The path to the database schema file relative to \code{project_path}.
-Default is}
 }
 \value{
-A named list containing paths to important directories and files, including:
-\itemize{
+A named list containing paths to important directories and files.
+See details for output items.
+}
+\description{
+Default argument values assume a directory structure that includes Dropbox
+and is appropriate for the Fellowship project for Dr. Paul Brockway.
+}
+\details{
+The default argument for \code{home_path} gets the value for \code{fs::path_home()}.
+
+Although this function is called \code{\link[=get_abs_paths]{get_abs_paths()}},
+it can return relative paths if both \code{home_path} and \code{cloud_storage_path}
+are set to "" (an empty string) and
+\code{project_path} is set to the root folder of the project.
+In that event, the leading file separator (\code{fsep}) is removed
+from the path (if it exists).
+
+Output items include:
+\describe{
 \item{home_path}{The absolute path to the user's home.}
 \item{cloud_storage_path}{The absolute path of the user's cloud storage folder.}
 \item{project_path}{The absolute path to the project folder.}
@@ -144,20 +159,6 @@ A named list containing paths to important directories and files, including:
 \item{pipeline_releases_folder}{The path to a folder that stores releases of various targets.}
 \item{versions_and_products_path}{The path to the versions and products file.}
 }
-}
-\description{
-Default argument values assume a directory structure that includes Dropbox
-and is appropriate for the Fellowship project for Dr. Paul Brockway.
-}
-\details{
-The default argument for \code{home_path} gets the value for \code{fs::path_home()}.
-
-Although this function is called \code{\link[=get_abs_paths]{get_abs_paths()}},
-it can return relative paths if both \code{home_path} and \code{cloud_storage_path}
-are set to "" (an empty string) and
-\code{project_path} is set to the root folder of the project.
-In that event, the leading file separator (\code{fsep}) is removed
-from the path (if it exists).
 }
 \examples{
 get_abs_paths()

@@ -9,6 +9,7 @@ FAO
 IEA
 IEA's
 ILO
+OneDrive
 PFU
 PFUPipelineTools
 PSUT
@@ -16,19 +17,10 @@ PipelineCaches
 PipelineReleases
 README
 WEEB
-amw
-ceda
-dest
 doi
 exergy
 exiobase
-fao
-fu
-hmw
-iea
-ilo
 lifecycle
-mw
 pkgdown
 xlsx
 zenodo
