@@ -5,9 +5,10 @@
 \title{Get absolute paths to important files and folders appropriate for this computer}
 \usage{
 get_abs_paths(
-  home_path = fs::path_home() \%>\% as.character(),
-  cloud_storage_path = "Dropbox",
-  project_path = file.path(cloud_storage_path, "Fellowship 1960-2015 PFU database"),
+  home_path = as.character(fs::path_home()),
+  cloud_storage_path = "OneDrive - University of Leeds",
+  project_path = file.path(cloud_storage_path,
+    "Fellowship 1960-2015 PFU database research"),
   iea_year = "2022",
   iea_folder_path = file.path(project_path, "IEA extended energy balance data",
     paste("IEA", iea_year, "energy balance data")),
