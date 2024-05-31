@@ -3,15 +3,15 @@ citHeader("To cite package ‘PFUSetup’ in publications use:")
 citEntry(entry = "Manual",
   title        = "PFUSetup: Automated setup for the PFU database project.",
   author       = personList(as.person("Matthew Kuperus Heun")),
-  year         = "2023",
-  note         = "R package version 0.1.21",
+  year         = "2024",
+  note         = "R package version 0.1.22",
   url          = "https://doi.org/10.5281/zenodo.5228359",
   doi          = "10.5281/zenodo.5228359",
 
   textVersion  =
-  paste("Matthew Kuperus Heun (2023).",
+  paste("Matthew Kuperus Heun (2024).",
         "PFUSetup: Automated setup for the PFU database project.",
-        "R package version 0.1.21.",
+        "R package version 0.1.22.",
         "https://EnergyEconomyDecoupling.github.io/PFUSetup/",
         "https://doi.org/10.5281/zenodo.5228359")
 )
