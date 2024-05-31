@@ -13,6 +13,9 @@ which always resolves to the latest release.
 * Convert to using OneDrive for the default project location.
 * Added path the database schema setup file,
   by default called `SchemaAndSimpleTables.xlsx`.
+* One new tests.
+    * Up to 78 tests, all passing.
+    * Test coverage remains at 100%.
 
 
 # PFUSetup 0.1.21 (2023-12-21) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10420424.svg)](https://doi.org/10.5281/zenodo.10420424)
