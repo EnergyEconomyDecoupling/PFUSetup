@@ -177,3 +177,9 @@ test_that("get_abs_paths() works with empty strings for home_path and cloud_stor
 })
 
 
+test_that("schema_path works for v2.0", {
+  # Check that we get a length == 1 string here.
+  # If you say "version = version", you'll get a length == 14
+  # string, because version is a keyword.
+  expect_true(length(PFUSetup::get_abs_paths(version = "v2.0")[["schema_path"]]) == 1)
+})
