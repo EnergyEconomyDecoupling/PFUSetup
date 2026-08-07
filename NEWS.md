@@ -8,12 +8,23 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
+# PFUSetup 0.1.23 (2026-08-07) 
+
+* Adjust paths for August 2026 changes to project structure
+* Removed paths related to pipeline caches.
+  We no longer cache outputs from pipelines, because
+  we never used them.
+* Deleted some tests.
+    * Now at 76 tests, all passing.
+    * Test coverage remains at 100%.
+
+
 # PFUSetup 0.1.22 (2024-05-30) 
 
 * Convert to using OneDrive for the default project location.
 * Added path the database schema setup file,
   by default called `SchemaAndSimpleTables.xlsx`.
-* One new tests.
+* One new test.
     * Up to 78 tests, all passing.
     * Test coverage remains at 100%.
 
