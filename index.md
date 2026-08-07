@@ -1,0 +1,39 @@
+# PFUSetup
+
+## Statement of need
+
+Several packages are involved in creating the CL-PFU database. Each of
+those packages needs access to directories and files on a variety of
+machines. A way to organize and standardize those directory and file
+paths was needed.
+
+This package (`PFUSetup`) addresses that need. `PFUSetup` automates the
+setup process for the CL-PFU database by finding the locations of
+several directories common to all installations of the CL-PFU database
+in a platform- and machine-independent manner.
+
+## Installation
+
+You can install the latest version of `PFUSetup` from
+[GitHub](https://github.com/) with:
+
+``` r
+
+# install.packages("devtools")
+devtools::install_github("EnergyEconomyDecoupling/PFUSetup")
+```
+
+## Example
+
+You might use the package as follows:
+
+``` r
+
+library(PFUSetup)
+get_abs_paths()
+```
+
+## More Information
+
+Find more information, including vignettes and function documentation,
+at <https://EnergyEconomyDecoupling.github.io/PFUSetup/>.
