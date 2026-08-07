@@ -10,14 +10,14 @@ get_abs_paths(
   project_path = file.path(cloud_storage_path,
     "Fellowship 1960-2015 PFU database research"),
   iea_year = "2022",
-  iea_folder_path = file.path(project_path, "IEA extended energy balance data",
-    paste("IEA", iea_year, "energy balance data")),
+  iea_folder_path = file.path(project_path, "Input Data", "External Data",
+    "IEA extended energy balance data", paste("IEA", iea_year, "energy balance data")),
   iea_data_path = file.path(iea_folder_path, paste("IEA Extended Energy Balances",
     iea_year, "(TJ).csv")),
-  version = "v1.2",
-  input_data_path = file.path(project_path, "InputData", version),
-  output_data_path = file.path(project_path, "OutputData"),
-  schema_path = file.path(input_data_path, "SchemaAndSimpleTables.xlsx"),
+  version = "v3.0",
+  input_data_path = file.path(project_path, "Input Data", "CL-PFU Data", version),
+  output_data_path = file.path(project_path, "Output Data"),
+  schema_path = file.path(input_data_path, "SchemaAndFKTables.xlsx"),
   fao_data_path = file.path(input_data_path, "fao_qcl_data.rds"),
   ilo_employment_data_path = file.path(input_data_path, "ilo_employment_data.rds"),
   ilo_working_hours_data_path = file.path(input_data_path, "ilo_working_hours_data.rds"),
@@ -28,15 +28,14 @@ get_abs_paths(
   aggregation_mapping_path = file.path(input_data_path, "aggregation_mapping.xlsx"),
   phi_constants_path = file.path(input_data_path, "phi_constants.xlsx"),
   exemplar_table_path = file.path(input_data_path, "Exemplar_Table.xlsx"),
-  fu_analysis_folder = file.path(input_data_path, "FU analysis data"),
+  fu_analysis_folder = file.path(input_data_path, "FU allocation data"),
   machine_data_folder = file.path(input_data_path, "Machines - Data"),
   ceda_data_folder = file.path(input_data_path, "CEDA Data"),
   exiobase_energy_flows_path = file.path(input_data_path,
     "exiobase_energy_flows_concordance.xlsx"),
   reports_source_folders = "reports",
-  reports_dest_folder = file.path(output_data_path, "Reports"),
-  pipeline_caches_folder = file.path(output_data_path, "PipelineCaches"),
-  pipeline_releases_folder = file.path(output_data_path, "PipelineReleases"),
+  reports_dest_folder = file.path(output_data_path, version, "Reports"),
+  pipeline_releases_folder = file.path(output_data_path, "old_pins", "PipelineReleases"),
   versions_and_products_path = file.path(pipeline_releases_folder,
     "versions and products.xlsx"),
   fsep = .Platform$file.sep
@@ -95,10 +94,6 @@ Default is}
 \item{reports_source_folders}{A string vector of paths to folders containing report sources.}
 
 \item{reports_dest_folder}{The path to the folder into which reports will be written, relative to \code{home_path}.}
-
-\item{pipeline_caches_folder}{The path to a folder containing zipped versions of the pipeline cache, relative to \code{home_path}.
-Data are stored as .zip files
-Default is "PipelineCaches" relative to \code{project_path}.}
 
 \item{pipeline_releases_folder}{The path to a folder containing released versions of the PSUT target data frame, relative to \code{home_path}.
 Data are stored using the \code{pins} package.

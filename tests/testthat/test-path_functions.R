@@ -9,7 +9,7 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$project_path, "Fellowship 1960-2015 PFU database research"))
 
   # Schema path
-  expect_true(endsWith(paths$schema_path, "SchemaAndSimpleTables.xlsx"))
+  expect_true(endsWith(paths$schema_path, "SchemaAndFKTables.xlsx"))
 
   # IEA folder path
   expect_true(endsWith(paths$iea_folder_path, file.path("IEA extended energy balance data", "IEA 2022 energy balance data")))
@@ -48,7 +48,7 @@ test_that("get_abs_paths() works as expected", {
   expect_true(endsWith(paths$phi_constants_path, "phi_constants.xlsx"))
 
   # FU analysis folder
-  expect_true(endsWith(paths$fu_analysis_folder, "FU analysis data"))
+  expect_true(endsWith(paths$fu_analysis_folder, "FU allocation data"))
 
   # Machine data folder
   expect_true(endsWith(paths$machine_data_folder, "Machines - Data"))
@@ -64,9 +64,6 @@ test_that("get_abs_paths() works as expected", {
 
   # exiobase file path
   expect_true(endsWith(paths$exiobase_energy_flows_path, "exiobase_energy_flows_concordance.xlsx"))
-
-  # Workflow output folder
-  expect_true(endsWith(paths$pipeline_caches_folder, "PipelineCaches"))
 
   # Workflow releases folder
   expect_true(endsWith(paths$pipeline_releases_folder, "PipelineReleases"))
@@ -122,12 +119,6 @@ test_that("Files exist", {
   # Report destination folder
   expect_true(file.exists(paths$reports_dest_folder))
 
-  # Drake cache folder
-  # expect_true(file.exists(paths$drake_cache_folder))
-
-  # Report workflow output folder
-  expect_true(file.exists(paths$pipeline_caches_folder))
-
   # Report workflow releases folder
   expect_true(file.exists(paths$pipeline_releases_folder))
 })
@@ -145,10 +136,17 @@ test_that("get_abs_paths() works with empty strings for home_path and cloud_stor
   expect_equal(paths$home_path, "")
   expect_equal(paths$cloud_storage_path, "")
   expect_equal(paths$project_path, "p_path")
-  expect_equal(paths$iea_folder_path, file.path("p_path", "IEA extended energy balance data",
-                                                paste("IEA", iea_year, "energy balance data")))
-  expect_equal(paths$input_data_path, file.path("p_path", "InputData", version))
-  expect_equal(paths$output_data_path, file.path("p_path", "OutputData"))
+  expect_equal(paths$iea_folder_path,
+               file.path("p_path",
+                         "Input Data",
+                         "External Data",
+                         "IEA extended energy balance data",
+                         paste("IEA", iea_year, "energy balance data")))
+  expect_equal(paths$input_data_path, file.path("p_path",
+                                                "Input Data",
+                                                "CL-PFU Data",
+                                                version))
+  expect_equal(paths$output_data_path, file.path("p_path", "Output Data"))
   expect_equal(paths$iea_data_path, file.path(paths$iea_folder_path,
                                               paste("IEA Extended Energy Balances", "iea_year", "(TJ).csv")))
   expect_equal(paths$fao_data_path, file.path(paths$input_data_path, "fao_qcl_data.rds"))
@@ -165,15 +163,26 @@ test_that("get_abs_paths() works with empty strings for home_path and cloud_stor
   expect_equal(paths$exemplar_table_path, file.path(paths$input_data_path,
                                                     "Exemplar_Table.xlsx"))
   expect_equal(paths$fu_analysis_folder, file.path(paths$input_data_path,
-                                                   "FU analysis data"))
+                                                   "FU allocation data"))
   expect_equal(paths$ceda_data_folder, file.path(paths$input_data_path,
                                                  "CEDA Data"))
   expect_equal(paths$machine_data_folder, file.path(paths$input_data_path,
                                                     "Machines - Data"))
   expect_equal(paths$reports_source_folders, "reports")
-  expect_equal(paths$reports_dest_folder, file.path(paths$output_data_path, "Reports"))
-  expect_equal(paths$pipeline_caches_folder, file.path(paths$output_data_path, "PipelineCaches"))
-  expect_equal(paths$pipeline_releases_folder, file.path(paths$output_data_path, "PipelineReleases"))
+  expect_equal(paths$reports_dest_folder,
+               file.path(paths$output_data_path,
+                         "this_version",
+                         "Reports"))
+  expect_equal(paths$pipeline_releases_folder,
+               file.path(paths$output_data_path,
+                         "old_pins",
+                         "PipelineReleases"))
 })
 
 
+test_that("schema_path works for v3.0", {
+  # Check that we get a length == 1 string here.
+  # If you say "version = version", you'll get a length == 14
+  # string, because version is a keyword.
+  expect_true(length(PFUSetup::get_abs_paths(version = "v3.0")[["schema_path"]]) == 1)
+})
