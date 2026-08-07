@@ -8,7 +8,7 @@ Cite all releases with doi [10.5281/zenodo.5228359](https://doi.org/10.5281/zeno
 which always resolves to the latest release.
 
 
-# PFUSetup 0.1.23 (2026-08-07) 
+# PFUSetup 0.1.23 (2026-08-07) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21840787.svg)](https://doi.org/10.5281/zenodo.21840787)
 
 * Adjust paths for August 2026 changes to project structure
 * Removed paths related to pipeline caches.
